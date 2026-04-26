@@ -39,6 +39,48 @@ def history():
 def __hash_func__(data: str) -> str:
     return sha1(data.encode()).hexdigest()
 
+def safe_read_question_metadata():
+        all_questions = [] 
+        nested_data = {}
+        focus_id_map = {}
+        trait_id_map = {}
+        sub_capability_id_map = {}
+        with open(ALL_QUESTION_METADATA_FILE, mode='r', encoding='utf-8') as f:
+            reader = csv.DictReader(f, delimiter='\t')
+            for i, row in enumerate(reader, start=1):
+
+                focus = row['focus']
+                trait = row['care_trait']
+                sub_capability = row['care_sub_capability']
+                question_text = row['question'].replace("'", "`")
+                
+                # Create IDs
+                focus_id = __hash_func__(focus)
+                focus_id_map[focus_id] = focus 
+
+                trait_id = __hash_func__(f"{focus}_{trait}")
+                trait_id_map[trait_id] = trait
+
+                sub_capability_id = __hash_func__(f"{focus}_{trait}_{sub_capability}")
+                sub_capability_id_map[sub_capability_id] = sub_capability
+
+
+                question_id = __hash_func__(f"{focus}_{trait}_{sub_capability}_{i}".replace(" ", "_"))
+
+                qs = {'focus': focus, 
+                      'trait': trait, 
+                      'sub_capability': sub_capability, 
+                      'question_text': question_text,
+                      'focus_id': focus_id,
+                      'trait_id': trait_id,
+                      'sub_capability_id': sub_capability_id,
+                      'question_id': question_id
+                }
+                all_questions.append(qs)
+        return (all_questions, focus_id_map, trait_id_map, sub_capability_id_map)
+
+
+
 def generate_metadata(file_path):
     l = []
     with open(file_path, mode='r', encoding='utf-8') as f:
@@ -62,62 +104,53 @@ def generate_metadata(file_path):
 
 def generate_nested_list(file_path):
     nested_data = {}
-    focus_id_map = {}
-    trait_id_map = {}
-    sub_capabilities_id_map = {}
-    
-    with open(file_path, mode='r', encoding='utf-8') as f:
-        reader = csv.DictReader(f, delimiter='\t')
-        for i, row in enumerate(reader, start=1):
 
-            focus = row['focus']
-            trait = row['care_trait']
-            sub_capabilities = row['care_sub_capability']
-            question_text = row['question'].replace("'", "`")
-            
-            # Create IDs
-            area_id = __hash_func__(focus)
-            focus_id_map[area_id] = focus 
+    all_questions, focus_id_map, trait_id_map, sub_capability_id_map = safe_read_question_metadata()
+    print(f"========>. all_questions: {all_questions}")
+    print(f"========>. focus_id_map: {focus_id_map}")
+    print(f"========>. trait_id_map: {trait_id_map}")
+    print(f"========>. sub_capability_id_map: {sub_capability_id_map}")
 
-            trait_id = __hash_func__(f"{focus}_{trait}")
-            trait_id_map[trait_id] = trait
+    for i, row in enumerate(all_questions):
 
-            sub_capabilities_id = __hash_func__(f"{focus}_{trait}_{sub_capabilities}")
-            sub_capabilities_id_map[sub_capabilities_id] = sub_capabilities
+        focus = row['focus']
+        trait = row['trait']
+        sub_capability = row['sub_capability']
+        question_text = row['question_text']
+        focus_id = row['focus_id']
+        trait_id = row['trait_id']
+        sub_capability_id = row['sub_capability_id']
+        question_id = row['question_id']
+        
+        # Build nesting
+        if focus_id not in nested_data:
+            nested_data[focus_id] = {}
 
+        if trait_id not in nested_data[focus_id]:
+            nested_data[focus_id][trait_id] = {}
+        
+        if sub_capability_id not in nested_data[focus_id][trait_id]:
+            nested_data[focus_id][trait_id][sub_capability_id] = []
 
-            question_id = __hash_func__(f"{focus}_{trait}_{sub_capabilities}_{i}".replace(" ", "_"))
-
-
-            # Build nesting
-            if area_id not in nested_data:
-                nested_data[area_id] = {}
-
-            if trait_id not in nested_data[area_id]:
-                nested_data[area_id][trait_id] = {}
-            
-            if sub_capabilities_id not in nested_data[area_id][trait_id]:
-                nested_data[area_id][trait_id][sub_capabilities_id] = []
-
-            nested_data[area_id][trait_id][sub_capabilities_id].append({
-                "id": question_id,
-                "text": question_text
-            })
+        nested_data[focus_id][trait_id][sub_capability_id].append({
+            "id": question_id,
+            "text": question_text
+        })
     
     # Convert to final list format
     result = []
-    for area_id, traits in nested_data.items():
+    for focus_id, traits in nested_data.items():
         focus_entry = {
-            "id": area_id,
-            "name": focus_id_map[area_id],
+            "id": focus_id,
+            "name": focus_id_map[focus_id],
             "traits": []
         }
         for trait_id, sub_capabilities in traits.items():
             scs = []
-            for sub_capabilities_id, questions in sub_capabilities.items():
+            for sub_capability_id, questions in sub_capabilities.items():
                 scs.append({
-                    "id": sub_capabilities_id,
-                    "name": sub_capabilities_id_map[sub_capabilities_id],
+                    "id": sub_capability_id,
+                    "name": sub_capability_id_map[sub_capability_id],
                     "questions": questions
                 })
 
@@ -131,11 +164,25 @@ def generate_nested_list(file_path):
         
     return result
 
+def get_question_metadata(qid):
+    all_questions, focus_id_map, trait_id_map, sub_capability_id_map = safe_read_question_metadata()
+    for row in all_questions:
+        if qid == row['question_id']:
+            focus = row['focus']
+            trait = row['trait']
+            sub_capability = row['sub_capability']
+            return (focus, trait, sub_capability)
+    return (None, None, None)
 
 @app.route('/save_response', methods=['POST'])
 def save_response():
     data = request.get_json()
     question_id = data.get('question_id')
+    (focus, trait, sub_capability) = get_question_metadata(question_id)
+    data['focus'] = focus 
+    data['trait'] = trait 
+    data['sub_capability'] = sub_capability 
+
     print(f"data: {data}")
     if not os.path.exists("static/data/responses.json"):
         stored_responses = {}
@@ -202,7 +249,7 @@ def library():
 @app.route('/docs/<path:path>')
 def docs(path='index.html'):
     print(f"where is docs? {path}")
-    full_path = os.path.join(app.root_path, 'my-profile', 'site')
+    full_path = os.path.join(app.root_path, 'trustably-docs', 'site')
     print(send_from_directory(full_path, path))
     print(full_path)
     # Path to the 'site' folder generated by 'mkdocs build'

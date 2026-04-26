@@ -65,7 +65,7 @@ class AssessmentAgent():
 
             self.tasks.append(score_task) 
 
-            justification_ref_file_name = os.path.join(self.config_folder,f"raw_justification_{f}.md")
+            justification_ref_file_name = os.path.join(self.config_folder,f"raw_justification_task.md")
 
             justification_task = Task(name = f"Justification Task: {f}", 
                                     agent = self.agents[1], 

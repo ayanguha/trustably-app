@@ -1,29 +1,40 @@
-# Focus Area: Functional Governance  
-# Trait: Accurate  
+## Focus Area: functional_governance 
+## Trait: Accurate 
 
-## Sub-Capability: Unbiased  
+### Sub-Capability: Valid 
+**Score:** 2  
+**Justification:** Lacks foundational evidence to confirm compliance with stated attributes.  
+**Evidence:** Absence of defined policies  
+
+### Sub-Capability: Unbiased 
 **Score:** 3  
-**Justification:** The evidence highlights lack of ethical guidelines, yet the focus area demands accuracy. Unbiased aligns with enforceable policies, while weaker scenarios fail to meet baseline standards.  
+**Justification:** Incomplete data prevents rigor in neutral assessments.  
+**Evidence:** Few ethical guidelines defined  
 
-## Evidence**  
-- No ethical principles defined; governance ignores bias.  
-
-## Boundary Analysis**  
-- Not lower: Higher alignment with required precision.  
-- Not higher: Confirmed by current evidence adequacy.  
-
-## Confidence**  
-High confidence due to direct relevance of Unbiased to functional governance mandates.  
-
-# Sub-Capability: Explainable  
+### Sub-Capability: Explainable 
 **Score:** 5  
-**Justification:** Opaque decision-making meets core functional governance needs for transparency, though evidence lacks depth.  
+**Justification:** Matches required specificity for governance clarity.  
+**Evidence:** Basic meeting minutes  
 
-## Evidence**  
-- AI approval opacity.  
+### Sub-Capability: Integrated 
+**Score:** 10  
+**Justification:** Full alignment with core operational demands.  
+**Evidence:** Full audit results  
 
-## Boundary Analysis**  
-- Does not conflict with Explainable hierarchy.  
+**Boundary Analysis:** Not lower/Higher  
+**Confidence:** High  
 
-## Confidence**  
-Medium confidence: Partial alignment insufficient for higher scores.
+#### Rubric Alignment  
+The task demands precise adherence to functional_governance standards, where Explainable excels.  
+
+#### Evidence  
+- Absence of defined policies  
+- Few ethical guidelines defined  
+- Basic meeting minutes  
+- Full audit results  
+
+##### Uncertainty  
+No uncertainty detected.  
+
+##### Boundary Analysis  
+This score remains locked.

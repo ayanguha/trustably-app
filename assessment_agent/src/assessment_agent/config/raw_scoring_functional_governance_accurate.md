@@ -17,6 +17,25 @@ Evaluate the organisation’s maturity for **Functional Governance — Accurate 
     - Evidence - Create a list of exact response snippets to support the justification. 
 
     ---
+
+    ## Input Information:
+
+    User responses will be provided to you in following format (Example):
+    [
+    {
+        "question_id": "2867682fac1d73eb13ddd7415450ac86f4077a25",
+        "answer": "This is a looooooong response to show bb",
+        "qText": "Is there a formally approved Enterprise AI Strategy that defines the \"Right to Win\" and \"Right to Play\" for AI initiatives?",
+        'focus': 'functional governance', 'trait': 'accurate', 'sub-capability': 'valid'
+    },
+    "72d600c7134623f3fbc6f2188ad28b57a0f3cd02": {
+        "question_id": "72d600c7134623f3fbc6f2188ad28b57a0f3cd02",
+        "answer": "R22",
+        "qText": "To what extent are AI governance objectives directly linked to organizational KPIs and executive performance reviews?",
+        'focus': 'functional governance', 'trait': 'accurate', 'sub-capability': 'valid'
+    }]
+    {input}
+   
     ## RUBRIC (Ground Truth)
 
 
