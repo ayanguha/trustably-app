@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<style>
+    .area-header { cursor: pointer; padding: 15px; background: #fff; }
+    .sub-area-header { cursor: pointer; padding: 12px 15px 12px 55px; border-top: 1px solid #f1f5f9; background: #fff; }
+    .question-item { cursor: pointer; padding: 10px 15px 10px 85px; background: #fafbfc; transition: 0.2s; }
+    .question-item:hover { background-color: var(--anthropic-green-light);  }
+    #questionDrawer { 
+        background:  var(--main-bg); border-left: 1px solid #e2e8f0; 
+        height: 100vh; position: fixed; right: 0; top: 0; 
+        width: 30%; display: none; z-index: 1051; 
+    }
+    .rotate-icon { transition: transform 0.3s; }
+    .collapsed .rotate-icon { transform: rotate(-90deg); }
+
+    /* Vertical branch line for nested items */
+    .border-start {
+        border-left: 0.5px solid #dee2e6 !important;
+        /* This ensures the child block is tucked inside the parent */
+    }
+
+    /* Typographic hierarchy */
+    .smaller {
+        font-size: 0.7rem;
+    }
+
+    /* Optional: Add hover effect to indicate clickable rows */
+    .sub-area-header, .ps-3.py-2 {
+        cursor: pointer;
+        transition: background 0.15s ease-in-out;
+    }
+
+    .sub-area-header:hover {
+        background-color: #f1f3f5 !important;
+    }
+
+    /* Question style alignment */
+    .question-item {
+        cursor: pointer;
+    }
+
+    .question-item:hover {
+        background-color: var(--anthropic-green-light) !important;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row g-0">
+    <div class="col-12 p-4">
+        <h5 class="fw-bold mb-4">Question Library</h5>
+        
+ {% for area in areas %}
+<div class="card-custom shadow-sm mb-4 overflow-hidden">
+    <div class="area-header d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#focus{{ loop.index }}">
+        <div class="flex-grow-1">
+            <div class="fw-bold">{{ area.name }}</div>
+            
+        </div>
+        <i class="bi bi-chevron-down rotate-icon"></i>
+    </div>
+
+    <div class="collapse" id="focus{{ loop.index }}">
+        {% for trait in area.traits %}
+        
+        <div class="sub-area-header d-flex align-items-center bg-light border-bottom" 
+             data-bs-toggle="collapse" data-bs-target="#{{ trait.id }}">
+            <i class="bi bi-chevron-right me-2 small text-secondary"></i>
+            <span class="flex-grow-1 fw-semibold small">{{ trait.name }}</span>
+           <span class="badge rounded-pill bg-white text-muted border smaller me-3">{{ trait.sub_capabilities|length }} Sub Capability</span>
+        </div>
+
+        <div class="collapse ms-4 border-start" id="{{ trait.id }}">
+            {% for sub in trait.sub_capabilities %}
+            
+            <div class="sub-area-header d-flex align-items-center bg-light border-bottomr" 
+                 data-bs-toggle="collapse" data-bs-target="#{{ sub.id }}">
+                <i class="bi bi-chevron-right me-2"></i>
+                <span class="flex-grow-1 small text-dark fw-medium">{{ sub.name }}</span>
+                <span class="badge rounded-pill bg-white text-muted border smaller me-3">{{ sub.questions|length }} Qs</span>
+            </div>
+
+            <div class="collapse ms-4 border-start" id="{{ sub.id }}">
+                {% for q in sub.questions %}
+                <div class="question-item d-flex align-items-start ps-3 py-2 border-bottom bg-white text-secondary" onclick="openDrawer('{{ q.id }}', '{{ q.text }}')">
+                    <span class="text-secondary small">{{ q.text }}</span>
+                </div>
+                {% endfor %}
+            </div>
+
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
+
+
+<div id="questionDrawer" class="shadow-lg">
+    <div class="p-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h6 class="fw-bold m-0">Edit Response</h6>
+            <button class="btn-close" onclick="closeDrawer()"></button>
+        </div>
+
+        <input type="hidden" id="currentQid">
+
+        <label class="text-muted fw-bold small mb-2">QUESTION</label>
+        <p id="qText" class="fw-medium mb-4"></p>
+        <label class="text-muted fw-bold small mb-2">EVIDENCE/NOTES</label>
+        <textarea id="qNotes" class="form-control mb-4" rows="10" placeholder="Enter details..."></textarea>
+        <button id="saveBtn" class="btn btn-dark w-100 py-2 fw-bold" onclick="saveResponse()"> 
+            <span id="btnText">Save Changes</span>
+            <span id="btnSpinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+        </button>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    function openDrawer(qid, qtext) {
+        
+        document.getElementById('currentQid').value = qid;
+        document.getElementById('qText').innerText = qtext;
+        document.getElementById('questionDrawer').style.display = 'block';
+    }
+    function closeDrawer() {
+        document.getElementById('questionDrawer').style.display = 'none';
+    }
+
+
+    async function saveResponse() {
+        const qid = document.getElementById('currentQid').value;
+        const answer = document.getElementById('qNotes').value;
+        const btn = document.getElementById('saveBtn');
+        const text = document.getElementById('btnText');
+        const spinner = document.getElementById('btnSpinner');
+        const qText = document.getElementById('qText').innerText;
+        // UI Feedback
+        btn.disabled = true;
+        text.innerText = "Saving...";
+        spinner.classList.remove('d-none');
+
+        try {
+            const response = await fetch('/save_response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    question_id: qid,
+                    answer: answer,
+                    qText: qText
+                })
+            });
+
+            if (response.ok) {
+                // Optional: Update the UI to show this question is answered
+                
+                closeDrawer();
+            } else {
+                alert("Failed to save response. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error saving response:", error);
+        } finally {
+            // Reset UI
+            btn.disabled = false;
+            text.innerText = "Save Changes";
+            spinner.classList.add('d-none');
+        }
+    }
+</script>
+{% endblock %}

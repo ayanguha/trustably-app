@@ -1,0 +1,314 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<style>
+    /* Hero Section - Trustably Style */
+    .hero-container {
+        padding: 120px 0 80px;
+        background: linear-gradient(180deg, #FDFBFA 0%, var(--bg-color) 100%);
+        text-align: center;
+    }
+    .hero-eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        font-weight: 700;
+        font-size: 0.75rem;
+        color: var(--anthropic-orange);
+        margin-bottom: 1rem;
+        display: block;
+    }
+    .hero-h1 {
+        font-family: 'Georgia', serif;
+        font-size: 3.8rem;
+        font-weight: 800;
+        line-height: 1.1;
+        color: #1B1B1B;
+        max-width: 900px;
+        margin: 0 auto 1.5rem;
+    }
+    .hero-p {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        max-width: 700px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.6;
+    }
+
+    /* Trust Section - Grey Scale Logos */
+    .trust-strip {
+        padding: 40px 0;
+        border-top: 1px solid var(--border-color);
+        background: white;
+    }
+    .trust-logo {
+        height: 24px;
+        filter: grayscale(1);
+        opacity: 0.5;
+        margin: 0 30px;
+    }
+
+    /* Core Modules (Based on Trustably "What we do") */
+    .module-card {
+        border-radius: 16px;
+        padding: 40px;
+        height: 100%;
+        border: 1px solid var(--border-color);
+        background: white;
+        transition: all 0.3s ease;
+    }
+    .module-card:hover {
+        border-color: var(--anthropic-orange);
+        box-shadow: 0 10px 30px rgba(217, 119, 87, 0.05);
+    }
+    .module-num {
+        font-weight: 800;
+        font-size: 0.9rem;
+        color: var(--anthropic-orange);
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    /* Value Proposition Section */
+    .value-prop {
+        padding: 100px 0;
+        background-color: #1B1B1B;
+        color: white;
+        border-radius: 32px;
+        margin: 40px 1.5rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-0">
+    <section class="hero-container">
+        <div class="container">
+            <span class="hero-eyebrow">Trustably • Applied AI Adoption Framework</span>
+            <h1 class="hero-h1">The source of truth for your AI adoption strategy.</h1>
+            <p class="hero-p">
+                We help organisations measure and benchmark AI readiness, then build a principled, evidence-based roadmap for adoption.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="{{ url_for('home') }}" class="btn btn-primary btn-lg px-4 py-3 fw-bold shadow-sm">
+                    Start Assessment
+                </a>
+                <a href="{{ url_for('sample_report') }}" class="btn btn-outline-dark btn-lg px-4 py-3 fw-bold">
+                    View Sample Report
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust-strip d-flex justify-content-center align-items-center flex-wrap">
+        <span class="fw-bold text-uppercase me-4 " style="letter-spacing: 2px; color: var(--anthropic-orange);">Designed for</span>
+
+        <i class="bi bi-person-arms-up me-2"></i>
+        <span class="text-muted text-uppercase me-4" style="letter-spacing: 1px;">Executive Leaders </span>
+        <i class="bi bi-person-workspace me-2"></i>
+        <span class=" text-muted text-uppercase me-4" style="letter-spacing: 1px;">Product and Portfolio managers </span>
+        <i class="bi bi-universal-access me-2"></i>
+        <span class="text-muted text-uppercase me-4" style="letter-spacing: 1px;">Governance leaders</span>
+        <i class="bi bi-person-fill-gear me-2"></i>
+        <span class=" text-muted text-uppercase me-4" style="letter-spacing: 1px;">Practitioners</span>
+    </section>
+
+    <section class="container py-5 mt-5">
+        <div class="row align-items-center mb-5 pb-5">
+            <div class="col-md-6">
+                <span class="module-num">ASSESSMENT</span>
+                <h2 class="fw-bold mb-4" style="font-family: Georgia, serif; font-size: 2.5rem;">Benchmark your current standing in 5 Simple Steps.</h2>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-1-circle-fill text-success me-2"></i>Answer questions</li>
+                    <li class="mb-2"><i class="bi bi-2-circle-fill text-success me-2"></i> Evaluate Institutional Maturity</li>
+                    <li class="mb-2"><i class="bi bi-3-circle-fill text-success me-2"></i> Evaluate Individual Fluency</li>
+                    <li class="mb-2"><i class="bi bi-4-circle-fill text-success me-2"></i> Generate Maturity Ratings</li>
+                    <li class="mb-2"><i class="bi bi-5-circle-fill text-success me-2"></i> Generate Prioritized Roadmap</li>
+                </ul>
+                
+                <h3 class="fw-bold mb-4" style="font-family: Georgia, serif; font-size: 1.5rem;">Gain a clear, data-driven assessment of where your organization on <span class="text-success" style="font-size: 1.5rem;">4</span> maturity stages, measured over <span class="text-success" style="font-size: 1.5rem;">5</span> focus areas, across <span class="text-success" style="font-size: 1.5rem;">15</span> sub-capabillities</h2>
+                
+            </div>
+            <div class="col-md-5 offset-md-1">
+                <div class="p-4 bg-white border rounded shadow-sm">
+                    
+                         <img src="{{ url_for('static', filename='images/assess-discuss.png') }}"  class="img-fluid" alt="Individual Fluency Illustration">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="module-card">
+                    <span class="module-num">Risk Profiles</span>
+                    <h5 class="fw-bold">Identify Risks</h5>
+                    <p class="text-muted small">Our platform highlights exactly where your governance falls short, providing a prioritized roadmap for remediation.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="module-card">
+                    <span class="module-num">Maturity Score</span>
+                    <h5 class="fw-bold">Identify Where you are</h5>
+                    <p class="text-muted small">An evidence-based measure of your AI readiness</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="module-card">
+                    <span class="module-num">Actionalble Roadmap</span>
+                    <h5 class="fw-bold">Identify Next Steps</h5>
+                    <p class="text-muted small">Convert complex assessment data into executive-ready reports with a single click. Downloadable and shareable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="value-prop text-center">
+        <div class="container">
+            <h2 class="hero-h1 text-white mb-4">Start your journey towards a more trustworthy AI future.</h2>
+            <p class="hero-p text-white opacity-75 mb-5">Based on unique dual-focus to combine individual fluency with institutional maturity</p>
+            <a href="{{ url_for('home') }}" class="btn btn-primary btn-lg px-4 py-3 fw-bold shadow-sm">
+                    Start Assessment
+                </a>
+        </div>
+    </section>
+
+    <section class="py-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            
+            <div class="col-lg-6">
+                <div class="d-flex flex-column h-100">
+                    <h6 class="text-uppercase fw-bold mb-3" style="color: var(--anthropic-orange); letter-spacing: 1px;">Playbook</h6>
+                    <h2 class="fw-bold mb-4" style="font-family: Georgia, serif; line-height: 1.3;">
+                        Know exactly <span style="color: var(--anthropic-green);">where your organisation stands</span> — and what to do next.
+                    </h2>
+                    
+                    <div class="mb-4">
+                        <a href="{{ url_for('home') }}" class="btn btn-outline-light btn-sm px-3 py-2 rounded-1 text-uppercase fw-bold" style="font-size: 0.75rem; letter-spacing: 1px;">
+                            <i class="bi bi-arrow-right-short text-warning me-1"></i> Start Assessment
+                        </a>
+                    </div>
+
+                    <div class="mb-4 rounded overflow-hidden">
+                        <img src="{{ url_for('static', filename='images/playbook_illustration.png') }}" class="img-fluid" alt="Institutional Maturity Illustration">
+                    </div>
+
+                    <p class="text-muted small mb-4">
+                        The playbook is designed for assessing institutional maturity based on questions and evaluations. It is designed to produce a comprehensive report with Current State, Top Risks, Gaps and Detailed next Steps.
+                    </p>
+
+                    <div class="p-3 rounded" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-brightness-high text-muted me-3 mt-1"></i>
+                            <p class="small text-muted mb-0">
+                                Trustably is grounded on best-in-class frameworks like <strong>NIST RMF for AI</strong>, <strong>AWS-WAR - Gen AI Lens</strong> and <strong>Databricks AI Security Framework (DASF)</strong> to provide wide compliance coverage.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="d-flex flex-column h-100">
+                    <h6 class="text-uppercase fw-bold mb-3" style="color: var(--anthropic-orange); letter-spacing: 1px;">Fluency Certification</h6>
+                    <h2 class="fw-bold mb-4" style="font-family: Georgia, serif; line-height: 1.3;">
+                        Trustably provides <span style="color: var(--anthropic-green);">core and advanced</span> certification for evidence-based fluency
+                    </h2>
+
+                    <div class="mb-4">
+                        <a href="#" class="btn btn-outline-light btn-sm px-3 py-2 rounded-1 text-uppercase fw-bold" style="font-size: 0.75rem; letter-spacing: 1px;">
+                            <i class="bi bi-arrow-right-short text-warning me-1"></i> Start Certification
+                        </a>
+                    </div>
+
+                    <div class="mb-4 rounded overflow-hidden">
+                        <img src="{{ url_for('static', filename='images/fluency_illustration.png') }}"  class="img-fluid" alt="Individual Fluency Illustration">
+                    </div>
+
+                    <p class="text-muted small mb-4">
+                        Trustably certifications are useful tools to assess individual fluency on applied knowledge and experience of using emerging AI tools and technologies.
+                    </p>
+
+                    <div class="p-3 rounded" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-brightness-high text-muted me-3 mt-1"></i>
+                            <p class="small text-muted mb-0">
+                                Trustably uses leading fluency frameworks such as <strong>Anthropic and Google</strong> to provide a comprehensive coverage of the AI landscape.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="value-prop py-5 " style="background-color:  #1B1B1B; border-top: 1px solid #1a1a1a;">
+    <div class="container py-5">
+        <h6 class="hero-h1 text-white mb-4">The Trustably Model</h6>
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="p-5 rounded-4 h-80" style="background: var(--main-bg); border: 1px solid rgba(255,255,255,0.05);">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8">
+                            <h6 class="text-uppercase fw-bold mb-3" style="color: var(--anthropic-green);">CARE — The Shared Quality Standard</h6>
+                            <p class="text-secondary mb-4" style="max-width: 800px;">
+                                <span class="text-success"> CARE </span> is the quality rubric that governs both the institutional and individual dimensions defined by <strong>15 sub-capabilities</strong> across <strong>4 traits</strong>.
+                            </p>
+                            <a href="#" class="btn btn-link text-decoration-none p-0 fw-bold" style="color: var(--anthropic-orange); font-size: 0.85rem;">
+                                <i class="bi bi-arrow-right me-2"></i> Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="p-5 rounded-4 h-80" style="background: var(--main-bg); border: 1px solid rgba(255,255,255,0.03);">
+                    <h6 class="text-uppercase fw-bold mb-4 " style="color: var(--anthropic-green); letter-spacing: 1px;">Organisational Maturity</h6>
+                    
+                    <div class="mb-5">
+                        <h6 class="fw-bold mb-2" style="color: var(--anthropic-orange);">4E — Maturity Model</h6>
+                        <p class="small text-secondary">How organizations progress through AI activation journey across <strong>4 progression scales</strong>.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="fw-bold mb-2" style="color: var(--anthropic-orange);">FOCUS — The Institutional Pillars</h6>
+                        <p class="small text-secondary"><strong>5 vertical pillars</strong> for maturity assessment & development.</p>
+                    </div>
+
+                    <a href="#" class="btn btn-link text-decoration-none p-0 fw-bold mt-auto" style="color: var(--anthropic-orange); font-size: 0.85rem;">
+                        <i class="bi bi-arrow-right me-2"></i> Learn More
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="p-5 rounded-4 h-80" style="background: var(--main-bg); border: 1px solid rgba(255,255,255,0.03);">
+                    <h6 class="text-uppercase fw-bold mb-4 " style="color: var(--anthropic-green); letter-spacing: 1px;">Individual Fluency</h6>
+
+                    <div class="mb-5">
+                        <h6 class="fw-bold mb-2" style="color: var(--anthropic-orange);">ANCHOR — Individual Practice</h6>
+                        <p class="small text-secondary"><strong>6 practices</strong> that define what it means to be a responsible and effective AI practitioner.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="fw-bold mb-2" style="color: var(--anthropic-orange);">ECHO — Modes of AI Engagement</h6>
+                        <p class="small text-secondary"><strong>4 </strong> AI engagement modes describing how practitioners work with AI systems.</p>
+                    </div>
+
+                    <a href="#" class="btn btn-link text-decoration-none p-0 fw-bold mt-auto" style="color: var(--anthropic-orange); font-size: 0.85rem;">
+                        <i class="bi bi-arrow-right me-2"></i> Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+{% endblock %}

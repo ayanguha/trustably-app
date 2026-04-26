@@ -1,0 +1,66 @@
+site_name: Ayan Guha
+site_description: Personal profile – data, AI, and engineering leadership
+site_url: https://your-domain.com/docs/
+use_directory_urls: false
+
+theme:
+  name: material
+  font:
+    text: Google Sans
+  palette:
+    scheme: light
+    primary: teal
+    accent: indigo
+  features:
+    - navigation.path
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.footer
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - content.fade
+  icon:
+    logo: simple/ticktick
+
+
+nav:
+  - Home: index.md
+  - experience.md
+
+plugins:
+  - search:
+      enabled: false
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+
+
+extra_css:
+  - stylesheets/extra.css
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/ayan-g-660b858/
+    - icon: fontawesome/brands/github
+      link: https://github.com/ayanguha 
+    - icon: simple/medium
+      link: https://medium.com/@guha-ayan

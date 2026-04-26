@@ -1,0 +1,175 @@
+focus	care_trait	care_sub_capability	question	respondent_role
+F - Functional Governance	C — Consistent	Strategic	Is there a formally approved Enterprise AI Strategy that defines the "Right to Win" and "Right to Play" for AI initiatives?	Head of AI
+F - Functional Governance	C — Consistent	Strategic	To what extent are AI governance objectives directly linked to organizational KPIs and executive performance reviews?	Head of AI
+F - Functional Governance	C — Consistent	Viable	Is there a sustainable funding model for AI governance activities (e.g., impact assessments, auditing, training) that scales with adoption?	Risk Lead
+F - Functional Governance	C — Consistent	Viable	How frequently is the ROI of the AI Governance framework reviewed to ensure it is enabling rather than hindering business velocity?	Head of AI
+F - Functional Governance	C — Consistent	Resilient	Does the governance framework include a specific process for monitoring and adapting to changes in local (ANZ) and international AI regulations?	Legal Counsel
+F - Functional Governance	C — Consistent	Resilient	How effectively does the organization manage "Exit Strategies" or decommissioning plans for AI systems that no longer meet ethical or performance standards?	Risk Lead
+F - Functional Governance	A — Accurate	Valid	Is there a standardized "Risk Tiering" methodology applied to all AI use cases to determine the depth of governance required?	Risk Lead
+F - Functional Governance	A — Accurate	Valid	How well are the internal AI policies aligned to recognized standards like NIST AI RMF or ISO/IEC 42001?	Risk Lead
+F - Functional Governance	A — Accurate	Unbiased	Has the organization defined quantitative "Fairness Thresholds" that must be met before a high-risk AI system is approved for production?	Risk Lead
+F - Functional Governance	A — Accurate	Unbiased	Is there a mandatory requirement for an Ethical Impact Assessment (EIA) for any AI system that interacts with protected demographic data?	Legal Counsel
+F - Functional Governance	A — Accurate	Explainable	Is there a centralized "AI System Registry" that captures the rationale, data sources, and approval history for every deployed model?	Head of AI
+F - Functional Governance	A — Accurate	Explainable	How easily can the organization provide an audit trail of "Who approved what and why" for a specific AI system's deployment?	Risk Lead
+F - Functional Governance	A — Accurate	Integrated	Is AI governance integrated directly into the Software Development Life Cycle (SDLC) as an automated gate rather than a manual checklist?	Head of AI
+F - Functional Governance	A — Accurate	Integrated	How well do the Legal, Risk, and Engineering teams communicate regarding the technical trade-offs of compliance decisions?	Risk Lead
+F - Functional Governance	R — Reliable	Observable	To what degree does the organization have a real-time view of all "Shadow AI" or unsanctioned AI tool usage across the enterprise?	Risk Lead
+F - Functional Governance	R — Reliable	Observable	Are governance metrics (e.g., % of systems with completed risk assessments) regularly reported to the Board or Executive Committee?	Head of AI
+F - Functional Governance	R — Reliable	Transparent	Is there a clear internal policy for disclosing the use of AI to employees, and is this disclosure consistently applied?	Legal Counsel
+F - Functional Governance	R — Reliable	Transparent	Does the organization provide clear, plain-language explanations to end-users (clients) when AI is used to make or influence decisions?	Legal Counsel
+F - Functional Governance	R — Reliable	Accountable	Is there a clearly defined RACI matrix that identifies the single point of accountability for AI safety and ethical outcomes?	Head of AI
+F - Functional Governance	R — Reliable	Accountable	Does the Practice Director or CISO have the formal "Veto Power" to stop an AI project on ethical or risk grounds?	Head of AI
+F - Functional Governance	R — Reliable	Accountable	How are "Third-Party AI Vendors" held accountable for the safety and transparency of the models they provide?	Legal Counsel
+F - Functional Governance	R — Reliable	Interoperable	How well do your internal governance policies translate across different business units or international subsidiaries?	Risk Lead
+F - Functional Governance	R — Reliable	Interoperable	Is the governance documentation (e.g., risk assessments) stored in a machine-readable format that can be ingested by other compliance tools?	Risk Lead
+F - Functional Governance	E — Effective	Desirable	Do developers view the AI governance process as a helpful guide that reduces their personal and professional liability?	Head of AI
+F - Functional Governance	E — Effective	Desirable	Has the organization created "Fast-Path" governance tracks for low-risk use cases (e.g., internal productivity tools)?	Risk Lead
+F - Functional Governance	E — Effective	Secure	Is there a governance requirement for a "Privacy Impact Assessment" (PIA) for any AI system processing personal or sensitive data?	Legal Counsel
+F - Functional Governance	E — Effective	Secure	Does governance mandate the use of centralized, approved "Clean Rooms" or sandboxes for experimenting with sensitive datasets?	Risk Lead
+F - Functional Governance	E — Effective	Context-Aware	How effectively does the governance posture change based on the specific context (e.g., internal vs. public-facing) of the AI application?	Risk Lead
+F - Functional Governance	E — Effective	Context-Aware	Does the governance framework require a re-assessment whenever an AI system's deployment context changes significantly?	Risk Lead
+F - Functional Governance	E — Effective	Safe	Is there a formally documented "AI Incident Response Plan" that is distinct from standard IT incident response?	Risk Lead
+F - Functional Governance	E — Effective	Safe	Does governance require a "Human-in-the-Loop" for all AI decisions classified as "High Impact" under your risk tiering?	Legal Counsel
+F - Functional Governance	E — Effective	Safe	Are there clear "Prohibited Use Cases" (e.g., social scoring, facial recognition in certain contexts) defined within the policy?	Legal Counsel
+F - Functional Governance	E — Effective	Safe	How frequently are "Post-Market Surveillance" reviews conducted to ensure AI systems remain safe after deployment?	Risk Lead
+F - Functional Governance	E — Effective	Safe	Is there a formal mechanism for employees or external users to "Whistleblow" or report concerns regarding AI safety or ethics?	Legal Counsel
+F - Functional Governance	E — Effective	Safe	Does the organization conduct regular "Simulated AI Crisis" workshops to test governance and communication under pressure?	Head of AI
+O - Observability	C — Consistent	Strategic	To what extent is your observability strategy explicitly documented and connected to your organisation's AI risk priorities?	Executive · Risk Lead
+O - Observability	C — Consistent	Strategic	How well does observability coverage align to business-critical AI systems — are your highest-risk systems the most thoroughly monitored?	Tech Lead · Risk Lead
+O - Observability	C — Consistent	Viable	How proportionate and sustainable is the operational burden of your observability infrastructure — is it maintained without excessive manual effort?	Tech Lead · AI/ML Engineer
+O - Observability	C — Consistent	Viable	To what extent are inference costs, model selection, and resource consumption actively optimised within your observability and operations practice?	Tech Lead · AI/ML Engineer
+O - Observability	C — Consistent	Resilient	How reliably does your monitoring system itself remain operational when the AI systems it monitors experience failures or degradation?	Tech Lead · AI/ML Engineer
+O - Observability	C — Consistent	Resilient	How systematically are your AI systems tested against edge cases, stress scenarios, and worst-case conditions to establish resilience baselines?	AI/ML Engineer · Tech Lead
+O - Observability	A — Accurate	Valid	How thoroughly are data quality issues, preprocessing risks, and representativeness gaps identified and tracked across your AI data pipelines?	AI/ML Engineer · Tech Lead
+O - Observability	A — Accurate	Valid	How well-defined and enforced are your AI model testing and validation processes — covering accuracy, robustness, and behaviour across intended use cases?	AI/ML Engineer · Tech Lead
+O - Observability	A — Accurate	Valid	How effectively does drift detection identify changes in data distributions or model behaviour that impact accuracy or safety?	AI/ML Engineer · Tech Lead
+O - Observability	A — Accurate	Valid	How clearly are human oversight checkpoints mapped across the AI lifecycle — and are they consistently enforced at decision points requiring human judgment?	Risk Lead · Tech Lead
+O - Observability	A — Accurate	Unbiased	To what extent does your observability framework actively measure and surface bias, fairness issues, and disparate performance across sub-populations?	AI/ML Engineer · Risk Lead
+O - Observability	A — Accurate	Unbiased	How well does your monitoring detect harmful output patterns — such as performance degradation, discriminatory results, or outputs that violate stated guardrails?	AI/ML Engineer · Risk Lead
+O - Observability	A — Accurate	Unbiased	Are mechanisms in place for users or stakeholders to contest or report problematic AI outputs — and are those reports tracked and acted upon?	Risk Lead · Executive
+O - Observability	A — Accurate	Explainable	How structured and complete is your prompt and inference logging — can you reconstruct model inputs, outputs, and reasoning at any point in time for audit purposes?	Tech Lead · AI/ML Engineer
+O - Observability	A — Accurate	Explainable	How well are explainability and interpretability characteristics measured and reported — proportionate to system risk and the needs of the audience reviewing them?	Risk Lead · AI/ML Engineer
+O - Observability	A — Accurate	Integrated	How completely does your observability cover all application layers — from data ingestion and model training through to inference outputs and downstream systems?	Tech Lead · AI/ML Engineer
+O - Observability	A — Accurate	Integrated	How well is data lineage tracked from source data through model versions to final outputs — enabling traceability of any given result back to its origin?	AI/ML Engineer · Tech Lead
+O - Observability	R — Reliable	Observable	How comprehensively are metrics, signals, and thresholds defined and active across all production AI systems — including model inference, training jobs, and data pipelines?	Tech Lead · AI/ML Engineer
+O - Observability	R — Reliable	Observable	How well is centralised audit logging in place — covering inference activity, access events, and system changes — to support investigation and compliance?	Tech Lead · Risk Lead
+O - Observability	R — Reliable	Observable	To what extent are agent and RAG workflow traces captured — enabling visibility into multi-step AI actions and retrieval behaviour?	AI/ML Engineer · Tech Lead
+O - Observability	R — Reliable	Transparent	How consistently are monitoring results, system performance summaries, and identified risks communicated to relevant stakeholders — executives, governance leads, and operational teams?	Risk Lead · Executive
+O - Observability	R — Reliable	Transparent	How openly are AI system limitations, known failure modes, and observability gaps shared with the teams and individuals who depend on those systems?	Tech Lead · Risk Lead
+O - Observability	R — Reliable	Interoperable	How well does your observability tooling work across different teams, model types, and infrastructure — can all teams access a consistent shared view of AI system health?	Tech Lead · AI/ML Engineer
+O - Observability	R — Reliable	Interoperable	How well does your monitoring integrate with governance, risk, and platform systems — do observability signals flow automatically into downstream processes?	Tech Lead · Risk Lead
+O - Observability	E — Effective	Desirable	To what extent do observability outputs directly influence operational decisions — do monitoring signals result in concrete actions rather than reports that are reviewed but not acted on?	Executive · Risk Lead
+O - Observability	E — Effective	Desirable	How regularly are observability metrics and measurement frameworks updated to reflect changes in operating environment, stakeholder needs, and emerging risk patterns?	Risk Lead · Tech Lead
+O - Observability	E — Effective	Desirable	How effectively do your observability outputs inform AI use case evaluation, prioritisation, and retirement decisions — connecting system performance to business value assessment?	Executive · Risk Lead
+O - Observability	E — Effective	Secure	How well are security risks measured within your AI systems — including susceptibility to adversarial attacks, model extraction, and prompt injection?	Tech Lead · Risk Lead
+O - Observability	E — Effective	Secure	How well is the observability infrastructure itself secured — are logs, traces, and monitoring data protected against tampering, unauthorised access, or sensitive data exposure?	Tech Lead · Risk Lead
+O - Observability	E — Effective	Context-Aware	How well are monitoring depth and alert thresholds calibrated to the specific risk profile of each AI system — do higher-risk systems receive proportionately deeper instrumentation?	Tech Lead · Risk Lead
+O - Observability	E — Effective	Context-Aware	How dynamically does your observability framework adapt when AI systems are updated, redeployed, or operating in new contexts — without requiring manual reconfiguration?	AI/ML Engineer · Tech Lead
+O - Observability	E — Effective	Safe	How effectively does your observability framework detect unsafe or harmful AI outputs — including outputs that violate guardrails, cause harm, or exceed defined boundaries?	AI/ML Engineer · Risk Lead
+O - Observability	E — Effective	Safe	How well are safety-related monitoring signals connected to defined escalation and intervention procedures — do safety alerts trigger a documented, tested response?	Risk Lead · Tech Lead
+O - Observability	E — Effective	Safe	How well does ongoing compliance monitoring verify that AI systems continue to adhere to regulatory, policy, and governance requirements post-deployment?	Risk Lead · Executive
+C - Culture	C — Consistent	Strategic	Can you articulate how AI usage in your specific role aligns with the organization's broader "Applied AI" strategy?	All Respondents
+C - Culture	C — Consistent	Strategic	To what extent do you feel that AI is being introduced to solve real business problems rather than just following a technical trend?	Business Stakeholder
+C - Culture	C — Consistent	Viable	How much dedicated "learning time" are you officially permitted to spend on AI upskilling and literacy each month?	Senior Developer
+C - Culture	C — Consistent	Viable	Is there a clear, accessible budget for individuals to experiment with new AI tools or attend specialized AI training?	Head of AI
+C - Culture	C — Consistent	Resilient	If an AI system you developed or managed failed publicly, would the internal culture focus on "who to blame" or "how to fix the system"?	Senior Developer
+C - Culture	C — Consistent	Resilient	Do you feel psychologically safe to flag potential ethical or safety risks in an AI project, even if it might delay a deadline?	All Respondents
+C - Culture	A — Accurate	Valid	When using AI-generated code or text, how consistently do you apply a "verification ritual" to ensure the output is factually grounded?	Senior Developer
+C - Culture	A — Accurate	Valid	Are the ECHO habits (Execute, Context, History, Own) a recognized part of the daily workflow for your team?	Senior Developer
+C - Culture	A — Accurate	Unbiased	How often does your team engage in "Adversarial Thinking" sessions to identify potential biases in your AI models?	Senior Developer
+C - Culture	A — Accurate	Unbiased	Do you feel empowered to challenge an AI's recommendation if you believe it is producing an unfair or biased outcome?	Business Stakeholder
+C - Culture	A — Accurate	Explainable	How confident are you in your ability to explain the "Reasoning" behind an AI-driven decision to a non-technical client?	All Respondents
+C - Culture	A — Accurate	Explainable	Is there a cultural rejection of "Black Box" solutions—do people actively ask "how does this work?"	Head of AI
+C - Culture	A — Accurate	Integrated	How frequently do technical and non-technical teams collaborate on the design of AI systems rather than just the delivery?	Business Stakeholder
+C - Culture	A — Accurate	Integrated	Do you feel that the "Trustably" language (CARE, 4E) is understood and used across different departments?	Head of AI
+C - Culture	R — Reliable	Observable	How often are "Lessons Learned" from AI failures shared openly across the organization to prevent repeat mistakes?	Head of AI
+C - Culture	R — Reliable	Observable	Is there a central platform (e.g., Slack, Wiki, Handbook) where employees proactively share AI wins and "hacks"?	Senior Developer
+C - Culture	R — Reliable	Transparent	Do you feel comfortable openly disclosing when you have used AI to assist in a major deliverable (report, code, email)?	All Respondents
+C - Culture	R — Reliable	Transparent	Is there a cultural pride in "Human-AI Collaboration," or is there a tendency to mask AI involvement?	All Respondents
+C - Culture	R — Reliable	Accountable	Do individuals in your team take personal responsibility for AI outputs, or is "The AI said so" an accepted excuse for errors?	Senior Developer
+C - Culture	R — Reliable	Accountable	Are the ANCHOR habits (Awareness, Context, History, Ownership, Responsibility) embedded in your performance reviews?	Head of AI
+C - Culture	R — Reliable	Accountable	Who do you believe is ultimately responsible if an AI system you use causes a negative impact on a customer?	All Respondents
+C - Culture	R — Reliable	Interoperable	Is there a consistent vocabulary used across the company to describe AI concepts (e.g., "Grounding" vs. "Hallucination")?	Business Stakeholder
+C - Culture	R — Reliable	Interoperable	How easily can knowledge from one AI project be applied to another due to shared cultural standards?	Senior Developer
+C - Culture	E — Effective	Desirable	Do you view AI as a "Co-pilot" that enhances your creativity, or as a threat to your professional relevance?	All Respondents
+C - Culture	E — Effective	Desirable	Has the introduction of AI made your daily work more or less fulfilling over the last six months?	All Respondents
+C - Culture	E — Effective	Secure	When using public AI tools, is the instinct to "protect the data" as strong as the instinct to "get the answer"?	All Respondents
+C - Culture	E — Effective	Secure	Does the culture celebrate "Human Firewalls"—people who proactively identify data leakage risks in AI prompts?	Head of AI
+C - Culture	E — Effective	Secure	How well do you understand the privacy implications of the specific AI tools you use daily?	Business Stakeholder
+C - Culture	E — Effective	Context-Aware	How often do you consciously decide not to use AI for a task because you've judged that human intervention is more appropriate?	Senior Developer
+C - Culture	E — Effective	Context-Aware	Is there a cultural understanding of the "High Stakes" vs "Low Stakes" AI use cases within the business?	Head of AI
+C - Culture	E — Effective	Safe	Is "Safety" viewed as a core professional value within your team, similar to "Quality" or "Speed"?	Senior Developer
+C - Culture	E — Effective	Safe	Are safety guardrails viewed as "helpful protections" or as "annoying obstacles" to be bypassed?	Senior Developer
+C - Culture	E — Effective	Safe	Does the organization reward employees for identifying safety vulnerabilities in AI systems?	Head of AI
+C - Culture	E — Effective	Safe	How often are AI "Simulations" or "Wargames" held to prepare teams for potential safety incidents?	Head of AI
+C - Culture	E — Effective	Safe	Is there a moral imperative felt within the team to ensure that AI does no harm to the end user?	All Respondents
+U - Unified Platform	C — Consistent	Strategic	Is there a centralized "Service Catalog" or platform roadmap that governs which AI tools and models are approved for use?	Platform Lead
+U - Unified Platform	C — Consistent	Strategic	To what extent are platform decisions (e.g., choice of Vector DB or LLM provider) driven by long-term organizational strategy rather than ad-hoc project needs?	Head of AI
+U - Unified Platform	C — Consistent	Viable	Are AI infrastructure costs (compute, tokens, storage) automatically attributed to specific projects or business units?	Platform Lead
+U - Unified Platform	C — Consistent	Viable	Does the platform provide automated "stopping conditions" or budget caps for long-running agentic or training tasks?	AI Engineer
+U - Unified Platform	C — Consistent	Viable	How often is the "Cost-per-Inference" reviewed and optimized through model quantization or rightsizing?	AI Engineer
+U - Unified Platform	C — Consistent	Resilient	Are all AI infrastructure components (including model endpoints) deployed using Infrastructure-as-Code (IaC) for rapid recreation?	Platform Lead
+U - Unified Platform	C — Consistent	Resilient	Do you have an automated "Rollback" capability for models that exhibit performance degradation post-deployment?	AI Engineer
+U - Unified Platform	C — Consistent	Resilient	Is your AI stack architected for High Availability (HA) across multiple cloud availability zones?	Platform Lead
+U - Unified Platform	A — Accurate	Valid	Is there an automated pipeline that validates model artifacts and data schemas before they reach the production registry?	AI Engineer
+U - Unified Platform	A — Accurate	Valid	Does the platform enforce the use of "Certified" base models and base images to ensure supply chain integrity?	Platform Lead
+U - Unified Platform	A — Accurate	Unbiased	Are there standardized "DataOps" tools within the platform for detecting and cleaning anomalies in training or fine-tuning datasets?	AI Engineer
+U - Unified Platform	A — Accurate	Unbiased	Does the platform provide shared libraries or templates for quantitative fairness testing?	AI Engineer
+U - Unified Platform	A — Accurate	Explainable	Is the full lineage—from raw data source to model version to specific prompt—automatically captured and stored?	AI Engineer
+U - Unified Platform	A — Accurate	Explainable	Can you programmatically retrieve the specific "System Prompt" and configuration used for any historical inference?	AI Engineer
+U - Unified Platform	A — Accurate	Integrated	How seamlessly do your data registries, model stores, and application layers communicate via standardized APIs?	Tech Lead
+U - Unified Platform	A — Accurate	Integrated	Can model endpoints be swapped (e.g., GPT-4 to Llama-3) without requiring significant code changes in the application layer?	AI Engineer
+U - Unified Platform	R — Reliable	Observable	Does the platform provide a centralized dashboard for monitoring resource saturation (GPU/CPU) across all AI workloads?	Platform Lead
+U - Unified Platform	R — Reliable	Observable	Is there automated telemetry for tracking the latency and throughput of RAG retrievals specifically?	AI Engineer
+U - Unified Platform	R — Reliable	Transparent	Are platform limitations (rate limits, quotas, and "Known Issues") visible to all engineering teams via a live status page?	Platform Lead
+U - Unified Platform	R — Reliable	Transparent	Do you provide internal stakeholders with periodic "Consumption Reports" that detail performance vs. spend?	Head of AI
+U - Unified Platform	R — Reliable	Accountable	Are there formally defined Service Level Objectives (SLOs) for platform uptime and model API response times?	Platform Lead
+U - Unified Platform	R — Reliable	Accountable	Is there a clear escalation path for when an automated safety guardrail triggers a system-wide block?	Tech Lead
+U - Unified Platform	R — Reliable	Interoperable	Does the platform support multi-cloud or hybrid deployment patterns for data residency requirements?	Platform Lead
+U - Unified Platform	R — Reliable	Interoperable	Are prompt templates and vector embeddings stored in formats that are portable across different vector databases or LLM providers?	AI Engineer
+U - Unified Platform	E — Effective	Desirable	Can a new engineer provision a fully-governed AI sandbox environment in under 30 minutes?	AI Engineer
+U - Unified Platform	E — Effective	Desirable	Does the platform provide a "Self-Service" portal for accessing internal datasets and pre-trained models?	Platform Lead
+U - Unified Platform	E — Effective	Secure	Is a Zero-Trust architecture applied, ensuring all model-to-data communications are authenticated and encrypted?	Platform Lead
+U - Unified Platform	E — Effective	Secure	Does the platform automatically scan for "Prompt Injection" vulnerabilities or PII leakage in ingestion pipelines?	AI Engineer
+U - Unified Platform	E — Effective	Secure	Are "Secrets" (API keys, DB credentials) managed via a centralized, hardened vault rather than environment variables?	Platform Lead
+U - Unified Platform	E — Effective	Context-Aware	Does the infrastructure automatically scale or harden security based on the "Risk Tier" assigned to the application?	Platform Lead
+U - Unified Platform	E — Effective	Context-Aware	Can the platform dynamically route requests to different models based on the intent or sensitivity of the input context?	AI Engineer
+U - Unified Platform	E — Effective	Safe	Are there "Circuit Breakers" in place to prevent infinite loops in agentic or multi-step AI workflows?	AI Engineer
+U - Unified Platform	E — Effective	Safe	Does the platform enforce "Egress Controls" to prevent AI agents from calling unapproved external URLs?	Platform Lead
+U - Unified Platform	E — Effective	Safe	Is there a tested "Kill Switch" that can isolate specific models without bringing down the entire platform?	Platform Lead
+U - Unified Platform	E — Effective	Safe	How frequently are "Red Team" simulations run against the platform's safety guardrails?	Head of AI
+S - Security	C — Consistent	Strategic	Is there a documented AI Security Policy that specifically addresses risks like prompt injection, model inversion, and data poisoning?	CISO / Security Lead
+S - Security	C — Consistent	Strategic	To what extent is security integrated into the initial "Discovery" phase of new AI use cases rather than as a final gate?	Security Lead
+S - Security	C — Consistent	Viable	Is there a dedicated budget or resource allocation for recurring AI-specific "Red Teaming" and adversarial testing?	CISO
+S - Security	C — Consistent	Viable	How automated are your security compliance checks across the AI lifecycle to ensure sustainability as the number of models grows?	DevSecOps
+S - Security	C — Consistent	Resilient	Is there a tested Incident Response (IR) plan specifically tailored to AI-related breaches (e.g., unauthorized model weight extraction)?	Security Lead
+S - Security	C — Consistent	Resilient	In the event of a compromised AI agent, does the platform have the technical capability to isolate that specific agent without a total system outage?	DevSecOps
+S - Security	C — Consistent	Resilient	Are model artifacts, prompts, and vector embeddings backed up in a way that allows for "State Recovery" after a security event?	AI Engineer
+S - Security	Accurate	Valid	Are all AI-related code commits and model artifacts digitally signed and verified through a secure supply chain pipeline?	DevSecOps
+S - Security	A — Accurate	Valid	Do you perform automated "Adversarial Robustness" testing on models before they are promoted to production?	AI Engineer
+S - Security	A — Accurate	Unbiased	Do you periodically audit security logs to ensure that automated filtering/blocking is not disproportionately affecting specific user groups?	Security Lead
+S - Security	A — Accurate	Unbiased	Are the "Trust Scores" or risk thresholds used for automated blocking reviewed for quantitative fairness?	AI Engineer
+S - Security	A — Accurate	Explainable	When an AI request is blocked or intercepted by a security gate, is the specific policy violation logged with high-fidelity rationale?	DevSecOps
+S - Security	A — Accurate	Explainable	Can security analysts reconstruct the full "Chain of Thought" or input/output trace for a flagged security event?	Security Lead
+S - Security	A — Accurate	Integrated	Are AI security events (e.g., suspected prompt injection) automatically fed into the enterprise SIEM/SOAR for centralized alerting?	DevSecOps
+S - Security	A — Accurate	Integrated	To what degree are security guardrails "hard-coded" into the platform templates rather than left to individual developers?	AI Engineer
+S - Security	R — Reliable	Observable	Is there real-time monitoring specifically designed to detect "Low and Slow" data exfiltration via multiple small AI queries?	Security Lead
+S - Security	R — Reliable	Observable	Do you have automated alerts for anomalous model behavior that might indicate a compromised system or unauthorized fine-tuning?	AI Engineer
+S - Security	R — Reliable	Transparent	Is there a live dashboard or reporting mechanism that provides stakeholders with the current "Threat Level" for AI assets?	CISO
+S - Security	R — Reliable	Transparent	Are vulnerabilities in third-party AI libraries (e.g., LangChain, PyTorch) tracked and reported transparently to engineering teams?	DevSecOps
+S - Security	R — Reliable	Accountable	Does the Security Lead have the formal "Stop-Work" authority to deactivate a production model if a critical vulnerability is found?	CISO
+S - Security	R — Reliable	Accountable	Are individual developers held accountable for security through automated "Security Scorecards" for their AI applications?	Security Lead
+S - Security	R — Reliable	Interoperable	Are security policies (e.g., PII filtering rules) managed centrally such that they apply regardless of which model or cloud is used?	DevSecOps
+S - Security	R — Reliable	Interoperable	Can security telemetry be shared between different components of the AI stack (e.g., from the WAF to the Vector DB)?	AI Engineer
+S - Security	E — Effective	Desirable	Does the security framework provide "Fast-Track" approvals for use cases that utilize pre-approved, hardened templates?	Security Lead
+S - Security	E — Effective	Desirable	How much friction do developers report when trying to integrate security guardrails into their local development environment?	AI Engineer
+S - Security	E — Effective	Secure	Is a Zero-Trust model enforced for all agentic workflows, requiring re-authentication for every external tool call?	DevSecOps
+S - Security	E — Effective	Secure	Is PII detection and redaction operational for both the input (prompts) and the output (completions)?	AI Engineer
+S - Security	E — Effective	Secure	Are all sensitive data assets stored in "Silos" with identity-based access controls (DASF Component 1)?	DevSecOps
+S - Security	E — Effective	Secure	Do you use "Honeypot" prompts or data to detect model extraction or scraping attempts?	Security Lead
+S - Security	E — Effective	Context-Aware	Does the security posture (e.g., depth of filtering) automatically increase when a model is exposed to an external, untrusted network?	DevSecOps
+S - Security	E — Effective	Context-Aware	Are user "Trust Scores" dynamically adjusted based on the intent and sensitivity of their historical AI interactions?	AI Engineer
+S - Security	E — Effective	Safe	Are there automated guardrails (e.g., LlamaGuard) that scan completions for harmful, illegal, or out-of-boundary content?	AI Engineer
+S - Security	E — Effective	Safe	Is "Rate Limiting" applied at the user and application level to prevent Denial of Service (DoS) via expensive model calls?	DevSecOps
+S - Security	E — Effective	Safe	Do you have a "Human-in-the-loop" requirement for high-impact AI actions (e.g., executing a bank transfer or deleting data)?	Security Lead
+S - Security	E — Effective	Safe	Are egress controls (firewalls) restricted to a "White List" of approved URLs for all agentic AI workloads?	DevSecOps
