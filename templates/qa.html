@@ -120,12 +120,38 @@
 
 {% block extra_js %}
 <script>
-    function openDrawer(qid, qtext) {
+    async function openDrawer(qid, qtext) {
         
         document.getElementById('currentQid').value = qid;
         document.getElementById('qText').innerText = qtext;
         document.getElementById('questionDrawer').style.display = 'block';
-    }
+        const notesEl = document.getElementById('qNotes');
+    
+    // Reset + loading state
+    notesEl.value = "";
+    notesEl.placeholder = "Loading existing response...";
+
+    try {
+        const res = await fetch('/get_response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    question_id: qid
+                })
+            });
+            const data = await res.json();
+           
+            notesEl.value = data.response || "";
+            
+
+        } catch (err) {
+            console.error(err);
+            notesEl.value = "";
+            notesEl.placeholder = "Error loading response";
+        }
+}
     function closeDrawer() {
         document.getElementById('questionDrawer').style.display = 'none';
     }

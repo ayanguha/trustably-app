@@ -10,13 +10,12 @@
     </div>
 
     <div class="row g-3 mb-5">
+
         {% set items = [
-            ('300+', 'Total Questions', 'bi-question-circle', 'secondary'),
-            ('4', 'Maturity Levels', 'bi-bar-chart-steps', 'secondary'),
-            ('5', 'Focus Areas', 'bi-asterisk', 'secondary'),
-            ('10+', 'Responses Received', 'bi-check2-circle', 'secondary'),
-           
-        ] %}
+            (metadata['total_questions'], 'Total Questions', 'bi-question-circle', 'secondary'),           
+            (metadata['answered_questions'], 'Responses Received', 'bi-check2-circle', 'secondary'),
+             (metadata['pct_completed'], 'Completion %', 'bi-bar-chart-fill', 'secondary')
+             ] %}
         {% for count, label, icon, color in items %}
         <div class="col">
             <div class="card-custom p-3 shadow-sm">
