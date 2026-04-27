@@ -1,4 +1,4 @@
-site_name: Ayan Guha
+site_name: Trustably Docs
 site_description: Personal profile – data, AI, and engineering leadership
 site_url: https://your-domain.com/docs/
 use_directory_urls: false
@@ -8,9 +8,9 @@ theme:
   font:
     text: Google Sans
   palette:
-    scheme: light
-    primary: teal
-    accent: indigo
+    scheme: default
+    primary: custom
+    accent: custom
   features:
     - navigation.path
     - navigation.tabs
@@ -27,7 +27,9 @@ theme:
 
 nav:
   - Home: index.md
-  - experience.md
+  - Care: care.md
+  - Maturity: maturity.md
+  - Fluency: fluency.md
 
 plugins:
   - search:
@@ -38,16 +40,13 @@ markdown_extensions:
   - attr_list
   - footnotes
   - md_in_html
+  - tables
   - pymdownx.blocks.caption
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - toc:
       permalink: true
 

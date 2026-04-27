@@ -1,164 +1,361 @@
-/* =========================
-   DESIGN TOKENS
-========================= */
+/* =========================================
+   TRUSTABLY DESIGN SYSTEM (MkDocs Override)
+   ========================================= */
 
+/* 1. Root Variables */
 :root {
-  --bg-dark: #0b0f14;
-  --bg-mid: #111827;
-  --bg-light: #1f2937;
-  --bg-accent: #0f172a;
-  --bg-soft: #020617;
+    --sidebar-bg: #0f172a;
+    --main-bg: #F9F7F2;
+    --text-muted: #666362;
+    --text-main: #323232;
 
-  --text-main: #ffffff;
-  --text-muted: rgba(255,255,255,0.7);
+    --anthropic-green: #788c5d;
+    --anthropic-green-light: #f0fdf4;
+    --anthropic-orange: #D97757;
+
+    --border-color: #e2e8f0;
+
+    /* MkDocs Material Overrides */
+    --md-primary-fg-color: var(--anthropic-orange);
+    --md-primary-fg-color--light: var(--anthropic-orange);
+    --md-accent-fg-color: var(--anthropic-green);
+
+    --md-default-bg-color: var(--main-bg);
+    --md-default-fg-color: var(--text-main);
+    --md-typeset-color: var(--text-main);
+
 }
 
-/* =========================
-   SECTIONS
-========================= */
 
-.section {
-  width: 100%;
-  padding: 6rem 0;
-  color: var(--text-main);
+/* =========================================
+   2. Global Layout
+   ========================================= */
+
+body {
+    background-color: var(--main-bg);
+    color: var(--text-main);
+    font-size: 0.9rem;
 }
 
-.section-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2rem;
+/* Main content area */
+.md-main {
+    background-color: var(--main-bg);
 }
 
-/* Backgrounds */
-.section-dark { background: var(--bg-dark); }
-.section-mid  { background: var(--bg-mid); }
-.section-light{ background: var(--bg-light); }
-.section-accent { background: var(--bg-accent); }
-.section-soft { background: var(--bg-soft); }
-
-/* =========================
-   HERO
-========================= */
-
-.hero-inner {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 3rem;
-  align-items: center;
+/* Content cards feel */
+.md-content__inner {
+    background: transparent;
 }
 
-.hero-text h1 {
-  font-size: clamp(3rem, 5vw, 5rem);
-  margin-bottom: 1rem;
+
+/* =========================================
+   3. Sidebar (Navigation)
+   ========================================= */
+
+.md-nav--primary {
+    background-color: var(--main-bg);
 }
 
-.hero-text p {
-  color: var(--text-muted);
-  margin-bottom: 2rem;
+.md-sidebar--secondary {
+  background-color: var(--main-bg);
 }
 
-.hero-media img {
-  max-width: 400px;
-  width: 100%;
-  animation: float 6s ease-in-out infinite;
+/* Optional: Change the TOC title background specifically */
+.md-nav--secondary .md-nav__title {
+  background-color: var(--main-bg);
 }
 
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
+/* Sidebar links */
+.md-nav__link {
+    color: var(--text-main);
+    border-radius: 8px;
+    margin: 2px 6px;
+    padding: 6px 10px;
+    background-color: var(--main-bg);
 }
 
-/* =========================
-   TWO COLUMN
-========================= */
-
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
+/* Active nav item */
+.md-nav__link--active {
+    background-color: var(--anthropic-green);
+    color: var(--anthropic-green-light) !important;
 }
 
-.two-col img {
-  width: 100%;
-  border-radius: 12px;
+/* Hover */
+.md-nav__link:hover {
+    background-color: var(--anthropic-green);
+    color: var(--anthropic-green-light) !important;
 }
 
-/* Reverse */
-.two-col.reverse {
-  direction: rtl;
-}
-.two-col.reverse > * {
-  direction: ltr;
-}
 
-/* =========================
-   CARDS
-========================= */
+/* =========================================
+   4. Header (Top Bar)
+   ========================================= */
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+.md-header {
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.card {
-  padding: 2rem;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: all 0.3s ease;
+/* Title */
+.md-header__title {
+    color: var(--text-main);
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+
+/* =========================================
+   5. Buttons & Primary Actions
+   ========================================= */
+
+.md-button,
+.md-button--primary {
+    background-color: var(--anthropic-orange);
+    border-color: var(--anthropic-orange);
+    color: var(--anthropic-green-light) !important;
+    border-radius: 8px;
 }
 
-.card .icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.md-button:hover {
+    opacity: 0.9;
 }
 
-.card p {
-  color: var(--text-muted);
+/* Secondary button style */
+.md-button--secondary {
+    background-color: var(--anthropic-green);
+    border-color: var(--anthropic-green);
+    color: white;
 }
 
-.card a {
-  color: #7dd3fc;
-  text-decoration: none;
+
+/* =========================================
+   6. Cards / Containers
+   ========================================= */
+
+.md-typeset table,
+.md-typeset pre,
+.md-typeset blockquote,
+.md-typeset .admonition {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: white;
 }
 
-/* =========================
-   UTIL
-========================= */
-
-.center {
-  text-align: center;
+/* Code blocks */
+.md-typeset pre code {
+    background: #f8fafc;
 }
 
-.btn-primary {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: #2563eb;
+
+/* =========================================
+   7. Alerts / Admonitions
+   ========================================= */
+
+.md-typeset .admonition.note,
+.md-typeset details.note {
+    background-color: var(--anthropic-green-light);
+    border-left: 4px solid var(--anthropic-green);
+}
+
+.md-typeset .admonition.warning {
+    border-left: 4px solid var(--anthropic-orange);
+}
+
+
+/* =========================================
+   8. Typography
+   ========================================= */
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+    color: var(--text-main);
+}
+
+/* Muted text */
+.text-muted {
+    color: var(--text-muted);
+}
+
+/* Trustably branding text styles */
+.text-success {
+    color: var(--anthropic-orange);
+    font-family: Georgia, serif;
+}
+
+.text-secondary {
+    color: var(--anthropic-green);
+    font-family: Georgia, serif;
+}
+
+
+/* =========================================
+   9. Links
+   ========================================= */
+
+.md-typeset a {
+    color: var(--anthropic-orange);
+}
+
+.md-typeset a:hover {
+    color: var(--anthropic-green);
+}
+
+
+/* =========================================
+   10. Tables
+   ========================================= */
+
+.md-typeset table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.md-typeset thead {
+    background-color: #f1f5f9;
+}
+
+
+/* =========================================
+   11. Scrollbars (optional polish)
+   ========================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+/* =========================================
+   TRUSTABLY ADMONITION
+   ========================================= */
+
+/* Base container */
+.md-typeset .admonition.trustably,
+.md-typeset details.trustably {
+    background-color: var(--main-bg);
+    border: 1px solid var(--border-color);
+    border-left: 6px solid var(--anthropic-orange);
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+/* Optional: icon styling */
+.md-typeset .admonition-title::before,
+.md-typeset details > summary::before {
+    display: none !important;
+    content: none !important;
+}
+
+.md-typeset .admonition-title,
+.md-typeset details > summary {
+    padding-left: 30px !important;
+    
+}
+
+/* Adjust collapsible arrow position */
+.md-typeset details.trustably > summary {
+    position: relative;
+}
+
+/* Move the chevron left */
+.md-typeset details.trustably > summary::after {
+    right: 25px !important;   /* 👈 adjust this (try 10–16px) */
+    margin-left: 10px !important;
+}
+
+/* Title bar */
+.md-typeset .admonition.trustably > .admonition-title,
+.md-typeset details.trustably > summary {
+    background-color: var(--anthropic-green);
+    color: var( --anthropic-green-light);
+    font-weight: 600;
+    font-family: Georgia, serif;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-color);
+    
+}
+
+/* Content */
+.md-typeset .admonition.trustably > *,
+.md-typeset details.trustably > *:not(summary) {
+    padding: 12px 14px;
+    color: var(--text-main);
+}
+
+/* 1. The Wrapper: Force the responsive div to be full width */
+div[class*="md-typeset-table"] {
+    width: 100% !important;
+    display: block !important;
+    margin: 0 !important;
+}
+
+/* 2. The Table: Force the table to fill the wrapper */
+table {
+   
+    min-width: 100% !important;
+   }
+
+/* 3. The Cells: Ensure text wraps and doesn't push the table wider than the screen */
+td {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important; 
+    background-color: var(--main-bg);
+}
+
+/* 3. The Cells: Ensure text wraps and doesn't push the table wider than the screen */
+th {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    background-color: var(--anthropic-orange);
+    color: var(--anthropic-green-light)
+}
+
+
+span.pill-tag-green {
+  display: inline-block !important;
+  padding: 0.1rem 0.6rem !important;
+  border-radius: 1rem;
+  background-color: var(--anthropic-green) !important;
   color: white;
-  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
   text-decoration: none;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+span.pill-tag-green-light {
+  display: inline-block !important;
+  padding: 0.1rem 0.6rem !important;
+  border-radius: 1rem;
+  background-color: var(--anthropic-green-light) !important;
+  color: var(--text-main);
+  font-size: 0.1rem;
+  
+}
 
-@media (max-width: 900px) {
-  .hero-inner,
-  .two-col {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+span.pill-tag-orange {
+  display: inline-block !important;
+  padding: 0.1rem 0.6rem !important;
+  border-radius: 1rem;
+  background-color: var(--anthropic-orange) !important;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
 
-  .cards {
-    grid-template-columns: 1fr;
-  }
+span.pill-tag-green-light {
+  display: inline-block !important;
+  padding: 0.1rem 0.6rem !important;
+  border-radius: 1rem;
+  background-color: var(--anthropic-green-light) !important;
+  color: var(--text-main);
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
 }
