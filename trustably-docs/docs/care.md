@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# CARE — Shared Quality Standard**
+# CARE — Shared Quality Standard
 
 ---
 

@@ -108,4 +108,4 @@ An organisation using Trustably begins with the Playbook — a structured self-a
 
 The output is not a compliance certificate. It is a practical diagnostic: where are you, where are the gaps, what should you do first, and how do you know when you've made progress.
 
-[Explore Playbook](maturity.md#the-scoring-playbook){ .md-button }
+[Explore Playbook](playbook.md){ .md-button }

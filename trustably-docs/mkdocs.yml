@@ -11,6 +11,9 @@ theme:
     scheme: default
     primary: custom
     accent: custom
+  footer:
+    # This adds a simple copyright notice
+    copyright: "Copyright &copy; 2024 Trustably - Applied AI Adoption Framework"
   features:
     - navigation.path
     - navigation.tabs
@@ -30,6 +33,8 @@ nav:
   - Care: care.md
   - Maturity: maturity.md
   - Fluency: fluency.md
+  - Playbook: playbook.md 
+  - Lifecycle: lifecycle.md 
 
 plugins:
   - search:
@@ -54,12 +59,3 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
 
-
-extra:
-  social:
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/ayan-g-660b858/
-    - icon: fontawesome/brands/github
-      link: https://github.com/ayanguha 
-    - icon: simple/medium
-      link: https://medium.com/@guha-ayan

@@ -75,11 +75,5 @@ FOCUS defines the five vertical pillars through which maturity is assessed acros
 
 ---
 
-## The Scoring Playbook
 
-The 20 scoring cells are the primary output of the Trustably Playbook. Each cell sits at the intersection of a 4E stage and a FOCUS area, and contains three things: a milestone descriptor defining what that cell looks like when it is operating well, a CARE-grounded rubric defining what quality looks like at each maturity level within that cell, and a set of scoring questions that respondents answer to determine where the organisation currently sits.
-
-Each cell is assessed on a 1–10 scale, mapped to four maturity bands: 1–2 represents Explore-level practice, 3–5 represents Experiment-level practice, 6–8 represents Enable-level practice, and 9–10 represents Embrace-level practice. This design means that a single score locates an organisation's practice within the 4E spine for that specific FOCUS area — making it possible for an organisation to be simultaneously at Enable for Functional Governance and at Experiment for Culture, which is a far more honest and useful picture than a single aggregate score.
-
-The total question set spans approximately 175 questions across the five FOCUS areas, with between 30 and 40 questions per area. Questions are assigned to specific respondent roles — Executive/Head of AI, Risk/Governance Lead, Tech Lead/Architect, and Practitioner/Engineer — ensuring that assessment coverage reflects genuine organisational knowledge rather than a single stakeholder's perspective.
  

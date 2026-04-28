@@ -4,7 +4,7 @@
 
 /* 1. Root Variables */
 :root {
-    --sidebar-bg: #0f172a;
+    --sidebar-bg: #1B1B1B;
     --main-bg: #F9F7F2;
     --text-muted: #666362;
     --text-main: #323232;
@@ -16,13 +16,12 @@
     --border-color: #e2e8f0;
 
     /* MkDocs Material Overrides */
-    --md-primary-fg-color: var(--anthropic-orange);
-    --md-primary-fg-color--light: var(--anthropic-orange);
+    --md-primary-fg-color: var(--sidebar-bg);
     --md-accent-fg-color: var(--anthropic-green);
 
     --md-default-bg-color: var(--main-bg);
-    --md-default-fg-color: var(--text-main);
-    --md-typeset-color: var(--text-main);
+    --md-default-fg-color: var(--text-muted);
+    --md-typeset-color: var(--text-muted);
 
 }
 
@@ -33,7 +32,7 @@
 
 body {
     background-color: var(--main-bg);
-    color: var(--text-main);
+    color: var(--text-muted);
     font-size: 0.9rem;
 }
 
@@ -56,35 +55,6 @@ body {
     background-color: var(--main-bg);
 }
 
-.md-sidebar--secondary {
-  background-color: var(--main-bg);
-}
-
-/* Optional: Change the TOC title background specifically */
-.md-nav--secondary .md-nav__title {
-  background-color: var(--main-bg);
-}
-
-/* Sidebar links */
-.md-nav__link {
-    color: var(--text-main);
-    border-radius: 8px;
-    margin: 2px 6px;
-    padding: 6px 10px;
-    background-color: var(--main-bg);
-}
-
-/* Active nav item */
-.md-nav__link--active {
-    background-color: var(--anthropic-green);
-    color: var(--anthropic-green-light) !important;
-}
-
-/* Hover */
-.md-nav__link:hover {
-    background-color: var(--anthropic-green);
-    color: var(--anthropic-green-light) !important;
-}
 
 
 /* =========================================
@@ -98,7 +68,7 @@ body {
 
 /* Title */
 .md-header__title {
-    color: var(--text-main);
+    color: var(--text-muted);
 }
 
 
@@ -126,39 +96,6 @@ body {
 }
 
 
-/* =========================================
-   6. Cards / Containers
-   ========================================= */
-
-.md-typeset table,
-.md-typeset pre,
-.md-typeset blockquote,
-.md-typeset .admonition {
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    background: white;
-}
-
-/* Code blocks */
-.md-typeset pre code {
-    background: #f8fafc;
-}
-
-
-/* =========================================
-   7. Alerts / Admonitions
-   ========================================= */
-
-.md-typeset .admonition.note,
-.md-typeset details.note {
-    background-color: var(--anthropic-green-light);
-    border-left: 4px solid var(--anthropic-green);
-}
-
-.md-typeset .admonition.warning {
-    border-left: 4px solid var(--anthropic-orange);
-}
-
 
 /* =========================================
    8. Typography
@@ -166,24 +103,13 @@ body {
 
 .md-typeset h1,
 .md-typeset h2,
+.md-typeset h5,
 .md-typeset h3 {
-    color: var(--text-main);
-}
-
-/* Muted text */
-.text-muted {
-    color: var(--text-muted);
-}
-
-/* Trustably branding text styles */
-.text-success {
-    color: var(--anthropic-orange);
-    font-family: Georgia, serif;
-}
-
-.text-secondary {
-    color: var(--anthropic-green);
-    font-family: Georgia, serif;
+    color: var(--sidebar-bg);
+    font-weight: 700;
+  text-transform: uppercase;                /* H5 is typically uppercase in Material */
+  letter-spacing: .025em;
+  margin-top: 1.25em;
 }
 
 
@@ -236,7 +162,7 @@ body {
 .md-typeset details.trustably {
     background-color: var(--main-bg);
     border: 1px solid var(--border-color);
-    border-left: 6px solid var(--anthropic-orange);
+    border-left: 6px solid var(--sidebar-bg);
     border-radius: 12px;
     padding: 0;
     box-shadow: 0 1px 2px rgba(0,0,0,0.05);
@@ -270,7 +196,7 @@ body {
 /* Title bar */
 .md-typeset .admonition.trustably > .admonition-title,
 .md-typeset details.trustably > summary {
-    background-color: var(--anthropic-green);
+    background-color: var(--sidebar-bg);
     color: var( --anthropic-green-light);
     font-weight: 600;
     font-family: Georgia, serif;
@@ -285,6 +211,8 @@ body {
     padding: 12px 14px;
     color: var(--text-main);
 }
+
+/* ========================================= */
 
 /* 1. The Wrapper: Force the responsive div to be full width */
 div[class*="md-typeset-table"] {
@@ -316,46 +244,19 @@ th {
     color: var(--anthropic-green-light)
 }
 
+/* ========================================= */
 
-span.pill-tag-green {
-  display: inline-block !important;
-  padding: 0.1rem 0.6rem !important;
-  border-radius: 1rem;
-  background-color: var(--anthropic-green) !important;
-  color: white;
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-decoration: none;
+/* Brand-Immersive Footer */
+.md-footer {
+    background-color: var(--main-bg) !important;
+    color: var(--anthropic-green) !important;
+    padding: 3rem 0 !important;
+    text-align: center !important;
 }
 
-span.pill-tag-green-light {
-  display: inline-block !important;
-  padding: 0.1rem 0.6rem !important;
-  border-radius: 1rem;
-  background-color: var(--anthropic-green-light) !important;
-  color: var(--text-main);
-  font-size: 0.1rem;
-  
+/* Ensure the copyright text inside the footer is the correct color */
+.md-footer .md-footer-text {
+    color: var(--anthropic-green) !important;
+    font-weight: 700 !important;
 }
 
-span.pill-tag-orange {
-  display: inline-block !important;
-  padding: 0.1rem 0.6rem !important;
-  border-radius: 1rem;
-  background-color: var(--anthropic-orange) !important;
-  color: white;
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-span.pill-tag-green-light {
-  display: inline-block !important;
-  padding: 0.1rem 0.6rem !important;
-  border-radius: 1rem;
-  background-color: var(--anthropic-green-light) !important;
-  color: var(--text-main);
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-decoration: none;
-}

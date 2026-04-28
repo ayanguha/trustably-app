@@ -5,7 +5,7 @@ hide:
 # Individual Fluency Model
 
 
-## What is Individual Fluency?**
+## What is Individual Fluency?
 
 Individual fluency is the measure of how effectively and responsibly a practitioner engages with AI in their daily work. It is not about how much AI someone uses, or how technically sophisticated their tooling is. It is about the quality of judgment, habit, and accountability they bring to every AI interaction — from a simple chatbot query to the orchestration of a multi-agent system  
 
