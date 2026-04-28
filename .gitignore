@@ -230,5 +230,6 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-static/data/responses.json
+#static/data/responses.json
 trustably-docs/site/
+uv.lock
