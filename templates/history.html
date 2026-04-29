@@ -85,4 +85,72 @@
         </div>
     </div>
 </div>
+
+<!-- Drawer -->
+<div id="drawer" class="drawer">
+    <div class="drawer-header d-flex justify-content-between">
+        <h5>Assessment</h5>
+        <button onclick="closeDrawer()">✕</button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="drawer-tabs">
+        <button onclick="showTab('details')" class="active">Details</button>
+        <button onclick="showTab('summary')">Exec Summary</button>
+        <button onclick="showTab('download')">Download</button>
+    </div>
+
+    <!-- Content -->
+    <div class="drawer-content">
+
+        <!-- Details -->
+        <div id="details" class="tab-content active">
+            <p><strong>Client:</strong> Acme Financial</p>
+            <p><strong>Status:</strong> In Progress</p>
+            <p><strong>Scope:</strong> Enterprise AI</p>
+        </div>
+
+        <!-- Executive Summary -->
+        <div id="summary" class="tab-content">
+            <div class="card-custom p-3 mb-3">
+                <h6>Trustably Score</h6>
+                <h2 class="text-success">68 / 100</h2>
+                <p>Level 2 — Developing</p>
+            </div>
+
+            <div class="status-alert-bar">
+                Strong execution capabilities, gaps in governance & explainability.
+            </div>
+        </div>
+
+        <!-- Download -->
+        <div id="download" class="tab-content">
+            <button class="btn btn-primary w-100 mb-2">Download PDF</button>
+            <button class="btn btn-outline-secondary w-100">Download Raw Data</button>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function openDrawer() {
+    document.getElementById("drawer").classList.add("open");
+}
+
+function closeDrawer() {
+    document.getElementById("drawer").classList.remove("open");
+}
+
+function showTab(tabId) {
+    document.querySelectorAll(".tab-content").forEach(el => el.classList.remove("active"));
+    document.querySelectorAll(".drawer-tabs button").forEach(el => el.classList.remove("active"));
+
+    document.getElementById(tabId).classList.add("active");
+    event.target.classList.add("active");
+}
+
+function createAssessment() {
+    alert("Hook this to your Flask POST /create endpoint");
+}
+</script>
 {% endblock %}

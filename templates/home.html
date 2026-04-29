@@ -1,4 +1,15 @@
 {% extends "base.html" %}
+{% block extra_css %}
+ <style>
+    #assessmentDrawer { 
+        background:  var(--main-bg); border-left: 1px solid #e2e8f0; 
+        height: 100vh; position: fixed; right: 0; top: 0; 
+        width: 30%; display: none; z-index: 1051; 
+    }
+</style>
+{% endblock %}
+
+
 
 {% block content %}
 <div class="p-4">
@@ -27,24 +38,142 @@
         {% endfor %}
     </div>
 
-    <div class="card-custom p-4 shadow-sm">
-        <h6 class="fw-bold mb-4" style="color: var(--anthropic-orange);">Trustably Frameworks</h6>
-        <div class="row">
-            <div class="col-md-6 ps-md-4 border-end">
-                <p class="text-secondary fw-bold mb-1">CARE - Shared Standards</p>
-                <p class="small text-muted"> CARE is the quality rubric that measures institutional maturity defined by <strong>15 sub-capabilities</strong> across <strong>4 traits</strong></p>
-                <a href="https://ayanguha.github.io/trustably-docs/care.html" class="btn btn-link text-decoration-none p-0 fw-bold mt-auto" style="color: var(--anthropic-orange); font-size: 0.85rem;">
-                        <i class="bi bi-arrow-right me-2"></i> Learn More
-                    </a>
+    
+
+    <div class="p-5 text-white shadow-sm mb-4" style="background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%); border-radius: 12px;">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="fw-bold">Assessments</h4>
+                <button class="btn btn-primary" onclick="createAssessment()">+ New Assessment</button>
             </div>
-            <div class="col-md-6 ps-md-4 border-end">
-                <p class="text-secondary  fw-bold mb-1">4E Maturity Model</p>
-                <p class="small text-muted">How organizations progress through AI adoption journey across <strong>4 progression stages</strong>.</p>
-                <a href="https://ayanguha.github.io/trustably-docs/maturity.html" class="btn btn-link text-decoration-none p-0 fw-bold mt-auto" style="color: var(--anthropic-orange); font-size: 0.85rem;">
-                        <i class="bi bi-arrow-right me-2"></i> Learn More
-                    </a>
-            </div>
-        </div>
+         <div class="card-custom p-3">
+                    <table class="table table-sm align-middle">
+                        <thead>
+                            <tr class="text-muted">
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Score</th>
+                                <th>Started On</th>
+                                <th>Last Updated</th>
+                                <th>Actions</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody id="assessmentTable">
+                            <!-- Row -->
+                             {% for assessment in assessments %}
+                            <tr>
+                                <td><strong> {{ assessment['assessment_name'] }} </strong></td>
+                                <td><span  {% if assessment['assessment_status'] == 'In Progress' %}class="badge bg-anthropic-green"{% endif %} 
+                                           {% if assessment['assessment_status'] == 'Started' %}class="badge bg-anthropic-orange"{% endif %} 
+                                           {% if assessment['assessment_status'] == 'Completed' %}class="badge bg-anthropic-sidebar"{% endif %} 
+                                    > {{ assessment['assessment_status'] }} </span></td>
+                                <td>
+                                    {% if assessment['assessment_status'] == 'Completed' %} {{ assessment['assessment_score']['score']}} {% endif %}
+                                    {% if assessment['assessment_status'] != 'Completed' %}-{% endif %}
+                                </td>
+                                <td> {{assessment['assessment_start_date']}} </td>
+                                <td> {{assessment['assessment_last_updated_date']}} </td>
+                                <td>
+                                   <button class="btn btn-sm" title="Generate Report">
+                                        <i class="bi bi-play-fill text-success"></i>
+                                    </button>
+
+                                    <button class="btn btn-sm" title="Download">
+                                        <i class="bi-arrow-down-circle-fill  text-success"></i>
+                                    </button>
+
+                                    <button class="btn btn-sm" title="Delete">
+                                        <i class="bi bi-trash3-fill text-success"></i>
+                                    </button>
+
+                                    <button class="btn btn-sm " onclick="openDrawer({{ assessment['assessment_id'] }})" title="Open Details">
+                                        <i class="bi bi-arrow-right-circle-fill text-success"></i>
+                                    </button>
+                                </td>
+                                
+                            </tr>
+                            {% endfor %}
+                         
+                        </tbody>
+                    </table>
+                </div>
     </div>
 </div>
+    <!-- Drawer -->
+    <!-- Content -->
+    <div id="assessmentDrawer" class="shadow-lg">
+         <input type="hidden" id="currentAid">
+        <div class="p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h6 class="fw-bold m-0">Assessment</h6>
+                <button class="btn-close" onclick="closeDrawer()"></button>
+            </div>
+            <div>
+                <label class="text-muted fw-bold small mb-2">Client</label>
+                <p id="adClientName" class="text-success"></p>
+                <label class="text-muted fw-bold small mb-2">Industry</label>
+                <p id="adClientIndustry" class="fw-medium mb-4"></p>
+                <label class="text-muted fw-bold small mb-2">Assessment Status</label>
+                <p id="adAssessmentStatus" class="fw-medium mb-4"></p>
+                <label class="text-muted fw-bold small mb-2">Last Updated Date</label>
+                <p id="adAssessmentLastUpdate" class="fw-medium mb-4"></p>
+                <label class="text-muted fw-bold small mb-2">Assessment Score Details</label>
+                <p id="adAssessmentTrustablyScore" class="status-alert-bar">DD</p>
+            </div>
+       
+            <!-- Download -->
+            <div id="adAssessmentReportDownload" class="tab-content">
+                <button class="btn btn-primary w-100 mb-2">Download PDF</button>
+            </div>
+
+         </div>
+
+    </div>
+
+
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+async function openDrawer(assessment_id) {
+    document.getElementById('currentAid').value = assessment_id;
+    document.getElementById('assessmentDrawer').style.display = 'block';
+    
+    try {
+        const res = await fetch('/get_assessment_by_id', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    assessment_id: assessment_id
+                })
+            });
+            const data = await res.json();  
+            console.log(data.assessment.assessment_client_name);         
+            document.getElementById('adClientName').innerText = data.assessment.assessment_client_name;
+            document.getElementById('adClientIndustry').innerText = data.assessment.assessment_client_industry;
+            document.getElementById('adAssessmentStatus').innerText = data.assessment.assessment_status;
+            document.getElementById('adAssessmentLastUpdate').innerText = data.assessment.assessment_last_updated_date;
+            document.getElementById('adAssessmentTrustablyScore').innerText = data.assessment.assessment_score; 
+
+        } catch (err) {
+            console.error(err);
+          
+        }
+}
+
+
+function closeDrawer() {
+    document.getElementById('assessmentDrawer').style.display = 'none';
+}
+
+
+
+function createAssessment() {
+    alert("Hook this to your Flask POST /create endpoint");
+}
+</script>
+
 {% endblock %}

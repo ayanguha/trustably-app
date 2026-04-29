@@ -132,7 +132,7 @@
     notesEl.placeholder = "Loading existing response...";
 
     try {
-        const res = await fetch('/get_response', {
+        const res = await fetch('/get_response_by_qid', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -141,8 +141,7 @@
                     question_id: qid
                 })
             });
-            const data = await res.json();
-           
+            const data = await res.json();           
             notesEl.value = data.response || "";
             
 

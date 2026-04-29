@@ -14,7 +14,8 @@ def landing():
 @app.route('/home')
 def home():
     metadata = generate_metadata(ALL_QUESTION_METADATA_FILE)
-    return render_template('home.html', metadata=metadata)
+    assessments = safe_read_assessments()
+    return render_template('home.html', metadata=metadata, assessments=assessments)
 
 @app.route('/history')
 def history():
@@ -38,6 +39,10 @@ def history():
 
 def __hash_func__(data: str) -> str:
     return sha1(data.encode()).hexdigest()
+#####################################################
+####### Question Metadata
+#####################################################
+
 
 def safe_read_question_metadata():
         all_questions = [] 
@@ -175,6 +180,17 @@ def get_question_metadata(qid):
             return (focus, trait, sub_capability)
     return (None, None, None)
 
+
+@app.route('/library')
+def library():
+    '''knowledge_areas = '''
+    knowledge_areas = generate_nested_list(ALL_QUESTION_METADATA_FILE)
+    return render_template('qa.html', areas=knowledge_areas)
+
+
+#####################################################
+##### QA Response ##########
+#####################################################
 @app.route('/save_response', methods=['POST'])
 def save_response():
     data = request.get_json()
@@ -240,8 +256,8 @@ def safe_get_reposnse_by_qid(qid):
     return res 
 
 
-@app.route("/get_response", methods=["POST"])
-def get_response():
+@app.route("/get_response_by_qid", methods=["POST"])
+def get_response_by_qid():
     qid = request.get_json().get('question_id')
     try:
         qa = safe_get_reposnse_by_qid(qid) 
@@ -254,16 +270,81 @@ def get_response():
             "error": str(e)
         }), 500
 
+#####################################################
+############## Assessment
+assessments = [
+    {'assessment_id': '123',
+    'assessment_name': 'ABC1',
+    'assessment_client_name': 'C1',
+    'assessment_client_industry': 'I1',
+    'assessment_start_date': '2026-04-22T20:00:00+00',
+    'assessment_completed_date': '2026-04-23T20:00:00+00',
+    'assessment_last_updated_date': '2026-04-26T20:00:00+00',
+    'assessment_status': 'Started',
+    'assessment_score': {'completed': False, 'score': None}
+    },
+    {'assessment_id': '456',
+    'assessment_name': 'ABC2',
+    'assessment_client_name': 'C1',
+    'assessment_client_industry': 'I1',
+    'assessment_start_date': '2026-02-22T20:00:00+00',
+    'assessment_completed_date': '2026-02-23T20:00:00+00',
+    'assessment_last_updated_date': '2026-02-26T20:00:00+00',
+    'assessment_status': 'Completed',
+    'assessment_score': {'completed': True, 'score': 68}
+    },
+     {'assessment_id': '789',
+    'assessment_name': 'ABC3',
+    'assessment_client_name': 'C1',
+    'assessment_client_industry': 'I1',
+    'assessment_start_date': '2026-02-22T20:00:00+00',
+    'assessment_completed_date': '2026-02-23T20:00:00+00',
+    'assessment_last_updated_date': '2026-02-26T20:00:00+00',
+    'assessment_status': 'In Progress',
+    'assessment_score': {'completed': False, 'score': 68}
+    }
+]
+
+def safe_read_assessments():
+    '''if not os.path.exists("static/data/responses.json"):
+        stored_responses = {}
+    else:
+        stored_responses = json.load(open("static/data/responses.json"))
+    '''
+    return assessments
+
+def safe_get_assessment_by_id(assessment_id):
+    stored_assessments = safe_read_assessments()
+    for a in stored_assessments:
+        print(a)
+        if a['assessment_id'] == str(assessment_id):
+            return a 
+
+    return None  
+
+@app.route("/get_assessment_by_id", methods=["POST"])
+def get_assessment_by_id():
+    assessment_id = request.get_json().get('assessment_id')
+    print(assessment_id)
+    try:
+        assessment = safe_get_assessment_by_id(assessment_id)
+        res = {"success": 'true', 'assessment': assessment}
+        print(f"======== Response Text: {res}")
+        return jsonify(res)
+    except Exception as e:
+        raise
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
+
+#####################################################
 @app.route('/reports/sample')
 def sample_report():
     # This securely joins the path and sends the file
     return send_from_directory(os.path.join(app.root_path, 'static', 'reports'), "sample.pdf")
 
-@app.route('/library')
-def library():
-    '''knowledge_areas = '''
-    knowledge_areas = generate_nested_list(ALL_QUESTION_METADATA_FILE)
-    return render_template('qa.html', areas=knowledge_areas)
+
 
 # Route to serve the docs
 @app.route('/docs/')
