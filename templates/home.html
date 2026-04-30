@@ -74,21 +74,27 @@
                                 <td> {{assessment['assessment_start_date']}} </td>
                                 <td> {{assessment['assessment_last_updated_date']}} </td>
                                 <td>
-                                   <button class="btn btn-sm" title="Generate Report">
-                                        <i class="bi bi-play-fill text-success"></i>
-                                    </button>
+                                   
 
-                                    <button class="btn btn-sm" title="Download">
-                                        <i class="bi-arrow-down-circle-fill  text-success"></i>
-                                    </button>
-
-                                    <button class="btn btn-sm" title="Delete">
-                                        <i class="bi bi-trash3-fill text-success"></i>
+                                    <button class="btn btn-sm" onclick="deleteAssessment({{ assessment['assessment_id'] }})" title="Delete">
+                                        <i class="bi bi-trash3-fill text-danger"></i>
                                     </button>
 
                                     <button class="btn btn-sm " onclick="openDrawer({{ assessment['assessment_id'] }})" title="Open Details">
-                                        <i class="bi bi-arrow-right-circle-fill text-success"></i>
+                                        <i class="bi bi-arrow-right-circle-fill text-muted"></i>
                                     </button>
+                                    {% if assessment['assessment_status'] in ['Started']  %}  
+                                        
+                                        <button class="btn btn-sm" onclick="startAssessmentReporting({{ assessment['assessment_id'] }})" title="Generate Report">
+                                            <i class="bi bi-play-fill text-secondary"></i>
+                                        </button>
+                                     {% endif %}
+                                     {% if assessment['assessment_status'] == 'Completed' %}  
+                                        <a href="{{ url_for('download_assessment_report', assessment_id=assessment.assessment_id) }}" class="btn btn-sm">
+                                            <i class="bi bi-arrow-down-circle-fill text-secondary"></i>
+                                        </a>
+                                    {% endif %}
+
                                 </td>
                                 
                             </tr>
@@ -109,21 +115,13 @@
                 <button class="btn-close" onclick="closeDrawer()"></button>
             </div>
             <div>
-                <label class="text-muted fw-bold small mb-2">Client</label>
-                <p id="adClientName" class="text-success"></p>
-                <label class="text-muted fw-bold small mb-2">Industry</label>
-                <p id="adClientIndustry" class="fw-medium mb-4"></p>
-                <label class="text-muted fw-bold small mb-2">Assessment Status</label>
-                <p id="adAssessmentStatus" class="fw-medium mb-4"></p>
-                <label class="text-muted fw-bold small mb-2">Last Updated Date</label>
-                <p id="adAssessmentLastUpdate" class="fw-medium mb-4"></p>
                 <label class="text-muted fw-bold small mb-2">Assessment Score Details</label>
-                <p id="adAssessmentTrustablyScore" class="status-alert-bar">DD</p>
+                <p id="adAssessmentDetails" class="status-alert-bar"></p>
             </div>
        
             <!-- Download -->
             <div id="adAssessmentReportDownload" class="tab-content">
-                <button class="btn btn-primary w-100 mb-2">Download PDF</button>
+                <button class="btn btn-primary w-100 mb-2">Download Report</button>
             </div>
 
          </div>
@@ -150,13 +148,9 @@ async function openDrawer(assessment_id) {
                     assessment_id: assessment_id
                 })
             });
-            const data = await res.json();  
-            console.log(data.assessment.assessment_client_name);         
-            document.getElementById('adClientName').innerText = data.assessment.assessment_client_name;
-            document.getElementById('adClientIndustry').innerText = data.assessment.assessment_client_industry;
-            document.getElementById('adAssessmentStatus').innerText = data.assessment.assessment_status;
-            document.getElementById('adAssessmentLastUpdate').innerText = data.assessment.assessment_last_updated_date;
-            document.getElementById('adAssessmentTrustablyScore').innerText = data.assessment.assessment_score; 
+            const data = await res.json(); 
+            console.log(data); 
+            document.getElementById('adAssessmentDetails').innerText = JSON.stringify(data, null, 2); 
 
         } catch (err) {
             console.error(err);
@@ -172,7 +166,26 @@ function closeDrawer() {
 
 
 function createAssessment() {
-    alert("Hook this to your Flask POST /create endpoint");
+    console.log("createAssessment");
+    alert("Coming Soon");
+}
+
+function deleteAssessment(assessment_id) {
+    console.log("deleteAssessment");
+    console.log(assessment_id);
+    alert("Coming Soon");
+}
+
+function downloadAssessment(assessment_id) {
+    console.log("downloadAssessment");
+    console.log(assessment_id);
+    alert("Coming Soon");
+}
+
+function startAssessmentReporting(assessment_id) {
+    console.log("startAssessmentReporting");
+    console.log(assessment_id);
+    alert("Coming Soon");
 }
 </script>
 

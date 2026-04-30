@@ -1,0 +1,32 @@
+[
+    {"assessment_id": "123",
+    "assessment_name": "ABC1",
+    "assessment_client_name": "C1",
+    "assessment_client_industry": "I1",
+    "assessment_start_date": "2026-04-22T20:00:00+00",
+    "assessment_completed_date": "2026-04-23T20:00:00+00",
+    "assessment_last_updated_date": "2026-04-26T20:00:00+00",
+    "assessment_status": "Started",
+    "assessment_score": {"completed": false, "score": null}
+    },
+    {"assessment_id": "456",
+    "assessment_name": "ABC2",
+    "assessment_client_name": "C1",
+    "assessment_client_industry": "I1",
+    "assessment_start_date": "2026-02-22T20:00:00+00",
+    "assessment_completed_date": "2026-02-23T20:00:00+00",
+    "assessment_last_updated_date": "2026-02-26T20:00:00+00",
+    "assessment_status": "Completed",
+    "assessment_score": {"completed": true, "score": 68}
+    },
+     {"assessment_id": "789",
+    "assessment_name": "ABC3",
+    "assessment_client_name": "C1",
+    "assessment_client_industry": "I1",
+    "assessment_start_date": "2026-02-22T20:00:00+00",
+    "assessment_completed_date": "2026-02-23T20:00:00+00",
+    "assessment_last_updated_date": "2026-02-26T20:00:00+00",
+    "assessment_status": "In Progress",
+    "assessment_score": {"completed": false, "score": null}
+    }
+]
