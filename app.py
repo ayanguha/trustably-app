@@ -26,28 +26,18 @@ def library():
 @app.route('/history')
 def history():
     # Example data for the history view
-    sent_assessments = [
-        {
-            "id": "asmt_001",
-            "client": "Test",
-            "sender": "Ramya Kumar",
-            "timestamp": "14 Apr 2026, 03:57 pm",
-            "recipient": "ramya.kumar@versent.com.au",
-            "link": "https://main.d5yl4z9pmmspb.amplifyapp.com/assessment/mny...",
-            "questions": [
-                {"area": "Data Governance", "sub": "Data Governance Framework", "text": "Is there a documented data governance framework?"},
-                {"area": "Data Governance", "sub": "Data Governance Framework", "text": "Is the data governance framework communicated to all stakeholders?"},
-                {"area": "Data Governance", "sub": "Data Standards", "text": "Are data standards enforced through data validation rules?"}
-            ]
-        }
+    events = [
+        {"timestamp": "2024-01-01 10:00:00", "event": "Assessment Created", "trace_id": "abc123", 'level': 'info', 'details': {'assessment_id': 'def456'}}, 
+        {"timestamp": "2024-01-02 12:00:00", "event": "Question Answered", "trace_id": "def456", 'level': 'info', 'details': {'question_id': 'q1', 'answer': 'Yes', 'assessment_id': 'def456'}},
+        {"timestamp": "2024-01-03 14:00:00", "event": "Report Generated", "trace_id": "ghi789", 'level': 'warn', 'details': {'assessment_id': 'def456', 'report_url': '/reports/def456.pdf'}},
     ]
-    return render_template('history.html', assessments=sent_assessments)
+    return render_template('history.html', events=events)
 
 @app.route('/assessment/<assessment_id>')
 def assessment_detail(assessment_id):
     # fetch assessment by id
     metadata = generate_metadata(ALL_QUESTION_METADATA_FILE, assessment_id)
-    knowledge_areas = generate_nested_list(ALL_QUESTION_METADATA_FILE)
+    knowledge_areas = generate_nested_list(ALL_QUESTION_METADATA_FILE, assessment_id=assessment_id)
     index, assessment = safe_get_assessment_by_id(assessment_id)
     return render_template('assessment_detail.html', 
                             areas=knowledge_areas, 
@@ -125,7 +115,7 @@ def generate_metadata(file_path, assessment_id):
     return {'total_questions': total_questions, 'answered_questions': answered_questions, 'pct_completed': pct_completed}
         
 
-def generate_nested_list(file_path):
+def generate_nested_list(file_path, assessment_id=None):
     nested_data = {}
 
     all_questions, focus_id_map, trait_id_map, sub_capability_id_map = safe_read_question_metadata()
@@ -155,11 +145,18 @@ def generate_nested_list(file_path):
         
         if sub_capability_id not in nested_data[focus_id][trait_id]:
             nested_data[focus_id][trait_id][sub_capability_id] = []
-
-        nested_data[focus_id][trait_id][sub_capability_id].append({
-            "id": question_id,
-            "text": question_text
-        })
+        
+        if not assessment_id:
+             nested_data[focus_id][trait_id][sub_capability_id].append({
+                "id": question_id,
+                "text": question_text
+            })
+        else:
+            nested_data[focus_id][trait_id][sub_capability_id].append({
+                "id": question_id,
+                "text": question_text,
+                'question_answered': safe_get_reposnse_by_qid(assessment_id, question_id)['question_answered']
+            })
     
     # Convert to final list format
     result = []
@@ -337,7 +334,7 @@ def create_assessment():
         a  = {
         'assessment_id': assessment_id,
         'assessment_name': assessment_name,
-        'assessment_status': 'Started',
+        'assessment_status': 'Created',
         'assessment_start_date': datetime.now().isoformat(),
         'assessment_last_updated_date': datetime.now().isoformat(),
          "assessment_score": {"completed": False, "score": None}

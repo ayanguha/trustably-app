@@ -33,6 +33,33 @@
             "focus": "S - Security",
             "trait": "C — Consistent",
             "sub_capability": "Strategic"
+        },
+        "537b0a80b57cecebf85213591ca8c8a1f0b95c1e": {
+            "question_id": "537b0a80b57cecebf85213591ca8c8a1f0b95c1e",
+            "assessment_id": "5f60529cba41a3725570719bd7e91c28d342134e",
+            "answer": "New Response",
+            "qText": "How frequently is the ROI of the AI Governance framework reviewed to ensure it is enabling rather than hindering business velocity?",
+            "focus": "F - Functional Governance",
+            "trait": "C — Consistent",
+            "sub_capability": "Viable"
+        },
+        "dc01fcb139e03a296eae81dd6e04727580eb59ce": {
+            "question_id": "dc01fcb139e03a296eae81dd6e04727580eb59ce",
+            "assessment_id": "5f60529cba41a3725570719bd7e91c28d342134e",
+            "answer": "Another one",
+            "qText": "Do developers view the AI governance process as a helpful guide that reduces their personal and professional liability?",
+            "focus": "F - Functional Governance",
+            "trait": "E — Effective",
+            "sub_capability": "Desirable"
+        },
+        "c1294666885ad90ebcfafc1c95410a204279186e": {
+            "question_id": "c1294666885ad90ebcfafc1c95410a204279186e",
+            "assessment_id": "5f60529cba41a3725570719bd7e91c28d342134e",
+            "answer": "zdf",
+            "qText": "Does the governance framework include a specific process for monitoring and adapting to changes in local (ANZ) and international AI regulations?",
+            "focus": "F - Functional Governance",
+            "trait": "C — Consistent",
+            "sub_capability": "Resilient"
         }
     }
 }

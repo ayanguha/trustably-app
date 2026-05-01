@@ -4,8 +4,7 @@
 <style>
     .area-header { cursor: pointer; padding: 15px; background: #fff; }
     .sub-area-header { cursor: pointer; padding: 12px 15px 12px 55px; border-top: 1px solid #f1f5f9; background: #fff; }
-    .question-item { cursor: pointer; padding: 10px 15px 10px 85px; background: #fafbfc; transition: 0.2s; }
-    .question-item:hover { background-color: var(--anthropic-green-light);  }
+    
     #questionDrawer { 
         background:  var(--main-bg); border-left: 1px solid #e2e8f0; 
         height: 100vh; position: fixed; right: 0; top: 0; 
@@ -35,13 +34,18 @@
         background-color: #f1f3f5 !important;
     }
 
-    /* Question style alignment */
-    .question-item {
-        cursor: pointer;
-    }
+    .question-item { cursor: pointer; }   
 
     .question-item:hover {
         background-color: var(--anthropic-green-light) !important;
+        border-left: 3px solid var(--anthropic-orange);
+    }
+
+    .question-item-answered { cursor: pointer; }   
+
+    .question-item-answered:hover {
+        background-color: var(--anthropic-green-light) !important;
+        border-left: 3px solid var(--anthropic-green);
     }
 </style>
 {% endblock %}
@@ -178,14 +182,18 @@
                         data-bs-toggle="collapse" data-bs-target="#{{ sub.id }}">
                         <i class="bi bi-chevron-right me-2"></i>
                         <span class="flex-grow-1 small text-dark fw-medium">{{ sub.name }}</span>
-                        <span class="badge rounded-pill bg-white text-muted border smaller me-3">{{ sub.questions|length }} Qs</span>
+                        <span class="badge rounded-pill bg-white text-muted border smaller me-3">{{ sub.questions |selectattr('question_answered') |list |length }}/{{ sub.questions|length }} Answered</span>
                     </div>
 
                     <div class="collapse ms-4 border-start" id="{{ sub.id }}">
                         {% for q in sub.questions %}
-                        <div class="question-item d-flex align-items-start ps-3 py-2 border-bottom bg-white text-secondary" onclick="openDrawer('{{ q.id }}', '{{ q.text }}', '{{ assessment_id }}')">
-                            <span class="text-secondary small">{{ q.text }}</span>
-                        </div>
+                            {% set qClass = "question-item" %}
+                            {% if q.question_answered %}
+                                {% set qClass = " question-item-answered" %}
+                            {% endif %}
+                            <div class="{{qClass}} d-flex align-items-start ps-3 py-2 border-bottom bg-white text-secondary" onclick="openDrawer('{{ q.id }}', '{{ q.text }}', '{{ assessment_id }}')">
+                                <span class="text-secondary small">{{ q.text }}</span>
+                            </div>
                         {% endfor %}
                     </div>
 
@@ -293,6 +301,7 @@
                 // Optional: Update the UI to show this question is answered
                 
                 closeDrawer();
+                window.location.reload();
             } else {
                 alert("Failed to save response. Please try again.");
             }
