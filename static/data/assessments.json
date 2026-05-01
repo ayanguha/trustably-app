@@ -1,32 +1,35 @@
 [
-    {"assessment_id": "123",
-    "assessment_name": "ABC1",
-    "assessment_client_name": "C1",
-    "assessment_client_industry": "I1",
-    "assessment_start_date": "2026-04-22T20:00:00+00",
-    "assessment_completed_date": "2026-04-23T20:00:00+00",
-    "assessment_last_updated_date": "2026-04-26T20:00:00+00",
-    "assessment_status": "Started",
-    "assessment_score": {"completed": false, "score": null}
+    {
+        "assessment_id": "5f60529cba41a3725570719bd7e91c28d342134e",
+        "assessment_name": "New Assessment 1",
+        "assessment_status": "In Progress",
+        "assessment_start_date": "2026-05-01T10:19:20.656144",
+        "assessment_last_updated_date": "2026-05-01T10:19:20.656160",
+        "assessment_score": {
+            "completed": false,
+            "score": null
+        }
     },
-    {"assessment_id": "456",
-    "assessment_name": "ABC2",
-    "assessment_client_name": "C1",
-    "assessment_client_industry": "I1",
-    "assessment_start_date": "2026-02-22T20:00:00+00",
-    "assessment_completed_date": "2026-02-23T20:00:00+00",
-    "assessment_last_updated_date": "2026-02-26T20:00:00+00",
-    "assessment_status": "Completed",
-    "assessment_score": {"completed": true, "score": 68}
+    {
+        "assessment_id": "04a8f0724a511d83aa74d42e50181fd028bb1357",
+        "assessment_name": "New Assessment 2",
+        "assessment_status": "Completed",
+        "assessment_start_date": "2026-05-01T10:19:29.139581",
+        "assessment_last_updated_date": "2026-05-01T10:19:29.139600",
+        "assessment_score": {
+            "completed": false,
+            "score": 60
+        }
     },
-     {"assessment_id": "789",
-    "assessment_name": "ABC3",
-    "assessment_client_name": "C1",
-    "assessment_client_industry": "I1",
-    "assessment_start_date": "2026-02-22T20:00:00+00",
-    "assessment_completed_date": "2026-02-23T20:00:00+00",
-    "assessment_last_updated_date": "2026-02-26T20:00:00+00",
-    "assessment_status": "In Progress",
-    "assessment_score": {"completed": false, "score": null}
+    {
+        "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+        "assessment_name": "ABC",
+        "assessment_status": "Created",
+        "assessment_start_date": "2026-05-01T11:44:27.572757",
+        "assessment_last_updated_date": "2026-05-01T11:44:27.572775",
+        "assessment_score": {
+            "completed": false,
+            "score": null
+        }
     }
 ]

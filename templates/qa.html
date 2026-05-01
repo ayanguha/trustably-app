@@ -83,7 +83,7 @@
 
             <div class="collapse ms-4 border-start" id="{{ sub.id }}">
                 {% for q in sub.questions %}
-                <div class="question-item d-flex align-items-start ps-3 py-2 border-bottom bg-white text-secondary" onclick="openDrawer('{{ q.id }}', '{{ q.text }}')">
+                <div class="question-item d-flex align-items-start ps-3 py-2 border-bottom bg-white text-secondary" >
                     <span class="text-secondary small">{{ q.text }}</span>
                 </div>
                 {% endfor %}
@@ -141,7 +141,8 @@
                     question_id: qid
                 })
             });
-            const data = await res.json();           
+            const data = await res.json();
+           
             notesEl.value = data.response || "";
             
 

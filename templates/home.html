@@ -6,6 +6,12 @@
         height: 100vh; position: fixed; right: 0; top: 0; 
         width: 30%; display: none; z-index: 1051; 
     }
+
+    #createAssessmentDrawer{ 
+        background:  var(--main-bg); border-left: 1px solid #e2e8f0; 
+        height: 100vh; position: fixed; right: 0; top: 0; 
+        width: 30%; display: none; z-index: 1051; 
+    }
 </style>
 {% endblock %}
 
@@ -13,8 +19,7 @@
 
 {% block content %}
 <div class="p-4">
-    <h4 class="fw-bold mb-4">Dashboard</h4>
-
+    
     <div class="p-5 text-white shadow-sm mb-4" style="background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%); border-radius: 12px;">
         <h2 class="fw-bold">Assessment Portal</h2>
         <p class="opacity-75 mb-0">Trustably AI Adoption Readiness assessments for your organization.</p>
@@ -23,15 +28,13 @@
     <div class="row g-3 mb-5">
 
         {% set items = [
-            (metadata['total_questions'], 'Total Questions', 'bi-question-circle', 'secondary'),           
-            (metadata['answered_questions'], 'Responses Received', 'bi-check2-circle', 'secondary'),
-             (metadata['pct_completed'], 'Completion %', 'bi-bar-chart-fill', 'secondary')
-             ] %}
-        {% for count, label, icon, color in items %}
+            ('Total Assessments', 'bi-bookmark-check', 'secondary'),           
+            ] %}
+        {% for label, icon, color in items %}
         <div class="col">
             <div class="card-custom p-3 shadow-sm">
                 <div class="text-{{ color }} mb-2 fs-4"><i class="bi {{ icon }}"></i></div>
-                <h4 class="fw-bold m-0">{{ count }}</h4>
+                <h4 class="fw-bold m-0">{{ assessments|length}}</h4>
                 <p class="text-muted small mb-0">{{ label }}</p>
             </div>
         </div>
@@ -43,7 +46,7 @@
     <div class="p-5 text-white shadow-sm mb-4" style="background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%); border-radius: 12px;">
           <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="fw-bold">Assessments</h4>
-                <button class="btn btn-primary" onclick="createAssessment()">+ New Assessment</button>
+                <button class="btn btn-primary" onclick="openCreateAssessmentDrawer()">+ New Assessment</button>
             </div>
          <div class="card-custom p-3">
                     <table class="table table-sm align-middle">
@@ -64,7 +67,7 @@
                             <tr>
                                 <td><strong> {{ assessment['assessment_name'] }} </strong></td>
                                 <td><span  {% if assessment['assessment_status'] == 'In Progress' %}class="badge bg-anthropic-green"{% endif %} 
-                                           {% if assessment['assessment_status'] == 'Started' %}class="badge bg-anthropic-orange"{% endif %} 
+                                           {% if assessment['assessment_status'] == 'Created' %}class="badge bg-anthropic-orange"{% endif %} 
                                            {% if assessment['assessment_status'] == 'Completed' %}class="badge bg-anthropic-sidebar"{% endif %} 
                                     > {{ assessment['assessment_status'] }} </span></td>
                                 <td>
@@ -76,16 +79,21 @@
                                 <td>
                                    
 
-                                    <button class="btn btn-sm" onclick="deleteAssessment({{ assessment['assessment_id'] }})" title="Delete">
+                                    <button class="btn btn-sm" onclick="deleteAssessment('{{ assessment['assessment_id'] }}')" title="Delete">
                                         <i class="bi bi-trash3-fill text-danger"></i>
                                     </button>
 
-                                    <button class="btn btn-sm " onclick="openDrawer({{ assessment['assessment_id'] }})" title="Open Details">
-                                        <i class="bi bi-arrow-right-circle-fill text-muted"></i>
-                                    </button>
-                                    {% if assessment['assessment_status'] in ['Started']  %}  
+                                   
+
+                                    <a href="{{ url_for('assessment_detail', assessment_id=assessment['assessment_id']) }}"
+                                        class="btn btn-sm">
+                                        <i class="bi bi-box-arrow-in-right text-secondary"></i>
+                                    </a>
+
+                                    
+                                    {% if assessment['assessment_status'] in ['Created']  %}  
                                         
-                                        <button class="btn btn-sm" onclick="startAssessmentReporting({{ assessment['assessment_id'] }})" title="Generate Report">
+                                        <button class="btn btn-sm" onclick="startAssessmentReporting('{{ assessment['assessment_id'] }}')" title="Generate Report">
                                             <i class="bi bi-play-fill text-secondary"></i>
                                         </button>
                                      {% endif %}
@@ -105,23 +113,22 @@
                 </div>
     </div>
 </div>
-    <!-- Drawer -->
-    <!-- Content -->
-    <div id="assessmentDrawer" class="shadow-lg">
-         <input type="hidden" id="currentAid">
+
+
+
+     <div id="createAssessmentDrawer" class="shadow-lg">
         <div class="p-4">
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h6 class="fw-bold m-0">Assessment</h6>
-                <button class="btn-close" onclick="closeDrawer()"></button>
+                <h6 class="fw-bold m-0">Create Assessment</h6>
+                <button class="btn-close" onclick="closecreateAssessmentDrawer()"></button>
             </div>
             <div>
-                <label class="text-muted fw-bold small mb-2">Assessment Score Details</label>
-                <p id="adAssessmentDetails" class="status-alert-bar"></p>
-            </div>
-       
-            <!-- Download -->
-            <div id="adAssessmentReportDownload" class="tab-content">
-                <button class="btn btn-primary w-100 mb-2">Download Report</button>
+               <label class="text-muted fw-bold small mb-2">Assessment Name</label>
+                <textarea id="assessmentName" class="form-control mb-4" rows="1" placeholder="Enter details..."></textarea>
+                <button id="saveBtn" class="btn btn-dark w-100 py-2 fw-bold" onclick="createAssessment()"> 
+                    <span id="btnText">Save Changes</span>
+                    <span id="btnSpinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+                </button>
             </div>
 
          </div>
@@ -134,12 +141,57 @@
 
 {% block extra_js %}
 <script>
-async function openDrawer(assessment_id) {
-    document.getElementById('currentAid').value = assessment_id;
-    document.getElementById('assessmentDrawer').style.display = 'block';
-    
+
+
+function openCreateAssessmentDrawer() {
+    console.log("In openCreateAssessmentDrawer");
+    console.log(document.getElementById('createAssessmentDrawer'))
+    document.getElementById('createAssessmentDrawer').style.display = 'block';
+}
+
+function closeDrawer() {
+    document.getElementById('assessmentDrawer').style.display = 'none';
+}
+
+function closecreateAssessmentDrawer() {
+    document.getElementById('createAssessmentDrawer').style.display = 'none';
+}
+
+
+
+async function createAssessment() {
+    console.log("createAssessment");
+    const assessment_name = document.getElementById('assessmentName').value;
     try {
-        const res = await fetch('/get_assessment_by_id', {
+            const response = await fetch('/create_assessment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    assessment_name: assessment_name
+                })
+            });
+
+            if (response.ok) {
+                // Optional: Update the UI to show this question is answered
+                
+                window.location.reload();
+            } else {
+                alert("Failed to save . Please try again.");
+            }
+        } catch (error) {
+            console.error("Error saving :", error);
+        } finally {
+           console.log("Done");
+        }
+}
+
+async function deleteAssessment(assessment_id) {
+    console.log("deleteAssessment");
+    console.log(assessment_id);
+    try {
+            const response = await fetch('/delete_assessment', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -148,32 +200,19 @@ async function openDrawer(assessment_id) {
                     assessment_id: assessment_id
                 })
             });
-            const data = await res.json(); 
-            console.log(data); 
-            document.getElementById('adAssessmentDetails').innerText = JSON.stringify(data, null, 2); 
 
-        } catch (err) {
-            console.error(err);
-          
+            if (response.ok) {
+                // Optional: Update the UI to show this question is answered
+                
+                window.location.reload();
+            } else {
+                alert("Failed to delete . Please try again.");
+            }
+        } catch (error) {
+            console.error("Error delete :", error);
+        } finally {
+           console.log("Done");
         }
-}
-
-
-function closeDrawer() {
-    document.getElementById('assessmentDrawer').style.display = 'none';
-}
-
-
-
-function createAssessment() {
-    console.log("createAssessment");
-    alert("Coming Soon");
-}
-
-function deleteAssessment(assessment_id) {
-    console.log("deleteAssessment");
-    console.log(assessment_id);
-    alert("Coming Soon");
 }
 
 function downloadAssessment(assessment_id) {
@@ -182,11 +221,7 @@ function downloadAssessment(assessment_id) {
     alert("Coming Soon");
 }
 
-function startAssessmentReporting(assessment_id) {
-    console.log("startAssessmentReporting");
-    console.log(assessment_id);
-    alert("Coming Soon");
-}
+
 </script>
 
 {% endblock %}

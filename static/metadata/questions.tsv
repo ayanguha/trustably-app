@@ -145,7 +145,7 @@ S - Security	C — Consistent	Viable	How automated are your security compliance 
 S - Security	C — Consistent	Resilient	Is there a tested Incident Response (IR) plan specifically tailored to AI-related breaches (e.g., unauthorized model weight extraction)?	Security Lead
 S - Security	C — Consistent	Resilient	In the event of a compromised AI agent, does the platform have the technical capability to isolate that specific agent without a total system outage?	DevSecOps
 S - Security	C — Consistent	Resilient	Are model artifacts, prompts, and vector embeddings backed up in a way that allows for "State Recovery" after a security event?	AI Engineer
-S - Security	Accurate	Valid	Are all AI-related code commits and model artifacts digitally signed and verified through a secure supply chain pipeline?	DevSecOps
+S - Security	A — Accurate	Valid	Are all AI-related code commits and model artifacts digitally signed and verified through a secure supply chain pipeline?	DevSecOps
 S - Security	A — Accurate	Valid	Do you perform automated "Adversarial Robustness" testing on models before they are promoted to production?	AI Engineer
 S - Security	A — Accurate	Unbiased	Do you periodically audit security logs to ensure that automated filtering/blocking is not disproportionately affecting specific user groups?	Security Lead
 S - Security	A — Accurate	Unbiased	Are the "Trust Scores" or risk thresholds used for automated blocking reviewed for quantitative fairness?	AI Engineer

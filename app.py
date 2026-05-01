@@ -2,7 +2,7 @@ from flask import Flask, render_template,send_from_directory, request, jsonify, 
 import os, json
 from hashlib import sha1
 import csv 
-
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -13,9 +13,15 @@ def landing():
 
 @app.route('/home')
 def home():
-    metadata = generate_metadata(ALL_QUESTION_METADATA_FILE)
+    
     assessments = safe_read_assessments()
-    return render_template('home.html', metadata=metadata, assessments=assessments)
+    return render_template('home.html',  assessments=assessments)
+
+@app.route('/library')
+def library():
+    '''knowledge_areas = '''
+    knowledge_areas = generate_nested_list(ALL_QUESTION_METADATA_FILE)
+    return render_template('qa.html', areas=knowledge_areas)
 
 @app.route('/history')
 def history():
@@ -36,6 +42,18 @@ def history():
         }
     ]
     return render_template('history.html', assessments=sent_assessments)
+
+@app.route('/assessment/<assessment_id>')
+def assessment_detail(assessment_id):
+    # fetch assessment by id
+    metadata = generate_metadata(ALL_QUESTION_METADATA_FILE, assessment_id)
+    knowledge_areas = generate_nested_list(ALL_QUESTION_METADATA_FILE)
+    index, assessment = safe_get_assessment_by_id(assessment_id)
+    return render_template('assessment_detail.html', 
+                            areas=knowledge_areas, 
+                            assessment_id=assessment_id,
+                            assessment=assessment,
+                            metadata=metadata)
 
 def __hash_func__(data: str) -> str:
     return sha1(data.encode()).hexdigest()
@@ -86,7 +104,7 @@ def safe_read_question_metadata():
 
 
 
-def generate_metadata(file_path):
+def generate_metadata(file_path, assessment_id):
     l = []
     with open(file_path, mode='r', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter='\t')
@@ -95,7 +113,7 @@ def generate_metadata(file_path):
             trait = row['care_trait']
             sub_capabilities = row['care_sub_capability']
             question_id = __hash_func__(f"{focus}_{trait}_{sub_capabilities}_{i}".replace(" ", "_"))
-            question_answered = safe_get_reposnse_by_qid(question_id)['question_answered']
+            question_answered = safe_get_reposnse_by_qid(assessment_id, question_id)['question_answered']
             l.append({'question_id': question_id, 'question_answered': question_answered})
         
     total_questions = len(l) 
@@ -181,11 +199,6 @@ def get_question_metadata(qid):
     return (None, None, None)
 
 
-@app.route('/library')
-def library():
-    '''knowledge_areas = '''
-    knowledge_areas = generate_nested_list(ALL_QUESTION_METADATA_FILE)
-    return render_template('qa.html', areas=knowledge_areas)
 
 
 #####################################################
@@ -195,18 +208,17 @@ def library():
 def save_response():
     data = request.get_json()
     question_id = data.get('question_id')
+    assessment_id = data.get('assessment_id')
     (focus, trait, sub_capability) = get_question_metadata(question_id)
     data['focus'] = focus 
     data['trait'] = trait 
     data['sub_capability'] = sub_capability 
 
     print(f"data: {data}")
-    if not os.path.exists("static/data/responses.json"):
-        stored_responses = {}
-    else:
-        stored_responses = json.load(open("static/data/responses.json"))
+    print(f"question_id: {question_id}; assessment_id:{assessment_id}")
+    stored_responses = safe_read_responses()
     
-    stored_responses[question_id] = data 
+    stored_responses[assessment_id][question_id] = data 
     
     with open('static/data/responses.json', 'w', encoding='utf-8') as f:
         json.dump(stored_responses, f, ensure_ascii=False, indent=4)
@@ -244,24 +256,24 @@ def safe_get_reposnse_by_metadata(focus: str=None, trait: str=None, sub_capabili
     print(f"active_filters: {active_filters}, Result = {result}") 
 
 
-def safe_get_reposnse_by_qid(qid):
+def safe_get_reposnse_by_qid(assessment_id, qid):
     stored_responses = safe_read_responses()
-    
-    if qid in stored_responses.keys():
-        response_text = stored_responses[qid]['answer']
-        res = {"question_answered": True, "response": response_text}
-    else:
-        response_text = ''
-        res = {"question_answered": False, "response": response_text}
+    res = {"question_answered": False, "response": ''}
+    if assessment_id in stored_responses.keys():
+        if qid in stored_responses[assessment_id].keys():
+            response_text = stored_responses[assessment_id][qid]['answer']
+            res = {"question_answered": True, "response": response_text}         
     return res 
 
 
 @app.route("/get_response_by_qid", methods=["POST"])
 def get_response_by_qid():
-    qid = request.get_json().get('question_id')
+    question_id = request.get_json().get('question_id')
+    assessment_id = request.get_json().get('assessment_id')
+    print(f"question_id: {question_id}; assessment_id:{assessment_id}")
     try:
-        qa = safe_get_reposnse_by_qid(qid) 
-        res = {"success": 'true',"qid": qid, "question_answered": qa['question_answered'], "response": qa['response']}
+        qa = safe_get_reposnse_by_qid(assessment_id,question_id) 
+        res = {"success": 'true',"qid": question_id, "assessment_id":assessment_id, "question_answered": qa['question_answered'], "response": qa['response']}
         #print(f"======== Response Text: {res}")
         return jsonify(res)
     except Exception as e:
@@ -282,23 +294,24 @@ def safe_read_assessments():
     
     return stored_assessments
 
-def safe_get_assessment_by_id(assessment_id):
+def safe_get_assessment_by_id(assessment_id: str):
     stored_assessments = safe_read_assessments()
-    for a in stored_assessments:
-        print(a)
-        if a['assessment_id'] == str(assessment_id):
-            return a 
+    for i,a in enumerate(stored_assessments):
+        if a['assessment_id'] == assessment_id:
+            return (i,a) 
 
-    return None  
+    return (None,None)  
 
+def safe_write_assessment(assessment):
+    with open('static/data/assessments.json', 'w', encoding='utf-8') as f:
+        json.dump(assessment, f, ensure_ascii=False, indent=4)
+    
 @app.route("/get_assessment_by_id", methods=["POST"])
 def get_assessment_by_id():
     assessment_id = request.get_json().get('assessment_id')
-    print(assessment_id)
     try:
-        assessment = safe_get_assessment_by_id(assessment_id)
+        index, assessment = safe_get_assessment_by_id(assessment_id)
         res = {"success": 'true', 'assessment': assessment}
-        print(f"======== Response Text: {res}")
         return Response(json.dumps(assessment, sort_keys=False), mimetype="application/json")
     except Exception as e:
         raise
@@ -306,6 +319,65 @@ def get_assessment_by_id():
             "success": False,
             "error": str(e)
         }), 500
+
+@app.route('/create_assessment', methods=['POST'])
+def create_assessment():
+    data = request.get_json()
+    try:
+        assessment_name = data.get('assessment_name')
+    except:
+        assessment_name = datetime.now().isoformat()
+    
+    print(f"data: {data}")
+    stored_assessments = safe_read_assessments()
+        
+    assessment_id = __hash_func__(assessment_name)
+    index, assessment = safe_get_assessment_by_id(assessment_id)
+    if not assessment:
+        a  = {
+        'assessment_id': assessment_id,
+        'assessment_name': assessment_name,
+        'assessment_status': 'Started',
+        'assessment_start_date': datetime.now().isoformat(),
+        'assessment_last_updated_date': datetime.now().isoformat(),
+         "assessment_score": {"completed": False, "score": None}
+        } 
+
+        stored_assessments.append(a)        
+    
+    safe_write_assessment(stored_assessments)
+    
+    return jsonify({"status": "success", "message": "Response saved"}), 200
+
+@app.route('/delete_assessment', methods=['POST'])
+def delete_assessment():
+    data = request.get_json()
+    assessment_id = data.get('assessment_id')
+    
+    print(f"data: {data}")
+    stored_assessments = safe_read_assessments()
+    index, assessment = safe_get_assessment_by_id(assessment_id)
+    if assessment:
+        stored_assessments.remove(assessment)
+
+    safe_write_assessment(stored_assessments)
+    
+    return jsonify({"status": "success", "message": "Response saved"}), 200
+
+@app.route('/start_reporting_assessment', methods=['POST'])
+def start_reporting_assessment():
+    data = request.get_json()
+    assessment_id = data.get('assessment_id')
+    
+    print(f"data: {data}")
+    stored_assessments = safe_read_assessments()
+    index, assessment = safe_get_assessment_by_id(assessment_id)
+    if safe_get_assessment_by_id(assessment_id):
+        stored_assessments[index]['assessment_status'] = "In Progress"
+
+    safe_write_assessment(stored_assessments)
+    
+    return jsonify({"status": "success", "message": "Response saved"}), 200
 
 #####################################################
 @app.route('/reports/sample')

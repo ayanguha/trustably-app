@@ -1,34 +1,38 @@
 {
-    "2867682fac1d73eb13ddd7415450ac86f4077a25": {
-        "question_id": "2867682fac1d73eb13ddd7415450ac86f4077a25",
-        "answer": "This is a looooooong response to show bb dsf",
-        "qText": "Is there a formally approved Enterprise AI Strategy that defines the \"Right to Win\" and \"Right to Play\" for AI initiatives?",
-        "focus": "F - Functional Governance",
-        "trait": "C — Consistent",
-        "sub_capability": "Strategic"
-    },
-    "72d600c7134623f3fbc6f2188ad28b57a0f3cd02": {
-        "question_id": "72d600c7134623f3fbc6f2188ad28b57a0f3cd02",
-        "answer": "R22",
-        "qText": "To what extent are AI governance objectives directly linked to organizational KPIs and executive performance reviews?",
-        "focus": "F - Functional Governance",
-        "trait": "C — Consistent",
-        "sub_capability": "Strategic"
-    },
-    "a60f31dd93b614a1ff10e6fda1df0cb7d1ee35bf": {
-        "question_id": "a60f31dd93b614a1ff10e6fda1df0cb7d1ee35bf",
-        "answer": "R3",
-        "qText": "Is there a sustainable funding model for AI governance activities (e.g., impact assessments, auditing, training) that scales with adoption?",
-        "focus": "F - Functional Governance",
-        "trait": "C — Consistent",
-        "sub_capability": "Viable"
-    },
-    "99314bf383510067c272e4e93bd4a26fb1b7bb78": {
-        "question_id": "99314bf383510067c272e4e93bd4a26fb1b7bb78",
-        "answer": "New answer",
-        "qText": "Is there a documented AI Security Policy that specifically addresses risks like prompt injection, model inversion, and data poisoning?",
-        "focus": "S - Security",
-        "trait": "C — Consistent",
-        "sub_capability": "Strategic"
+    "5f60529cba41a3725570719bd7e91c28d342134e": {
+        "2867682fac1d73eb13ddd7415450ac86f4077a25": {
+            "question_id": "2867682fac1d73eb13ddd7415450ac86f4077a25",
+            "assessment_id": "5f60529cba41a3725570719bd7e91c28d342134e",
+            "answer": "This is a looooooong response to show bb dsf dfdf",
+            "qText": "Is there a formally approved Enterprise AI Strategy that defines the \"Right to Win\" and \"Right to Play\" for AI initiatives?",
+            "focus": "F - Functional Governance",
+            "trait": "C — Consistent",
+            "sub_capability": "Strategic"
+        },
+        "72d600c7134623f3fbc6f2188ad28b57a0f3cd02": {
+            "question_id": "72d600c7134623f3fbc6f2188ad28b57a0f3cd02",
+            "answer": "R22",
+            "qText": "To what extent are AI governance objectives directly linked to organizational KPIs and executive performance reviews?",
+            "focus": "F - Functional Governance",
+            "trait": "C — Consistent",
+            "sub_capability": "Strategic"
+        },
+        "a60f31dd93b614a1ff10e6fda1df0cb7d1ee35bf": {
+            "question_id": "a60f31dd93b614a1ff10e6fda1df0cb7d1ee35bf",
+            "answer": "R3",
+            "qText": "Is there a sustainable funding model for AI governance activities (e.g., impact assessments, auditing, training) that scales with adoption?",
+            "focus": "F - Functional Governance",
+            "trait": "C — Consistent",
+            "sub_capability": "Viable"
+        },
+        "99314bf383510067c272e4e93bd4a26fb1b7bb78": {
+            "question_id": "99314bf383510067c272e4e93bd4a26fb1b7bb78",
+            "assessment_id": "5f60529cba41a3725570719bd7e91c28d342134e",
+            "answer": "New answer again",
+            "qText": "Is there a documented AI Security Policy that specifically addresses risks like prompt injection, model inversion, and data poisoning?",
+            "focus": "S - Security",
+            "trait": "C — Consistent",
+            "sub_capability": "Strategic"
+        }
     }
 }
