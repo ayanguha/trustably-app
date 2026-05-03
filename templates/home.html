@@ -25,6 +25,8 @@
         <p class="opacity-75 mb-0">Trustably AI Adoption Readiness assessments for your organization.</p>
     </div>
 
+    
+
     <div class="row g-3 mb-5">
 
         {% set items = [
@@ -43,15 +45,14 @@
 
     
 
-    <div class="p-5 text-white shadow-sm mb-4" style="background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%); border-radius: 12px;">
+    <div class="p-5 text-white shadow-sm mb-4" style="background: transparent; border-radius: 12px;">
           <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4 class="fw-bold">Assessments</h4>
                 <button class="btn btn-primary" onclick="openCreateAssessmentDrawer()">+ New Assessment</button>
             </div>
-         <div class="card-custom p-3">
-                    <table class="table table-sm align-middle">
+         <div class="card-custom p-3" style="background: transparent; border-radius: 12px; border: 1px solid var(--main-bg);">
+                    <table class="table table-sm align-middle mb-0 bg-transparent">
                         <thead>
-                            <tr class="text-muted">
+                            <tr class="text-muted ">
                                 <th>Name</th>
                                 <th>Status</th>
                                 <th>Score</th>
@@ -85,7 +86,7 @@
 
                                    
 
-                                    <a href="{{ url_for('assessment_detail', assessment_id=assessment['assessment_id']) }}"
+                                    <a href="{{ url_for('ui.assessment_detail', assessment_id=assessment['assessment_id']) }}"
                                         class="btn btn-sm">
                                         <i class="bi bi-box-arrow-in-right text-secondary"></i>
                                     </a>
@@ -98,7 +99,7 @@
                                         </button>
                                      {% endif %}
                                      {% if assessment['assessment_status'] == 'Completed' %}  
-                                        <a href="{{ url_for('download_assessment_report', assessment_id=assessment.assessment_id) }}" class="btn btn-sm">
+                                        <a href="{{ url_for('ui.download_assessment_report', assessment_id=assessment.assessment_id) }}" class="btn btn-sm">
                                             <i class="bi bi-arrow-down-circle-fill text-secondary"></i>
                                         </a>
                                     {% endif %}

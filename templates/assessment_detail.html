@@ -113,7 +113,7 @@
 
                         <!-- Download Report -->
                         {% if assessment.assessment_status == "Completed" %}
-                        <a href="{{ url_for('download_assessment_report', assessment_id=assessment.assessment_id) }}"
+                        <a href="{{ url_for('ui.download_assessment_report', assessment_id=assessment.assessment_id) }}"
                         class="btn btn-sm btn-light"
                         title="Download Report">
                             <i class="bi bi-arrow-down-circle-fill text-success"></i>
@@ -150,7 +150,7 @@
     </div>
 </div>
 
- {% if assessment.assessment_status == "In Progress" %}
+ {% if assessment.assessment_status != "Created" %}
 <div class="row g-0">
     <div class="col-12 p-4">
         <h5 class="fw-bold mb-4">Question Library</h5>

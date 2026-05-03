@@ -99,22 +99,22 @@
             <p class="text-uppercase text-muted fw-bold mb-3 mt-4" style="font-size: 0.6rem; letter-spacing: 1px;">Main Menu</p>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link {% if request.endpoint == 'landing' %}active{% endif %}" href="{{ url_for('landing') }}">
+                    <a class="nav-link {% if request.endpoint == 'ui.landing' %}active{% endif %}" href="{{ url_for('ui.landing') }}">
                         <i class="bi bi-grid-1x2 me-2"></i> Trustably
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if request.endpoint == 'home' %}active{% endif %}" href="{{ url_for('home') }}">
+                    <a class="nav-link {% if request.endpoint == 'ui.home' %}active{% endif %}" href="{{ url_for('ui.home') }}">
                         <i class="bi bi-house-check-fill me-2"></i> Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if request.endpoint == 'library' %}active{% endif %}" href="{{ url_for('library') }}">
+                    <a class="nav-link {% if request.endpoint == 'ui.library' %}active{% endif %}" href="{{ url_for('ui.library') }}">
                         <i class="bi bi-journal-text me-2"></i> Question Library
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if request.endpoint == 'history' %}active{% endif %}" href="{{ url_for('history') }}">
+                    <a class="nav-link {% if request.endpoint == 'ui.history' %}active{% endif %}" href="{{ url_for('ui.history') }}">
                         <i class="bi bi-clock-history me-2"></i> View History
                     </a>
                 </li> 
@@ -172,7 +172,7 @@
             <div class="col-lg-2 col-6">
                 <h6 class="text-white small fw-bold text-uppercase text-success  mb-3" style="letter-spacing: 1px;">Playbook</h6>
                 <ul class="list-unstyled small">
-                    <li class="mb-2"><a href="{{ url_for('home') }}" class="text-decoration-none text-reset hover-white">Assessment</a></li>
+                    <li class="mb-2"><a href="{{ url_for('ui.home') }}" class="text-decoration-none text-reset hover-white">Assessment</a></li>
                     
                 </ul>
             </div>

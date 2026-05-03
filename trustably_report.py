@@ -29,7 +29,7 @@ C_LIGHT   = colors.HexColor('#F5F0E8')   # warm off-white
 C_MID     = colors.HexColor('#E8E0D0')   # mid tone
 C_GRAY    = colors.HexColor('#666666')   # body text gray
 C_LGRAY   = colors.HexColor('#AAAAAA')   # light gray
-C_WHITE   = colors.white
+C_WHITE   = colors.white 
 
 W, H = A4
 
