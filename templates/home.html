@@ -1,232 +1,151 @@
 {% extends "base.html" %}
 {% block extra_css %}
  <style>
-    #assessmentDrawer { 
-        background:  var(--main-bg); border-left: 1px solid #e2e8f0; 
+    #assessmentDrawer, #createAssessmentDrawer { 
+        background: var(--main-bg); border-left: 1px solid #e2e8f0; 
         height: 100vh; position: fixed; right: 0; top: 0; 
         width: 30%; display: none; z-index: 1051; 
     }
 
-    #createAssessmentDrawer{ 
-        background:  var(--main-bg); border-left: 1px solid #e2e8f0; 
-        height: 100vh; position: fixed; right: 0; top: 0; 
-        width: 30%; display: none; z-index: 1051; 
-
-
-
-
+    /* Card Styling to match image_bc5f93.png */
+    .assessment-card {
+        background: #fff;
+        border-radius: 12px;
+        border-top: 4px solid var(--status-color);
+        transition: transform 0.2s;
     }
+
+        /* Status Modifier Classes using your root variables */
+.status-in-progress { --status-color: var(--anthropic-green); }
+.status-created { --status-color: var(--anthropic-orange); }
+.status-completed { --status-color: var(--sidebar-bg); }
+
+    .assessment-card:hover {
+        transform: translateY(-5px);
+    }
+    .card-footer-actions {
+        background: rgba(0,0,0,0.02);
+        border-top: 1px solid #eee;
+        padding: 10px 15px;
+        border-radius: 0 0 12px 12px;
+    }
+
+
+
+/* Apply variable to the badge */
+.status-badge {
+    background-color: var(--status-color);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+
 </style>
 {% endblock %}
 
-
-
 {% block content %}
 <div class="p-4">
-    
     <div class="p-5 text-white shadow-sm mb-4" style="background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%); border-radius: 12px;">
-        <h2 class="fw-bold">Assessment Portal</h2>
+        <h2 class="fw-bold"> Assessments Portal</h2>
         <p class="opacity-75 mb-0">Trustably AI Adoption Readiness assessments for your organization.</p>
     </div>
 
+
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="fw-bold m-0">Recent Assessments ( {{ assessments|length }} )</h4>
+        <button class="btn btn-primary" onclick="openCreateAssessmentDrawer()">+ New Assessment</button>
+    </div>
+
+    <!-- CARD GRID START -->
+    <!-- CARD GRID START -->
+<div class="row g-4" id="assessmentGrid">
+    {% for assessment in assessments %}
+
     
+        {# Map the status string to your CSS class name #}
+        {% set status_class = 'status-created' %}
+        {% if assessment['assessment_status'] == 'In Progress' %}
+            {% set status_class = 'status-in-progress' %}
+        {% elif assessment['assessment_status'] == 'Completed' %}
+            {% set status_class = 'status-completed' %}
+        {% endif %}
 
-    <div class="row g-3 mb-5">
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="assessment-card shadow-sm h-100 d-flex flex-column {{ status_class }} ">
+            
+            <div class="p-4 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <span class="status-badge 
+                        {% if assessment['assessment_status'] == 'In Progress' %}bg-anthropic-green text-white
+                        {% elif assessment['assessment_status'] == 'Created' %}bg-anthropic-orange text-white
+                        {% else %}bg-anthropic-sidebar text-white{% endif %}">
+                        {{ assessment['assessment_status'] }}
+                    </span>
+                    <small class="text-muted">Score: <strong>{% if assessment['assessment_status'] == 'Completed' %}{{ assessment['assessment_score']['score'] }}{% else %}-{% endif %}</strong></small>
+                </div>
 
-        {% set items = [
-            ('Total Assessments', 'bi-bookmark-check', 'secondary'),           
-            ] %}
-        {% for label, icon, color in items %}
-        <div class="col">
-            <div class="card-custom p-3 shadow-sm">
-                <div class="text-{{ color }} mb-2 fs-4"><i class="bi {{ icon }}"></i></div>
-                <h4 class="fw-bold m-0">{{ assessments|length}}</h4>
-                <p class="text-muted small mb-0">{{ label }}</p>
+                <h5 class="fw-bold text-dark mb-3">{{ assessment['assessment_name'] }}</h5>
+                
+                <!-- Single line for dates -->
+                <div class="mt-2 small text-muted">
+                    <i class="bi bi-calendar3 me-1"></i> 
+                    {{ assessment['assessment_start_date'][:10] }} 
+                    <span class="mx-2 text-silver">|</span> 
+                    <i class="bi bi-clock-history me-1"></i> 
+                    {{ assessment['assessment_last_updated_date'][:10] }}
+                </div>
+            </div>
+
+            <!-- FOOTER ACTIONS -->
+            <div class="card-footer-actions d-flex justify-content-between align-items-center">
+                <!-- Group 1: Delete and View (Always visible on the left) -->
+                <div class="d-flex gap-3">
+                    <button class="btn btn-link btn-sm text-success p-0 text-decoration-none" onclick="deleteAssessment('{{ assessment['assessment_id'] }}')">
+                        <i class="bi bi-trash3"></i> Delete
+                    </button>
+                    <a href="{{ url_for('ui.assessment_detail', assessment_id=assessment['assessment_id']) }}" class="btn btn-link btn-sm text-success p-0 text-decoration-none">
+                        <i class="bi bi-eye"></i> View
+                    </a>
+                </div>
+
+                <!-- Group 2: Contextual Actions (Right side) -->
+                <div>
+                    {% if assessment['assessment_status'] == 'Created' %}
+                        <button class="btn btn-link btn-sm text-success p-0 text-decoration-none" onclick="startAssessmentReporting('{{ assessment['assessment_id'] }}')">
+                            <i class="bi bi-play-circle"></i> Start
+                        </button>
+                    {% elif assessment['assessment_status'] == 'Completed' %}
+                         <a href="{{ url_for('ui.download_assessment_report', assessment_id=assessment.assessment_id) }}" class="btn btn-link btn-sm text-success p-0 text-decoration-none">
+                            <i class="bi bi-download"></i> Download Report
+                        </a>
+                    
+                    {% endif %}
+                </div>
             </div>
         </div>
-        {% endfor %}
     </div>
-
-    
-
-    <div class="p-5 text-white shadow-sm mb-4" style="background: transparent; border-radius: 12px;">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-                <button class="btn btn-primary" onclick="openCreateAssessmentDrawer()">+ New Assessment</button>
-            </div>
-         <div class="card-custom p-3" >
-                    <table class="table table-sm align-middle mb-0 table-borderless ">
-                        <thead>
-                            <tr >
-                                <th class="text-muted text-center">Name</th>
-                                <th class="text-muted text-center">Status</th>
-                                <th class="text-muted text-center">Score</th>
-                                <th class="text-muted text-center">Started On</th>
-                                <th class="text-muted text-center">Last Updated</th>
-                                <th >Actions</th>
-                               
-                            </tr>
-                        </thead>
-                        <tbody id="assessmentTable">
-                            <!-- Row -->
-                             {% for assessment in assessments %}
-                            <tr>
-                                <td class="text-muted text-center"><strong> {{ assessment['assessment_name'] }} </strong></td>
-                                <td class="text-muted text-center"><span  {% if assessment['assessment_status'] == 'In Progress' %}class="badge bg-anthropic-green"{% endif %} 
-                                           {% if assessment['assessment_status'] == 'Created' %}class="badge bg-anthropic-orange"{% endif %} 
-                                           {% if assessment['assessment_status'] == 'Completed' %}class="badge bg-anthropic-sidebar"{% endif %} 
-                                    > {{ assessment['assessment_status'] }} </span></td>
-                                <td class="text-muted text-center">
-                                    {% if assessment['assessment_status'] == 'Completed' %} {{ assessment['assessment_score']['score']}} {% endif %}
-                                    {% if assessment['assessment_status'] != 'Completed' %}-{% endif %}
-                                </td>
-                                <td class="text-muted text-center"> {{assessment['assessment_start_date']}} </td>
-                                <td class="text-muted text-center"> {{assessment['assessment_last_updated_date']}} </td>
-                                <td >
-                                   
-
-                                    <button class="btn btn-sm" onclick="deleteAssessment('{{ assessment['assessment_id'] }}')" title="Delete">
-                                        <i class="bi bi-trash3-fill text-danger"></i>
-                                    </button>
-
-                                   
-
-                                    <a href="{{ url_for('ui.assessment_detail', assessment_id=assessment['assessment_id']) }}"
-                                        class="btn btn-sm">
-                                        <i class="bi bi-box-arrow-in-right text-secondary"></i>
-                                    </a>
-
-                                    
-                                    {% if assessment['assessment_status'] in ['Created']  %}  
-                                        
-                                        <button class="btn btn-sm" onclick="startAssessmentReporting('{{ assessment['assessment_id'] }}')" title="Generate Report">
-                                            <i class="bi bi-play-fill text-secondary"></i>
-                                        </button>
-                                     {% endif %}
-                                     {% if assessment['assessment_status'] == 'Completed' %}  
-                                        <a href="{{ url_for('ui.download_assessment_report', assessment_id=assessment.assessment_id) }}" class="btn btn-sm">
-                                            <i class="bi bi-arrow-down-circle-fill text-secondary"></i>
-                                        </a>
-                                    {% endif %}
-
-                                </td>
-                                
-                            </tr>
-                            {% endfor %}
-                         
-                        </tbody>
-                    </table>
-                </div>
-    </div>
+    {% endfor %}
+</div>
 </div>
 
-
-
-     <div id="createAssessmentDrawer" class="shadow-lg">
-        <div class="p-4">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h6 class="fw-bold m-0">Create Assessment</h6>
-                <button class="btn-close" onclick="closecreateAssessmentDrawer()"></button>
-            </div>
-            <div>
-               <label class="text-muted fw-bold small mb-2">Assessment Name</label>
-                <textarea id="assessmentName" class="form-control mb-4" rows="1" placeholder="Enter details..."></textarea>
-                <button id="saveBtn" class="btn btn-dark w-100 py-2 fw-bold" onclick="createAssessment()"> 
-                    <span id="btnText">Save Changes</span>
-                    <span id="btnSpinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
-                </button>
-            </div>
-
-         </div>
-
+<!-- Drawer for Creating Assessment -->
+<div id="createAssessmentDrawer" class="shadow-lg">
+    <div class="p-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h6 class="fw-bold m-0">Create Assessment</h6>
+            <button class="btn-close" onclick="closecreateAssessmentDrawer()"></button>
+        </div>
+        <div>
+            <label class="text-muted fw-bold small mb-2">Assessment Name</label>
+            <textarea id="assessmentName" class="form-control mb-4" rows="1" placeholder="Enter details..."></textarea>
+            <button id="saveBtn" class="btn btn-dark w-100 py-2 fw-bold" onclick="createAssessment()"> 
+                <span id="btnText">Create Assessment</span>
+            </button>
+        </div>
     </div>
-
-
-
-{% endblock %}
-
-{% block extra_js %}
-<script>
-
-
-function openCreateAssessmentDrawer() {
-    console.log("In openCreateAssessmentDrawer");
-    console.log(document.getElementById('createAssessmentDrawer'))
-    document.getElementById('createAssessmentDrawer').style.display = 'block';
-}
-
-function closeDrawer() {
-    document.getElementById('assessmentDrawer').style.display = 'none';
-}
-
-function closecreateAssessmentDrawer() {
-    document.getElementById('createAssessmentDrawer').style.display = 'none';
-}
-
-
-
-async function createAssessment() {
-    console.log("createAssessment");
-    const assessment_name = document.getElementById('assessmentName').value;
-    try {
-            const response = await fetch('/create_assessment', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    assessment_name: assessment_name
-                })
-            });
-
-            if (response.ok) {
-                // Optional: Update the UI to show this question is answered
-                
-                window.location.reload();
-            } else {
-                alert("Failed to save . Please try again.");
-            }
-        } catch (error) {
-            console.error("Error saving :", error);
-        } finally {
-           console.log("Done");
-        }
-}
-
-async function deleteAssessment(assessment_id) {
-    console.log("deleteAssessment");
-    console.log(assessment_id);
-    try {
-            const response = await fetch('/delete_assessment', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    assessment_id: assessment_id
-                })
-            });
-
-            if (response.ok) {
-                // Optional: Update the UI to show this question is answered
-                
-                window.location.reload();
-            } else {
-                alert("Failed to delete . Please try again.");
-            }
-        } catch (error) {
-            console.error("Error delete :", error);
-        } finally {
-           console.log("Done");
-        }
-}
-
-function downloadAssessment(assessment_id) {
-    console.log("downloadAssessment");
-    console.log(assessment_id);
-    alert("Coming Soon");
-}
-
-
-</script>
-
+</div>
 {% endblock %}
