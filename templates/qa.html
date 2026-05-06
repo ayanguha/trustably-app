@@ -43,6 +43,66 @@
     .question-item:hover {
         background-color: var(--anthropic-green-light) !important;
     }
+
+.section-block {
+    border-radius: 16px;
+    padding: 60px 0;
+    overflow: hidden;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+}
+
+.section-beige { background: #CDC4B5; }
+.section-teal  { background: #A2B7B2; }
+.section-purple { background: #B7B5C6; }
+.section-green { background: #A8C9A8; }
+.section-blue { background: #6E96BF; }
+
+
+.area-header {
+    cursor: pointer;
+    padding-left: 28px;
+    padding-right: 28px;
+    background: transparent;
+    font-size: 1.05rem;
+}
+
+.area-header .fw-bold {
+    font-size: 1.4rem;   /* was ~1.1–1.2 */
+    line-height: 1.3;
+}
+
+.sub-area-header {
+    cursor: pointer;
+    padding-left: 28px;
+    padding-right: 28px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    margin: 6px 16px;   /* adds breathing space */
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 1rem;
+}
+
+.sub-area-header:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.area-header .fw-bold {
+    font-size: 1.2rem;
+    letter-spacing: -0.2px;
+}
+
+.sub-area-header span {
+    font-size: 0.9rem;
+}
+
+.badge {
+    background: var(--anthropic-green-light) !important;
+    border: none;
+    font-size: 0.65rem;
+    padding: 4px 8px;
+}
 </style>
 {% endblock %}
 
@@ -52,7 +112,17 @@
         <h5 class="fw-bold mb-4">Question Library</h5>
         
  {% for area in areas %}
-<div class="card-custom shadow-sm mb-4 overflow-hidden">
+
+
+<div class="section-block 
+    {% if loop.index == 1 %}section-beige
+        {% elif loop.index == 2 %}section-teal
+        {% elif loop.index == 3 %}section-purple
+        {% elif loop.index == 4 %}section-green
+        {% elif loop.index == 5 %}section-blue
+        {% else %}section-beige
+        {% endif %}
+     mb-4">
     <div class="area-header d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#focus{{ loop.index }}">
         <div class="flex-grow-1">
             <div class="fw-bold">{{ area.name }}</div>
