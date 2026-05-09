@@ -67,13 +67,11 @@
     .text-success {
         color: var(--anthropic-orange) !important;
         font-family: Georgia, serif; 
-        font-size: 1rem;
     }
 
     .text-secondary {
         color: var(--anthropic-green) !important;
         font-family: Georgia, serif; 
-        font-size: 1rem;
     }
 
     .module-num {
@@ -200,17 +198,18 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-async function startAssessmentReporting(assessment_id) {
-    console.log("startAssessmentReporting");
+async function setAssessmentStatus(assessment_id, status) {
+    console.log("setAssessmentStatus");
     console.log(assessment_id);
      try {
-            const response = await fetch('/start_reporting_assessment', {
+            const response = await fetch('/set_assessment_status', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    assessment_id: assessment_id
+                    assessment_id: assessment_id, 
+                    status: status
                 })
             });
 
@@ -227,6 +226,35 @@ async function startAssessmentReporting(assessment_id) {
            console.log("Done");
         }
 }
+
+
+async function deleteAssessment(assessment_id) {
+    
+    try {
+            const response = await fetch('/delete_assessment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    assessment_id: assessment_id
+                })
+            });
+
+            if (response.ok) {
+                // Optional: Update the UI to show this question is answered
+                
+                window.location.reload();
+            } else {
+                alert("Failed to delete . Please try again.");
+            }
+        } catch (error) {
+            console.error("Error delete :", error);
+        } finally {
+           console.log("Done");
+        }
+}
+
 </script>
 {% block extra_js %}{% endblock %}
 </body>

@@ -43,7 +43,7 @@ def create_assessment():
         a  = {
         'assessment_id': assessment_id,
         'assessment_name': assessment_name,
-        'assessment_status': 'Created',
+        'assessment_status': 'In Progress',
         'assessment_start_date': datetime.now().isoformat(),
         'assessment_last_updated_date': datetime.now().isoformat(),
          "assessment_score": {"completed": False, "score": None}
@@ -70,16 +70,17 @@ def delete_assessment():
     
     return jsonify({"status": "success", "message": "Response saved"}), 200
 
-@bp.route('/start_reporting_assessment', methods=['POST'])
-def start_reporting_assessment():
+@bp.route('/set_assessment_status', methods=['POST'])
+def set_assessment_status():
     data = request.get_json()
     assessment_id = data.get('assessment_id')
-    
+    status = data.get('status')
+
     print(f"data: {data}")
     stored_assessments = safe_read_assessments()
     index, assessment = safe_get_assessment_by_id(assessment_id)
-    if safe_get_assessment_by_id(assessment_id):
-        stored_assessments[index]['assessment_status'] = "In Progress"
+    if assessment:
+        stored_assessments[index]['assessment_status'] = status
 
     safe_write_assessment(stored_assessments)
     
@@ -100,7 +101,9 @@ def safe_read_assessments():
 
 def safe_get_assessment_by_id(assessment_id: str):
     stored_assessments = safe_read_assessments()
+    print(f"assessment_id: {assessment_id}")
     for i,a in enumerate(stored_assessments):
+        print(f"Checking assessment {i}: {a['assessment_id']}")
         if a['assessment_id'] == assessment_id:
             return (i,a) 
 
@@ -127,6 +130,11 @@ def save_response():
     print(f"data: {data}")
     print(f"question_id: {question_id}; assessment_id:{assessment_id}")
     stored_responses = safe_read_responses()
+    
+    if assessment_id not in stored_responses.keys():
+        stored_responses[assessment_id] = {}
+    else:
+        print(f"Existing responses for assessment_id {assessment_id}: {stored_responses[assessment_id]}")
     
     stored_responses[assessment_id][question_id] = data 
     
@@ -155,47 +163,6 @@ def get_response_by_qid():
             "error": str(e)
         }), 500
     
-##############################################
-## Helper functions to read/write responses
-##############################################
-
-def safe_get_reposnse_by_qid(assessment_id, qid):
-    stored_responses = safe_read_responses()
-    res = {"question_answered": False, "response": ''}
-    if assessment_id in stored_responses.keys():
-        if qid in stored_responses[assessment_id].keys():
-            response_text = stored_responses[assessment_id][qid]['answer']
-            res = {"question_answered": True, "response": response_text}         
-    return res 
-
-def safe_read_responses():
-    if not os.path.exists("static/data/responses.json"):
-        stored_responses = {}
-    else:
-        stored_responses = json.load(open("static/data/responses.json"))
-    
-    return stored_responses
-
-'''
-def safe_get_reposnse_by_metadata(focus: str=None, trait: str=None, sub_capability: str=None ):
-    stored_responses = safe_read_responses()
-    result = []
-    filters = {"focus": focus, "trait": trait,"sub_capability": sub_capability}
-    # Remove None filters
-    active_filters = {k: v for k, v in filters.items() if v}
-    for r in stored_responses:
-        response = stored_responses[r]
-        check = [] 
-        for k, v in active_filters.items():
-            check.append(response.get(k) == v)
-        
-        #if all(response.get(k) == v for k, v in active_filters.items()):
-        if all(check):
-            result.append(response) 
-    
-    print(f"active_filters: {active_filters}, Result = {result}") 
-'''
-
 
 #####################################################
 ####### Question Metadata
@@ -228,7 +195,7 @@ def safe_read_question_metadata():
                 sub_capability_id_map[sub_capability_id] = sub_capability
 
 
-                question_id = __hash_func__(f"{focus}_{trait}_{sub_capability}_{i}".replace(" ", "_"))
+                question_id = __hash_func__(f"{focus}_{trait}_{sub_capability}_{question_text}".replace(" ", "_"))
 
                 qs = {'focus': focus, 
                       'trait': trait, 
@@ -252,7 +219,8 @@ def generate_metadata(file_path, assessment_id):
             focus = row['focus']
             trait = row['care_trait']
             sub_capabilities = row['care_sub_capability']
-            question_id = __hash_func__(f"{focus}_{trait}_{sub_capabilities}_{i}".replace(" ", "_"))
+            question_text = row['question'].replace("'", "`")
+            question_id = __hash_func__(f"{focus}_{trait}_{sub_capabilities}_{question_text}".replace(" ", "_"))
             question_answered = safe_get_reposnse_by_qid(assessment_id, question_id)['question_answered']
             l.append({'question_id': question_id, 'question_answered': question_answered})
         
@@ -346,6 +314,64 @@ def get_question_metadata(qid):
     return (None, None, None)
 
 
+##############################################
+## Helper functions to read/write responses
+##############################################
 
+def safe_get_reposnse_by_qid(assessment_id, qid):
+    stored_responses = safe_read_responses()
+    res = {"question_answered": False, "response": ''}
+    if assessment_id in stored_responses.keys():
+        if qid in stored_responses[assessment_id].keys():
+            response_text = stored_responses[assessment_id][qid]['answer']
+            res = {"question_answered": True, "response": response_text}         
+    return res 
+
+def safe_read_responses():
+    if not os.path.exists("static/data/responses.json"):
+        stored_responses = {}
+    else:
+        stored_responses = json.load(open("static/data/responses.json"))
+    
+    return stored_responses
+
+##############################################
+## Higher order functions to query responses. Primarily to be queried by scoring agent to get all responses for a given focus and trait
+##############################################
+
+@bp.route("/get_response_by_metadata", methods=["POST"])
+def get_response_by_metadata():
+    data = request.get_json()
+    assessment_id = data.get('assessment_id')
+    focus = data.get('focus')
+    trait = data.get('trait')
+
+    try:
+        res = safe_get_response_by_metadata(assessment_id = assessment_id, focus = focus, trait = trait) 
+        return jsonify({"success": 'true', "data": res})
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
+
+def safe_get_response_by_metadata(assessment_id: str, focus: str=None, trait: str=None, sub_capability: str=None ):
+    stored_responses = safe_read_responses()
+    result = []
+    filters = {"focus": focus, "trait": trait,"sub_capability": sub_capability}
+    # Remove None filters
+    active_filters = {k: v for k, v in filters.items() if v}
+    if assessment_id in stored_responses.keys():
+        for r in stored_responses[assessment_id]:
+            response = stored_responses[assessment_id][r]
+            check = [] 
+            for k, v in active_filters.items():
+                check.append(response.get(k) == v)
+            
+            if all(check):
+                result.append(response) 
+    
+    print(f"active_filters: {active_filters}, Result = {result}") 
+    return result
 
 

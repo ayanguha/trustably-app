@@ -17,7 +17,7 @@
 
         /* Status Modifier Classes using your root variables */
 .status-in-progress { --status-color: var(--anthropic-green); }
-.status-created { --status-color: var(--anthropic-orange); }
+.status-ready-for-scoring { --status-color: var(--anthropic-orange); }
 .status-completed { --status-color: var(--sidebar-bg); }
 
     .assessment-card:hover {
@@ -67,9 +67,9 @@
 
     
         {# Map the status string to your CSS class name #}
-        {% set status_class = 'status-created' %}
-        {% if assessment['assessment_status'] == 'In Progress' %}
-            {% set status_class = 'status-in-progress' %}
+        {% set status_class = 'status-in-progress' %}
+        {% if assessment['assessment_status'] == 'Ready for Scoring' %}
+            {% set status_class = 'status-ready-for-scoring' %}
         {% elif assessment['assessment_status'] == 'Completed' %}
             {% set status_class = 'status-completed' %}
         {% endif %}
@@ -81,7 +81,7 @@
                 <div class="d-flex justify-content-between align-items-start mb-3">
                     <span class="status-badge 
                         {% if assessment['assessment_status'] == 'In Progress' %}bg-anthropic-green text-white
-                        {% elif assessment['assessment_status'] == 'Created' %}bg-anthropic-orange text-white
+                        {% elif assessment['assessment_status'] == 'Ready for Scoring' %}bg-anthropic-orange text-white
                         {% else %}bg-anthropic-sidebar text-white{% endif %}">
                         {{ assessment['assessment_status'] }}
                     </span>
@@ -105,22 +105,22 @@
                 <!-- Group 1: Delete and View (Always visible on the left) -->
                 <div class="d-flex gap-3">
                     <button class="btn btn-link btn-sm text-success p-0 text-decoration-none" onclick="deleteAssessment('{{ assessment['assessment_id'] }}')">
-                        <i class="bi bi-trash3"></i> Delete
+                        <i class="bi bi-x-circle-fill"></i> 
                     </button>
                     <a href="{{ url_for('ui.assessment_detail', assessment_id=assessment['assessment_id']) }}" class="btn btn-link btn-sm text-success p-0 text-decoration-none">
-                        <i class="bi bi-eye"></i> View
+                        <i class="bi bi-arrow-right-circle-fill"></i> 
                     </a>
                 </div>
 
                 <!-- Group 2: Contextual Actions (Right side) -->
                 <div>
-                    {% if assessment['assessment_status'] == 'Created' %}
-                        <button class="btn btn-link btn-sm text-success p-0 text-decoration-none" onclick="startAssessmentReporting('{{ assessment['assessment_id'] }}')">
-                            <i class="bi bi-play-circle"></i> Start
+                    {% if assessment['assessment_status'] == 'In Progress' %}
+                        <button class="btn btn-link btn-sm text-secondary p-0 text-decoration-none" onclick="setAssessmentStatus('{{ assessment['assessment_id'] }}', 'Ready for Scoring')">
+                            <i class="bi bi-play-circle-fill"></i> 
                         </button>
                     {% elif assessment['assessment_status'] == 'Completed' %}
-                         <a href="{{ url_for('ui.download_assessment_report', assessment_id=assessment.assessment_id) }}" class="btn btn-link btn-sm text-success p-0 text-decoration-none">
-                            <i class="bi bi-download"></i> Download Report
+                         <a href="{{ url_for('ui.download_assessment_report', assessment_id=assessment.assessment_id) }}" class="btn btn-link btn-sm text-secondary p-0 text-decoration-none">
+                            <i class="bi bi-arrow-down-circle-fill"></i> 
                         </a>
                     
                     {% endif %}
@@ -148,4 +148,42 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+
+function openCreateAssessmentDrawer() {
+    document.getElementById('createAssessmentDrawer').style.display = 'block';
+}
+
+async function createAssessment() {
+    
+    const assessment_name = document.getElementById('assessmentName').value;
+    try {
+            const response = await fetch('/create_assessment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    assessment_name: assessment_name
+                })
+            });
+
+            if (response.ok) {
+                // Optional: Update the UI to show this question is answered
+                
+                window.location.reload();
+            } else {
+                alert("Failed to save . Please try again.");
+            }
+        } catch (error) {
+            console.error("Error saving :", error);
+        } finally {
+           console.log("Done");
+        }
+}
+
+</script>
 {% endblock %}

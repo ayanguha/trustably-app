@@ -47,6 +47,7 @@ def assessment_detail(assessment_id):
     metadata = generate_metadata(ALL_QUESTION_METADATA_FILE, assessment_id)
     knowledge_areas = generate_nested_list(ALL_QUESTION_METADATA_FILE, assessment_id=assessment_id)
     index, assessment = safe_get_assessment_by_id(assessment_id)
+    
     return render_template('assessment_detail.html', 
                             areas=knowledge_areas, 
                             assessment_id=assessment_id,

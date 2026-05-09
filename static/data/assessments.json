@@ -1,16 +1,5 @@
 [
     {
-        "assessment_id": "5f60529cba41a3725570719bd7e91c28d342134e",
-        "assessment_name": "New Assessment 1",
-        "assessment_status": "In Progress",
-        "assessment_start_date": "2026-05-01T10:19:20.656144",
-        "assessment_last_updated_date": "2026-05-01T10:19:20.656160",
-        "assessment_score": {
-            "completed": false,
-            "score": null
-        }
-    },
-    {
         "assessment_id": "04a8f0724a511d83aa74d42e50181fd028bb1357",
         "assessment_name": "New Assessment 2",
         "assessment_status": "Completed",
@@ -23,8 +12,8 @@
     },
     {
         "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
-        "assessment_name": "ABC",
-        "assessment_status": "In Progress",
+        "assessment_name": "Assessment 1",
+        "assessment_status": "Ready for Scoring",
         "assessment_start_date": "2026-05-01T11:44:27.572757",
         "assessment_last_updated_date": "2026-05-01T11:44:27.572775",
         "assessment_score": {
@@ -33,11 +22,11 @@
         }
     },
     {
-        "assessment_id": "640ab2bae07bedc4c163f679a746f7ab7fb5d1fa",
-        "assessment_name": "Test",
-        "assessment_status": "Created",
-        "assessment_start_date": "2026-05-03T11:47:40.364242",
-        "assessment_last_updated_date": "2026-05-03T11:47:40.364255",
+        "assessment_id": "ef136f10083ce00d64f81d52c53a6b6ccb08eb26",
+        "assessment_name": "Assessment 2",
+        "assessment_status": "In Progress",
+        "assessment_start_date": "2026-05-10T08:54:54.903968",
+        "assessment_last_updated_date": "2026-05-10T08:54:54.903983",
         "assessment_score": {
             "completed": false,
             "score": null

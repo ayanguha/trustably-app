@@ -1,65 +1,1570 @@
 {
-    "5f60529cba41a3725570719bd7e91c28d342134e": {
-        "2867682fac1d73eb13ddd7415450ac86f4077a25": {
-            "question_id": "2867682fac1d73eb13ddd7415450ac86f4077a25",
-            "assessment_id": "5f60529cba41a3725570719bd7e91c28d342134e",
-            "answer": "Lets write it well",
+    "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8": {
+        "07530d60fcff6dce931fb20bdb71f6513fa2f60e": {
+            "question_id": "07530d60fcff6dce931fb20bdb71f6513fa2f60e",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
             "qText": "Is there a formally approved Enterprise AI Strategy that defines the \"Right to Win\" and \"Right to Play\" for AI initiatives?",
             "focus": "F - Functional Governance",
-            "trait": "C — Consistent",
+            "trait": "C \u2014 Consistent",
             "sub_capability": "Strategic"
         },
-        "72d600c7134623f3fbc6f2188ad28b57a0f3cd02": {
-            "question_id": "72d600c7134623f3fbc6f2188ad28b57a0f3cd02",
-            "answer": "R22",
+        "7b82d76153f3c90813d3e16fe144152da52148ad": {
+            "question_id": "7b82d76153f3c90813d3e16fe144152da52148ad",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
             "qText": "To what extent are AI governance objectives directly linked to organizational KPIs and executive performance reviews?",
             "focus": "F - Functional Governance",
-            "trait": "C — Consistent",
+            "trait": "C \u2014 Consistent",
             "sub_capability": "Strategic"
         },
-        "a60f31dd93b614a1ff10e6fda1df0cb7d1ee35bf": {
-            "question_id": "a60f31dd93b614a1ff10e6fda1df0cb7d1ee35bf",
-            "answer": "R3",
+        "261e98e5bb89163641c2dfcb886d65ac588cc5b1": {
+            "question_id": "261e98e5bb89163641c2dfcb886d65ac588cc5b1",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
             "qText": "Is there a sustainable funding model for AI governance activities (e.g., impact assessments, auditing, training) that scales with adoption?",
             "focus": "F - Functional Governance",
-            "trait": "C — Consistent",
+            "trait": "C \u2014 Consistent",
             "sub_capability": "Viable"
         },
-        "99314bf383510067c272e4e93bd4a26fb1b7bb78": {
-            "question_id": "99314bf383510067c272e4e93bd4a26fb1b7bb78",
-            "assessment_id": "5f60529cba41a3725570719bd7e91c28d342134e",
-            "answer": "New answer again",
-            "qText": "Is there a documented AI Security Policy that specifically addresses risks like prompt injection, model inversion, and data poisoning?",
-            "focus": "S - Security",
-            "trait": "C — Consistent",
-            "sub_capability": "Strategic"
-        },
-        "537b0a80b57cecebf85213591ca8c8a1f0b95c1e": {
-            "question_id": "537b0a80b57cecebf85213591ca8c8a1f0b95c1e",
-            "assessment_id": "5f60529cba41a3725570719bd7e91c28d342134e",
-            "answer": "New Response",
+        "643405667ca7ad0c975091ec8d193f69af385ca6": {
+            "question_id": "643405667ca7ad0c975091ec8d193f69af385ca6",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
             "qText": "How frequently is the ROI of the AI Governance framework reviewed to ensure it is enabling rather than hindering business velocity?",
             "focus": "F - Functional Governance",
-            "trait": "C — Consistent",
+            "trait": "C \u2014 Consistent",
             "sub_capability": "Viable"
         },
-        "dc01fcb139e03a296eae81dd6e04727580eb59ce": {
-            "question_id": "dc01fcb139e03a296eae81dd6e04727580eb59ce",
-            "assessment_id": "5f60529cba41a3725570719bd7e91c28d342134e",
-            "answer": "Another one",
-            "qText": "Do developers view the AI governance process as a helpful guide that reduces their personal and professional liability?",
-            "focus": "F - Functional Governance",
-            "trait": "E — Effective",
-            "sub_capability": "Desirable"
-        },
-        "c1294666885ad90ebcfafc1c95410a204279186e": {
-            "question_id": "c1294666885ad90ebcfafc1c95410a204279186e",
-            "assessment_id": "5f60529cba41a3725570719bd7e91c28d342134e",
-            "answer": "zdf",
+        "4c0f4df447f02b390159a60f8497c0d29fc78917": {
+            "question_id": "4c0f4df447f02b390159a60f8497c0d29fc78917",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
             "qText": "Does the governance framework include a specific process for monitoring and adapting to changes in local (ANZ) and international AI regulations?",
             "focus": "F - Functional Governance",
-            "trait": "C — Consistent",
+            "trait": "C \u2014 Consistent",
             "sub_capability": "Resilient"
+        },
+        "a01a160d51ff5ba73193b6c8b274f349a047e637": {
+            "question_id": "a01a160d51ff5ba73193b6c8b274f349a047e637",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "How effectively does the organization manage \"Exit Strategies\" or decommissioning plans for AI systems that no longer meet ethical or performance standards?",
+            "focus": "F - Functional Governance",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Resilient"
+        },
+        "44733d1d8881c04a1947fa563a87258e581f25d4": {
+            "question_id": "44733d1d8881c04a1947fa563a87258e581f25d4",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Is there a standardized \"Risk Tiering\" methodology applied to all AI use cases to determine the depth of governance required?",
+            "focus": "F - Functional Governance",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Valid"
+        },
+        "8c556e8a8814349779419e7a3e26ae9bf9c1a343": {
+            "question_id": "8c556e8a8814349779419e7a3e26ae9bf9c1a343",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "How well are the internal AI policies aligned to recognized standards like NIST AI RMF or ISO/IEC 42001?",
+            "focus": "F - Functional Governance",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Valid"
+        },
+        "74f241b368356008460634ec15dad7b7282864f8": {
+            "question_id": "74f241b368356008460634ec15dad7b7282864f8",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Has the organization defined quantitative \"Fairness Thresholds\" that must be met before a high-risk AI system is approved for production?",
+            "focus": "F - Functional Governance",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Unbiased"
+        },
+        "4a2f22f6dd8662f42dea2433525b28dadf3cfab3": {
+            "question_id": "4a2f22f6dd8662f42dea2433525b28dadf3cfab3",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Is there a mandatory requirement for an Ethical Impact Assessment (EIA) for any AI system that interacts with protected demographic data?",
+            "focus": "F - Functional Governance",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Unbiased"
+        },
+        "13c691941e17285af6c35abf52b49a3ab452dec9": {
+            "question_id": "13c691941e17285af6c35abf52b49a3ab452dec9",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Is there a centralized \"AI System Registry\" that captures the rationale, data sources, and approval history for every deployed model?",
+            "focus": "F - Functional Governance",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Explainable"
+        },
+        "b4632d39b019d8c0575ce60bbc8a0178469402df": {
+            "question_id": "b4632d39b019d8c0575ce60bbc8a0178469402df",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "How easily can the organization provide an audit trail of \"Who approved what and why\" for a specific AI system's deployment?",
+            "focus": "F - Functional Governance",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Explainable"
+        },
+        "70e58895f699c9f6d3d39bb892d4b6781760a490": {
+            "question_id": "70e58895f699c9f6d3d39bb892d4b6781760a490",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Is AI governance integrated directly into the Software Development Life Cycle (SDLC) as an automated gate rather than a manual checklist?",
+            "focus": "F - Functional Governance",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Integrated"
+        },
+        "08db371f2532a4a3e87e1fffee8cacd44088e975": {
+            "question_id": "08db371f2532a4a3e87e1fffee8cacd44088e975",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "How well do the Legal, Risk, and Engineering teams communicate regarding the technical trade-offs of compliance decisions?",
+            "focus": "F - Functional Governance",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Integrated"
+        },
+        "a1f0e4ef96d06385b878cc8ef7bd265c48f35049": {
+            "question_id": "a1f0e4ef96d06385b878cc8ef7bd265c48f35049",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "To what degree does the organization have a real-time view of all \"Shadow AI\" or unsanctioned AI tool usage across the enterprise?",
+            "focus": "F - Functional Governance",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Observable"
+        },
+        "4d434aca64ea6a3098b5ea95e24446063aea7f07": {
+            "question_id": "4d434aca64ea6a3098b5ea95e24446063aea7f07",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Are governance metrics (e.g., % of systems with completed risk assessments) regularly reported to the Board or Executive Committee?",
+            "focus": "F - Functional Governance",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Observable"
+        },
+        "5bbf5556e01171d5b29a7b4218e8efe3acb29532": {
+            "question_id": "5bbf5556e01171d5b29a7b4218e8efe3acb29532",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Is there a clear internal policy for disclosing the use of AI to employees, and is this disclosure consistently applied?",
+            "focus": "F - Functional Governance",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Transparent"
+        },
+        "c6609fe61eb786450757e36df7a637accc792105": {
+            "question_id": "c6609fe61eb786450757e36df7a637accc792105",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Does the organization provide clear, plain-language explanations to end-users (clients) when AI is used to make or influence decisions?",
+            "focus": "F - Functional Governance",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Transparent"
+        },
+        "ba9debe5fc60dbc908808b201682d43b96fd2f4c": {
+            "question_id": "ba9debe5fc60dbc908808b201682d43b96fd2f4c",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Is there a clearly defined RACI matrix that identifies the single point of accountability for AI safety and ethical outcomes?",
+            "focus": "F - Functional Governance",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Accountable"
+        },
+        "edb17a532d999607f51d23c45f0eb8217126e79a": {
+            "question_id": "edb17a532d999607f51d23c45f0eb8217126e79a",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Does the Practice Director or CISO have the formal \"Veto Power\" to stop an AI project on ethical or risk grounds?",
+            "focus": "F - Functional Governance",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Accountable"
+        },
+        "809e223d24218eb61d7a854e4fc1917d4d0cdfb1": {
+            "question_id": "809e223d24218eb61d7a854e4fc1917d4d0cdfb1",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "How are \"Third-Party AI Vendors\" held accountable for the safety and transparency of the models they provide?",
+            "focus": "F - Functional Governance",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Accountable"
+        },
+        "7e9bcb1ec2e948f5cebd96f194c6998544634648": {
+            "question_id": "7e9bcb1ec2e948f5cebd96f194c6998544634648",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "How well do your internal governance policies translate across different business units or international subsidiaries?",
+            "focus": "F - Functional Governance",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Interoperable"
+        },
+        "eff3c03b41b08ff7e42a77b5801ca3c5874200d5": {
+            "question_id": "eff3c03b41b08ff7e42a77b5801ca3c5874200d5",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Is the governance documentation (e.g., risk assessments) stored in a machine-readable format that can be ingested by other compliance tools?",
+            "focus": "F - Functional Governance",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Interoperable"
+        },
+        "144888422b5cae853d8628cc689388a140ef750d": {
+            "question_id": "144888422b5cae853d8628cc689388a140ef750d",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Do developers view the AI governance process as a helpful guide that reduces their personal and professional liability?",
+            "focus": "F - Functional Governance",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Desirable"
+        },
+        "31415712d33ea6979ce7d8c4a2c25d64ef7d9992": {
+            "question_id": "31415712d33ea6979ce7d8c4a2c25d64ef7d9992",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Has the organization created \"Fast-Path\" governance tracks for low-risk use cases (e.g., internal productivity tools)?",
+            "focus": "F - Functional Governance",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Desirable"
+        },
+        "015dc5e4ef2780458069246764d04afc08335937": {
+            "question_id": "015dc5e4ef2780458069246764d04afc08335937",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Is there a governance requirement for a \"Privacy Impact Assessment\" (PIA) for any AI system processing personal or sensitive data?",
+            "focus": "F - Functional Governance",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Secure"
+        },
+        "039616898779a196395bf7614e0bd41956e7ba8b": {
+            "question_id": "039616898779a196395bf7614e0bd41956e7ba8b",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Does governance mandate the use of centralized, approved \"Clean Rooms\" or sandboxes for experimenting with sensitive datasets?",
+            "focus": "F - Functional Governance",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Secure"
+        },
+        "86939b504547558b70ce848e921cc7fc32b6db41": {
+            "question_id": "86939b504547558b70ce848e921cc7fc32b6db41",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "How effectively does the governance posture change based on the specific context (e.g., internal vs. public-facing) of the AI application?",
+            "focus": "F - Functional Governance",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Context-Aware"
+        },
+        "87811df198ef6ff9cf4e0d752f66a93e40d22f17": {
+            "question_id": "87811df198ef6ff9cf4e0d752f66a93e40d22f17",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Does the governance framework require a re-assessment whenever an AI system's deployment context changes significantly?",
+            "focus": "F - Functional Governance",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Context-Aware"
+        },
+        "379cf39d396f751385efc93eb52ce6c5d6db50c5": {
+            "question_id": "379cf39d396f751385efc93eb52ce6c5d6db50c5",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Is there a formally documented \"AI Incident Response Plan\" that is distinct from standard IT incident response?",
+            "focus": "F - Functional Governance",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "eb57154c9aba839b4c1bc3baa3d5d28687b19a73": {
+            "question_id": "eb57154c9aba839b4c1bc3baa3d5d28687b19a73",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Does governance require a \"Human-in-the-Loop\" for all AI decisions classified as \"High Impact\" under your risk tiering?",
+            "focus": "F - Functional Governance",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "08ad3621536d6bbd115735f794657346864ed065": {
+            "question_id": "08ad3621536d6bbd115735f794657346864ed065",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Are there clear \"Prohibited Use Cases\" (e.g., social scoring, facial recognition in certain contexts) defined within the policy?",
+            "focus": "F - Functional Governance",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "73752b46fc44f1928443573b91e18f6a7c45298e": {
+            "question_id": "73752b46fc44f1928443573b91e18f6a7c45298e",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "How frequently are \"Post-Market Surveillance\" reviews conducted to ensure AI systems remain safe after deployment?",
+            "focus": "F - Functional Governance",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "e32badaa724ce07649175d67a01578233c5e4ad0": {
+            "question_id": "e32badaa724ce07649175d67a01578233c5e4ad0",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Is there a formal mechanism for employees or external users to \"Whistleblow\" or report concerns regarding AI safety or ethics?",
+            "focus": "F - Functional Governance",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "ac2150d94fa0d17f0e99d0e89f4e145907b0364d": {
+            "question_id": "ac2150d94fa0d17f0e99d0e89f4e145907b0364d",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We are currently in the process of defining our formal risk appetite for AI; policies exist in draft form but are not yet operationalized across all engineering squads.",
+            "qText": "Does the organization conduct regular \"Simulated AI Crisis\" workshops to test governance and communication under pressure?",
+            "focus": "F - Functional Governance",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "77b603d741e5171205221341fb51be748d6b5b83": {
+            "question_id": "77b603d741e5171205221341fb51be748d6b5b83",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "To what extent is your observability strategy explicitly documented and connected to your organisation's AI risk priorities?",
+            "focus": "O - Observability",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Strategic"
+        },
+        "ede670193ffc7f977b6da4fa56ac4351a412bf5b": {
+            "question_id": "ede670193ffc7f977b6da4fa56ac4351a412bf5b",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How well does observability coverage align to business-critical AI systems \u2014 are your highest-risk systems the most thoroughly monitored?",
+            "focus": "O - Observability",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Strategic"
+        },
+        "c881349880446427c021d0f9009d0b7ae3340237": {
+            "question_id": "c881349880446427c021d0f9009d0b7ae3340237",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How proportionate and sustainable is the operational burden of your observability infrastructure \u2014 is it maintained without excessive manual effort?",
+            "focus": "O - Observability",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Viable"
+        },
+        "1718130b4686a6920cb6141ebe9243a97d1b8b05": {
+            "question_id": "1718130b4686a6920cb6141ebe9243a97d1b8b05",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "To what extent are inference costs, model selection, and resource consumption actively optimised within your observability and operations practice?",
+            "focus": "O - Observability",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Viable"
+        },
+        "6029640c3b4fdf842dd24a131e0f8c2e3602c453": {
+            "question_id": "6029640c3b4fdf842dd24a131e0f8c2e3602c453",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How reliably does your monitoring system itself remain operational when the AI systems it monitors experience failures or degradation?",
+            "focus": "O - Observability",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Resilient"
+        },
+        "40a8e02e9b84d89643519f507b90154aa5ca2053": {
+            "question_id": "40a8e02e9b84d89643519f507b90154aa5ca2053",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How systematically are your AI systems tested against edge cases, stress scenarios, and worst-case conditions to establish resilience baselines?",
+            "focus": "O - Observability",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Resilient"
+        },
+        "75f5f0ac4c9e5d9d807651a76a4e3e2bf09f1335": {
+            "question_id": "75f5f0ac4c9e5d9d807651a76a4e3e2bf09f1335",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How thoroughly are data quality issues, preprocessing risks, and representativeness gaps identified and tracked across your AI data pipelines?",
+            "focus": "O - Observability",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Valid"
+        },
+        "be72e83d301ba5fe28ed718c1f90af4bc4117402": {
+            "question_id": "be72e83d301ba5fe28ed718c1f90af4bc4117402",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How well-defined and enforced are your AI model testing and validation processes \u2014 covering accuracy, robustness, and behaviour across intended use cases?",
+            "focus": "O - Observability",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Valid"
+        },
+        "b62faeefe5956f2f25310e6276ee3eb2acaa0beb": {
+            "question_id": "b62faeefe5956f2f25310e6276ee3eb2acaa0beb",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How effectively does drift detection identify changes in data distributions or model behaviour that impact accuracy or safety?",
+            "focus": "O - Observability",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Valid"
+        },
+        "06faacc46488fd9b39c2d8387b343673dd0c5d58": {
+            "question_id": "06faacc46488fd9b39c2d8387b343673dd0c5d58",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How clearly are human oversight checkpoints mapped across the AI lifecycle \u2014 and are they consistently enforced at decision points requiring human judgment?",
+            "focus": "O - Observability",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Valid"
+        },
+        "3d7165003d155c81deacbdb1a361d8279ab56d73": {
+            "question_id": "3d7165003d155c81deacbdb1a361d8279ab56d73",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "To what extent does your observability framework actively measure and surface bias, fairness issues, and disparate performance across sub-populations?",
+            "focus": "O - Observability",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Unbiased"
+        },
+        "f530ea9e5b2ad66bf315058b2a9044fb4c4c0693": {
+            "question_id": "f530ea9e5b2ad66bf315058b2a9044fb4c4c0693",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How well does your monitoring detect harmful output patterns \u2014 such as performance degradation, discriminatory results, or outputs that violate stated guardrails?",
+            "focus": "O - Observability",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Unbiased"
+        },
+        "d10c70242bc4b248b84894c3bbd41008fbcca49e": {
+            "question_id": "d10c70242bc4b248b84894c3bbd41008fbcca49e",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "Are mechanisms in place for users or stakeholders to contest or report problematic AI outputs \u2014 and are those reports tracked and acted upon?",
+            "focus": "O - Observability",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Unbiased"
+        },
+        "b99a6761ef120c9d255d30e406aa17d45759d8be": {
+            "question_id": "b99a6761ef120c9d255d30e406aa17d45759d8be",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How structured and complete is your prompt and inference logging \u2014 can you reconstruct model inputs, outputs, and reasoning at any point in time for audit purposes?",
+            "focus": "O - Observability",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Explainable"
+        },
+        "286333bc7745a1b5cf3c0b3af8e2f79137d3dbf4": {
+            "question_id": "286333bc7745a1b5cf3c0b3af8e2f79137d3dbf4",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How well are explainability and interpretability characteristics measured and reported \u2014 proportionate to system risk and the needs of the audience reviewing them?",
+            "focus": "O - Observability",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Explainable"
+        },
+        "c9b6cf502ad6d5513c8daaf2a38b47bcf07bf098": {
+            "question_id": "c9b6cf502ad6d5513c8daaf2a38b47bcf07bf098",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How completely does your observability cover all application layers \u2014 from data ingestion and model training through to inference outputs and downstream systems?",
+            "focus": "O - Observability",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Integrated"
+        },
+        "4fb20987532d80296fc1482cae49aa403142e0bd": {
+            "question_id": "4fb20987532d80296fc1482cae49aa403142e0bd",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How well is data lineage tracked from source data through model versions to final outputs \u2014 enabling traceability of any given result back to its origin?",
+            "focus": "O - Observability",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Integrated"
+        },
+        "8e61b7d7a43c98effba1206fdc80903bca9849e5": {
+            "question_id": "8e61b7d7a43c98effba1206fdc80903bca9849e5",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How comprehensively are metrics, signals, and thresholds defined and active across all production AI systems \u2014 including model inference, training jobs, and data pipelines?",
+            "focus": "O - Observability",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Observable"
+        },
+        "2e41559238fe77a0f69eaa0ebb13ee2e34fa7346": {
+            "question_id": "2e41559238fe77a0f69eaa0ebb13ee2e34fa7346",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How well is centralised audit logging in place \u2014 covering inference activity, access events, and system changes \u2014 to support investigation and compliance?",
+            "focus": "O - Observability",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Observable"
+        },
+        "8e8113569f6eac69b910e452d9a30dd6aec564c7": {
+            "question_id": "8e8113569f6eac69b910e452d9a30dd6aec564c7",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "To what extent are agent and RAG workflow traces captured \u2014 enabling visibility into multi-step AI actions and retrieval behaviour?",
+            "focus": "O - Observability",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Observable"
+        },
+        "b1f8156f5d1771d9b2c8a61daf34a28e326e9d8b": {
+            "question_id": "b1f8156f5d1771d9b2c8a61daf34a28e326e9d8b",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How consistently are monitoring results, system performance summaries, and identified risks communicated to relevant stakeholders \u2014 executives, governance leads, and operational teams?",
+            "focus": "O - Observability",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Transparent"
+        },
+        "946037debec35666b2e601770f38c522b40911ad": {
+            "question_id": "946037debec35666b2e601770f38c522b40911ad",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How openly are AI system limitations, known failure modes, and observability gaps shared with the teams and individuals who depend on those systems?",
+            "focus": "O - Observability",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Transparent"
+        },
+        "d6bd214e5e6b3b33384fdeef92abbf82c73cdcba": {
+            "question_id": "d6bd214e5e6b3b33384fdeef92abbf82c73cdcba",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How well does your observability tooling work across different teams, model types, and infrastructure \u2014 can all teams access a consistent shared view of AI system health?",
+            "focus": "O - Observability",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Interoperable"
+        },
+        "710b4660d8cc9234fd5a8761b3401a840a9bb3c5": {
+            "question_id": "710b4660d8cc9234fd5a8761b3401a840a9bb3c5",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How well does your monitoring integrate with governance, risk, and platform systems \u2014 do observability signals flow automatically into downstream processes?",
+            "focus": "O - Observability",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Interoperable"
+        },
+        "9c922cc438e9de6ccf80fd47dbdde6da6d0263a3": {
+            "question_id": "9c922cc438e9de6ccf80fd47dbdde6da6d0263a3",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "To what extent do observability outputs directly influence operational decisions \u2014 do monitoring signals result in concrete actions rather than reports that are reviewed but not acted on?",
+            "focus": "O - Observability",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Desirable"
+        },
+        "2e084a7d9d088af0cd7f9462569ba72deb665f93": {
+            "question_id": "2e084a7d9d088af0cd7f9462569ba72deb665f93",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How regularly are observability metrics and measurement frameworks updated to reflect changes in operating environment, stakeholder needs, and emerging risk patterns?",
+            "focus": "O - Observability",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Desirable"
+        },
+        "ebbee9e016390d1ffede7b6743b9dbb1da2ed28f": {
+            "question_id": "ebbee9e016390d1ffede7b6743b9dbb1da2ed28f",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How effectively do your observability outputs inform AI use case evaluation, prioritisation, and retirement decisions \u2014 connecting system performance to business value assessment?",
+            "focus": "O - Observability",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Desirable"
+        },
+        "a0f718528f6de90504ac8cb049302a9e3c071a5e": {
+            "question_id": "a0f718528f6de90504ac8cb049302a9e3c071a5e",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How well are security risks measured within your AI systems \u2014 including susceptibility to adversarial attacks, model extraction, and prompt injection?",
+            "focus": "O - Observability",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Secure"
+        },
+        "80907617386b15191c4dcfdb7051efafffce4435": {
+            "question_id": "80907617386b15191c4dcfdb7051efafffce4435",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How well is the observability infrastructure itself secured \u2014 are logs, traces, and monitoring data protected against tampering, unauthorised access, or sensitive data exposure?",
+            "focus": "O - Observability",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Secure"
+        },
+        "417032270c44a8d72789e7d72146e946d3633460": {
+            "question_id": "417032270c44a8d72789e7d72146e946d3633460",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How well are monitoring depth and alert thresholds calibrated to the specific risk profile of each AI system \u2014 do higher-risk systems receive proportionately deeper instrumentation?",
+            "focus": "O - Observability",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Context-Aware"
+        },
+        "e819f02e5b603ac4b963df9371c024c3bdf73081": {
+            "question_id": "e819f02e5b603ac4b963df9371c024c3bdf73081",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How dynamically does your observability framework adapt when AI systems are updated, redeployed, or operating in new contexts \u2014 without requiring manual reconfiguration?",
+            "focus": "O - Observability",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Context-Aware"
+        },
+        "daf9f313f0611a85ebad6b5d6c6b61b63d156cf2": {
+            "question_id": "daf9f313f0611a85ebad6b5d6c6b61b63d156cf2",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How effectively does your observability framework detect unsafe or harmful AI outputs \u2014 including outputs that violate guardrails, cause harm, or exceed defined boundaries?",
+            "focus": "O - Observability",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "460218998f6e4b0ed0193565f9abd6479343dfe3": {
+            "question_id": "460218998f6e4b0ed0193565f9abd6479343dfe3",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How well are safety-related monitoring signals connected to defined escalation and intervention procedures \u2014 do safety alerts trigger a documented, tested response?",
+            "focus": "O - Observability",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "ac2f68eecb4e8c42aa79575b6cb975ddade4f4d7": {
+            "question_id": "ac2f68eecb4e8c42aa79575b6cb975ddade4f4d7",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our current monitoring is restricted to infrastructure health (CPU/RAM); we lack visibility into model-specific metrics like semantic drift, hallucination rates, or token-level cost attribution.",
+            "qText": "How well does ongoing compliance monitoring verify that AI systems continue to adhere to regulatory, policy, and governance requirements post-deployment?",
+            "focus": "O - Observability",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "71bc9c351f22bf9ebd907f0ed05a9c8e4e0223ec": {
+            "question_id": "71bc9c351f22bf9ebd907f0ed05a9c8e4e0223ec",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Can you articulate how AI usage in your specific role aligns with the organization's broader \"Applied AI\" strategy?",
+            "focus": "C - Culture",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Strategic"
+        },
+        "4195b4ab87be402c302cd458c5f2ff1e7932b2a1": {
+            "question_id": "4195b4ab87be402c302cd458c5f2ff1e7932b2a1",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "To what extent do you feel that AI is being introduced to solve real business problems rather than just following a technical trend?",
+            "focus": "C - Culture",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Strategic"
+        },
+        "22104b0dc1eca3d715c0504efec537e669b05ed4": {
+            "question_id": "22104b0dc1eca3d715c0504efec537e669b05ed4",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "How much dedicated \"learning time\" are you officially permitted to spend on AI upskilling and literacy each month?",
+            "focus": "C - Culture",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Viable"
+        },
+        "91232193060d1a82cc2b893368b48952bce07d96": {
+            "question_id": "91232193060d1a82cc2b893368b48952bce07d96",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Is there a clear, accessible budget for individuals to experiment with new AI tools or attend specialized AI training?",
+            "focus": "C - Culture",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Viable"
+        },
+        "07e42b09c62f4b765c5ad2622661c04535b0eb4a": {
+            "question_id": "07e42b09c62f4b765c5ad2622661c04535b0eb4a",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "If an AI system you developed or managed failed publicly, would the internal culture focus on \"who to blame\" or \"how to fix the system\"?",
+            "focus": "C - Culture",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Resilient"
+        },
+        "f3e1fe7ba90d64285bd35dcfd79f51a9763e826f": {
+            "question_id": "f3e1fe7ba90d64285bd35dcfd79f51a9763e826f",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Do you feel psychologically safe to flag potential ethical or safety risks in an AI project, even if it might delay a deadline?",
+            "focus": "C - Culture",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Resilient"
+        },
+        "d1900929b81c875bbefccaaba012ac8410feb3b3": {
+            "question_id": "d1900929b81c875bbefccaaba012ac8410feb3b3",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "When using AI-generated code or text, how consistently do you apply a \"verification ritual\" to ensure the output is factually grounded?",
+            "focus": "C - Culture",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Valid"
+        },
+        "6949518d9dd21b4a9b96671c342306f2c301bd66": {
+            "question_id": "6949518d9dd21b4a9b96671c342306f2c301bd66",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Are the ECHO habits (Execute, Context, History, Own) a recognized part of the daily workflow for your team?",
+            "focus": "C - Culture",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Valid"
+        },
+        "f7f781c75d6ee16db4ed6ddc336b00e7d68d5f46": {
+            "question_id": "f7f781c75d6ee16db4ed6ddc336b00e7d68d5f46",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "How often does your team engage in \"Adversarial Thinking\" sessions to identify potential biases in your AI models?",
+            "focus": "C - Culture",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Unbiased"
+        },
+        "38831ebb9d4d07545e2cd661ca15b10e1f147ddb": {
+            "question_id": "38831ebb9d4d07545e2cd661ca15b10e1f147ddb",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Do you feel empowered to challenge an AI's recommendation if you believe it is producing an unfair or biased outcome?",
+            "focus": "C - Culture",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Unbiased"
+        },
+        "4fd43b8623d15b1e77f77866a919081da43de158": {
+            "question_id": "4fd43b8623d15b1e77f77866a919081da43de158",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "How confident are you in your ability to explain the \"Reasoning\" behind an AI-driven decision to a non-technical client?",
+            "focus": "C - Culture",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Explainable"
+        },
+        "d73a8294fd3d2341e0c35a472949c815ed46bddc": {
+            "question_id": "d73a8294fd3d2341e0c35a472949c815ed46bddc",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Is there a cultural rejection of \"Black Box\" solutions\u2014do people actively ask \"how does this work?\"",
+            "focus": "C - Culture",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Explainable"
+        },
+        "bd0fc4015a09b6f8554b2ec9c68464f4d7dc17b4": {
+            "question_id": "bd0fc4015a09b6f8554b2ec9c68464f4d7dc17b4",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "How frequently do technical and non-technical teams collaborate on the design of AI systems rather than just the delivery?",
+            "focus": "C - Culture",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Integrated"
+        },
+        "6c5694fcbda81e6594c06bafc08f0570c3b3f2ea": {
+            "question_id": "6c5694fcbda81e6594c06bafc08f0570c3b3f2ea",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Do you feel that the \"Trustably\" language (CARE, 4E) is understood and used across different departments?",
+            "focus": "C - Culture",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Integrated"
+        },
+        "d541049de830d20ff25c5a552dd3c7368f32f4d5": {
+            "question_id": "d541049de830d20ff25c5a552dd3c7368f32f4d5",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "How often are \"Lessons Learned\" from AI failures shared openly across the organization to prevent repeat mistakes?",
+            "focus": "C - Culture",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Observable"
+        },
+        "f2d303c72d451b270c72209116d28223045571a2": {
+            "question_id": "f2d303c72d451b270c72209116d28223045571a2",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Is there a central platform (e.g., Slack, Wiki, Handbook) where employees proactively share AI wins and \"hacks\"?",
+            "focus": "C - Culture",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Observable"
+        },
+        "2fceca248e1dedea5122cad45ae7fef8df0ebd93": {
+            "question_id": "2fceca248e1dedea5122cad45ae7fef8df0ebd93",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Do you feel comfortable openly disclosing when you have used AI to assist in a major deliverable (report, code, email)?",
+            "focus": "C - Culture",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Transparent"
+        },
+        "fa968e8287098b5183bcae9b9a2b63dab0f0a3b2": {
+            "question_id": "fa968e8287098b5183bcae9b9a2b63dab0f0a3b2",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Is there a cultural pride in \"Human-AI Collaboration,\" or is there a tendency to mask AI involvement?",
+            "focus": "C - Culture",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Transparent"
+        },
+        "c34e7eb101a12ca92b6c6a60f7224afa5c920ff3": {
+            "question_id": "c34e7eb101a12ca92b6c6a60f7224afa5c920ff3",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Do individuals in your team take personal responsibility for AI outputs, or is \"The AI said so\" an accepted excuse for errors?",
+            "focus": "C - Culture",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Accountable"
+        },
+        "db29d4b19c9dded96c03a43ee0b7cf53f97d8e70": {
+            "question_id": "db29d4b19c9dded96c03a43ee0b7cf53f97d8e70",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Are the ANCHOR habits (Awareness, Context, History, Ownership, Responsibility) embedded in your performance reviews?",
+            "focus": "C - Culture",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Accountable"
+        },
+        "1e57a2e668963f7d7c7dc28db7a78197d6fa0d6a": {
+            "question_id": "1e57a2e668963f7d7c7dc28db7a78197d6fa0d6a",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Who do you believe is ultimately responsible if an AI system you use causes a negative impact on a customer?",
+            "focus": "C - Culture",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Accountable"
+        },
+        "84a81b039920667ac1b8fb73a3f965e5c52c02dc": {
+            "question_id": "84a81b039920667ac1b8fb73a3f965e5c52c02dc",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Is there a consistent vocabulary used across the company to describe AI concepts (e.g., \"Grounding\" vs. \"Hallucination\")?",
+            "focus": "C - Culture",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Interoperable"
+        },
+        "34711d34a1c9997e1daf4cb24eedf8bb8afdc6b4": {
+            "question_id": "34711d34a1c9997e1daf4cb24eedf8bb8afdc6b4",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "How easily can knowledge from one AI project be applied to another due to shared cultural standards?",
+            "focus": "C - Culture",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Interoperable"
+        },
+        "d6ec843778d12f694bbb0e3a08a9a0dbd55fe5a1": {
+            "question_id": "d6ec843778d12f694bbb0e3a08a9a0dbd55fe5a1",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Do you view AI as a \"Co-pilot\" that enhances your creativity, or as a threat to your professional relevance?",
+            "focus": "C - Culture",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Desirable"
+        },
+        "3d614d710de215ee385ac46d164ae5f397c3c752": {
+            "question_id": "3d614d710de215ee385ac46d164ae5f397c3c752",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Has the introduction of AI made your daily work more or less fulfilling over the last six months?",
+            "focus": "C - Culture",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Desirable"
+        },
+        "4409374e13df9629f8d1b753185f2a5e63234196": {
+            "question_id": "4409374e13df9629f8d1b753185f2a5e63234196",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "When using public AI tools, is the instinct to \"protect the data\" as strong as the instinct to \"get the answer\"?",
+            "focus": "C - Culture",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Secure"
+        },
+        "418d61a2dc18552bd99be7fd5b3b6f0b6cd3f0cf": {
+            "question_id": "418d61a2dc18552bd99be7fd5b3b6f0b6cd3f0cf",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Does the culture celebrate \"Human Firewalls\"\u2014people who proactively identify data leakage risks in AI prompts?",
+            "focus": "C - Culture",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Secure"
+        },
+        "a9a3e031772cc96defa6ea4dbabb424b559bad62": {
+            "question_id": "a9a3e031772cc96defa6ea4dbabb424b559bad62",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "How well do you understand the privacy implications of the specific AI tools you use daily?",
+            "focus": "C - Culture",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Secure"
+        },
+        "c0a7bb8983c96b4abe7fdd77d8a66a9892708089": {
+            "question_id": "c0a7bb8983c96b4abe7fdd77d8a66a9892708089",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "How often do you consciously decide not to use AI for a task because you've judged that human intervention is more appropriate?",
+            "focus": "C - Culture",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Context-Aware"
+        },
+        "a0aef11dc547c1c09fa53a7d60fe53bae06427d1": {
+            "question_id": "a0aef11dc547c1c09fa53a7d60fe53bae06427d1",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Is there a cultural understanding of the \"High Stakes\" vs \"Low Stakes\" AI use cases within the business?",
+            "focus": "C - Culture",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Context-Aware"
+        },
+        "a9f09b2295cfcb551c442ad3d4820d573b342a06": {
+            "question_id": "a9f09b2295cfcb551c442ad3d4820d573b342a06",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Is \"Safety\" viewed as a core professional value within your team, similar to \"Quality\" or \"Speed\"?",
+            "focus": "C - Culture",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "0226cf189782b796959d7b3783b92b98f0780204": {
+            "question_id": "0226cf189782b796959d7b3783b92b98f0780204",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Are safety guardrails viewed as \"helpful protections\" or as \"annoying obstacles\" to be bypassed?",
+            "focus": "C - Culture",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "ddcc0d142e932a705c261574e952cc89aed050da": {
+            "question_id": "ddcc0d142e932a705c261574e952cc89aed050da",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Does the organization reward employees for identifying safety vulnerabilities in AI systems?",
+            "focus": "C - Culture",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "65b4168194814d706eff0941ccb2d1efb44e6ca2": {
+            "question_id": "65b4168194814d706eff0941ccb2d1efb44e6ca2",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "How often are AI \"Simulations\" or \"Wargames\" held to prepare teams for potential safety incidents?",
+            "focus": "C - Culture",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "1c848b1b65dd729c8f27eb33eb162f8602f2b17f": {
+            "question_id": "1c848b1b65dd729c8f27eb33eb162f8602f2b17f",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "We have an informal community of interest around AI, but lack a formal capability academy or structured change management plan to handle AI-driven workforce shifts.",
+            "qText": "Is there a moral imperative felt within the team to ensure that AI does no harm to the end user?",
+            "focus": "C - Culture",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "db8b6e55e300c51b8314a50420bcc17c6308175c": {
+            "question_id": "db8b6e55e300c51b8314a50420bcc17c6308175c",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Is there a centralized \"Service Catalog\" or platform roadmap that governs which AI tools and models are approved for use?",
+            "focus": "U - Unified Platform",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Strategic"
+        },
+        "d9869fb4a2d17331013af702bd7321ae2c8f3c3d": {
+            "question_id": "d9869fb4a2d17331013af702bd7321ae2c8f3c3d",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "To what extent are platform decisions (e.g., choice of Vector DB or LLM provider) driven by long-term organizational strategy rather than ad-hoc project needs?",
+            "focus": "U - Unified Platform",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Strategic"
+        },
+        "ba75a031ec838077b0c3312ba4a3787e8bdf1e5b": {
+            "question_id": "ba75a031ec838077b0c3312ba4a3787e8bdf1e5b",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Are AI infrastructure costs (compute, tokens, storage) automatically attributed to specific projects or business units?",
+            "focus": "U - Unified Platform",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Viable"
+        },
+        "e4d6a75da2c6d9eecd8bdb26f8c970a3306bfbd5": {
+            "question_id": "e4d6a75da2c6d9eecd8bdb26f8c970a3306bfbd5",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Does the platform provide automated \"stopping conditions\" or budget caps for long-running agentic or training tasks?",
+            "focus": "U - Unified Platform",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Viable"
+        },
+        "25b0900cb7f82162fdb665b9a30d806e6c1583cd": {
+            "question_id": "25b0900cb7f82162fdb665b9a30d806e6c1583cd",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "How often is the \"Cost-per-Inference\" reviewed and optimized through model quantization or rightsizing?",
+            "focus": "U - Unified Platform",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Viable"
+        },
+        "32cf89b8b920ccc09d0f12ad64091f2dea0ff71f": {
+            "question_id": "32cf89b8b920ccc09d0f12ad64091f2dea0ff71f",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Are all AI infrastructure components (including model endpoints) deployed using Infrastructure-as-Code (IaC) for rapid recreation?",
+            "focus": "U - Unified Platform",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Resilient"
+        },
+        "026a906d4158918c6be5fbdd6e867498a87badde": {
+            "question_id": "026a906d4158918c6be5fbdd6e867498a87badde",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Do you have an automated \"Rollback\" capability for models that exhibit performance degradation post-deployment?",
+            "focus": "U - Unified Platform",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Resilient"
+        },
+        "adbcfec548ea7d0817f4c1bd956feea544d24472": {
+            "question_id": "adbcfec548ea7d0817f4c1bd956feea544d24472",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Is your AI stack architected for High Availability (HA) across multiple cloud availability zones?",
+            "focus": "U - Unified Platform",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Resilient"
+        },
+        "f07affdc95646e1ed5c189f3ab80b69df146233e": {
+            "question_id": "f07affdc95646e1ed5c189f3ab80b69df146233e",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Is there an automated pipeline that validates model artifacts and data schemas before they reach the production registry?",
+            "focus": "U - Unified Platform",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Valid"
+        },
+        "6869a21e48feca246eca09b39b183574946413c9": {
+            "question_id": "6869a21e48feca246eca09b39b183574946413c9",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Does the platform enforce the use of \"Certified\" base models and base images to ensure supply chain integrity?",
+            "focus": "U - Unified Platform",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Valid"
+        },
+        "09cd23bdde520b5e3c3aa0cf10c77c1cbfbd71fe": {
+            "question_id": "09cd23bdde520b5e3c3aa0cf10c77c1cbfbd71fe",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Are there standardized \"DataOps\" tools within the platform for detecting and cleaning anomalies in training or fine-tuning datasets?",
+            "focus": "U - Unified Platform",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Unbiased"
+        },
+        "f2eeb4f5f2ff12e54887fc75d72c9369cb92ef19": {
+            "question_id": "f2eeb4f5f2ff12e54887fc75d72c9369cb92ef19",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Does the platform provide shared libraries or templates for quantitative fairness testing?",
+            "focus": "U - Unified Platform",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Unbiased"
+        },
+        "81fbc2c9814a233ff4769250e1433802cddff92a": {
+            "question_id": "81fbc2c9814a233ff4769250e1433802cddff92a",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Is the full lineage\u2014from raw data source to model version to specific prompt\u2014automatically captured and stored?",
+            "focus": "U - Unified Platform",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Explainable"
+        },
+        "b644c7e4320b47f4e61cfdc148a4a1a8e496efdd": {
+            "question_id": "b644c7e4320b47f4e61cfdc148a4a1a8e496efdd",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Can you programmatically retrieve the specific \"System Prompt\" and configuration used for any historical inference?",
+            "focus": "U - Unified Platform",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Explainable"
+        },
+        "3ea8fcdee4fc4507a320477a579868dcf987f3dc": {
+            "question_id": "3ea8fcdee4fc4507a320477a579868dcf987f3dc",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "How seamlessly do your data registries, model stores, and application layers communicate via standardized APIs?",
+            "focus": "U - Unified Platform",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Integrated"
+        },
+        "c0e5bde8871cd336133a6e06a627003fc3c1eddb": {
+            "question_id": "c0e5bde8871cd336133a6e06a627003fc3c1eddb",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Can model endpoints be swapped (e.g., GPT-4 to Llama-3) without requiring significant code changes in the application layer?",
+            "focus": "U - Unified Platform",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Integrated"
+        },
+        "8b0cf27a9eba563da40d804b5b2da7502ca7c6b4": {
+            "question_id": "8b0cf27a9eba563da40d804b5b2da7502ca7c6b4",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Does the platform provide a centralized dashboard for monitoring resource saturation (GPU/CPU) across all AI workloads?",
+            "focus": "U - Unified Platform",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Observable"
+        },
+        "04545d67f6d341158994cb75e5420e7f73f5416e": {
+            "question_id": "04545d67f6d341158994cb75e5420e7f73f5416e",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Is there automated telemetry for tracking the latency and throughput of RAG retrievals specifically?",
+            "focus": "U - Unified Platform",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Observable"
+        },
+        "e1a86d78462dbb6b5cecfa3ca67f58248a9a988f": {
+            "question_id": "e1a86d78462dbb6b5cecfa3ca67f58248a9a988f",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Are platform limitations (rate limits, quotas, and \"Known Issues\") visible to all engineering teams via a live status page?",
+            "focus": "U - Unified Platform",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Transparent"
+        },
+        "19bde1754a89afe64263ed0197e8a5ff7f6803c7": {
+            "question_id": "19bde1754a89afe64263ed0197e8a5ff7f6803c7",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Do you provide internal stakeholders with periodic \"Consumption Reports\" that detail performance vs. spend?",
+            "focus": "U - Unified Platform",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Transparent"
+        },
+        "ce3b2afaa75adb4e05d6ded535fe0420e9f2335b": {
+            "question_id": "ce3b2afaa75adb4e05d6ded535fe0420e9f2335b",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Are there formally defined Service Level Objectives (SLOs) for platform uptime and model API response times?",
+            "focus": "U - Unified Platform",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Accountable"
+        },
+        "aad809f6a7c9b74348b155295e75a6aa33db73c3": {
+            "question_id": "aad809f6a7c9b74348b155295e75a6aa33db73c3",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Is there a clear escalation path for when an automated safety guardrail triggers a system-wide block?",
+            "focus": "U - Unified Platform",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Accountable"
+        },
+        "8445460630e10beee048672def233cdfc64ebd9f": {
+            "question_id": "8445460630e10beee048672def233cdfc64ebd9f",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Does the platform support multi-cloud or hybrid deployment patterns for data residency requirements?",
+            "focus": "U - Unified Platform",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Interoperable"
+        },
+        "9feb36ce727ef36f89c4e0f1c0badd534eaf9c43": {
+            "question_id": "9feb36ce727ef36f89c4e0f1c0badd534eaf9c43",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Are prompt templates and vector embeddings stored in formats that are portable across different vector databases or LLM providers?",
+            "focus": "U - Unified Platform",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Interoperable"
+        },
+        "c16139288e695e49e58a58a465d4c49167fd280c": {
+            "question_id": "c16139288e695e49e58a58a465d4c49167fd280c",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Can a new engineer provision a fully-governed AI sandbox environment in under 30 minutes?",
+            "focus": "U - Unified Platform",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Desirable"
+        },
+        "380054f3231322b571e36461a3188108a8360bb4": {
+            "question_id": "380054f3231322b571e36461a3188108a8360bb4",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Does the platform provide a \"Self-Service\" portal for accessing internal datasets and pre-trained models?",
+            "focus": "U - Unified Platform",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Desirable"
+        },
+        "0f68907c1c42534e83e48e2844a8ebbdce5f3e0a": {
+            "question_id": "0f68907c1c42534e83e48e2844a8ebbdce5f3e0a",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Is a Zero-Trust architecture applied, ensuring all model-to-data communications are authenticated and encrypted?",
+            "focus": "U - Unified Platform",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Secure"
+        },
+        "2128042f6e84e821df61f60a8f32e76d93aeaa68": {
+            "question_id": "2128042f6e84e821df61f60a8f32e76d93aeaa68",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Does the platform automatically scan for \"Prompt Injection\" vulnerabilities or PII leakage in ingestion pipelines?",
+            "focus": "U - Unified Platform",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Secure"
+        },
+        "77e981365d8a687c3bee002f32275930fadd80ba": {
+            "question_id": "77e981365d8a687c3bee002f32275930fadd80ba",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Are \"Secrets\" (API keys, DB credentials) managed via a centralized, hardened vault rather than environment variables?",
+            "focus": "U - Unified Platform",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Secure"
+        },
+        "f78efd6420f2bb6664edc504292227cc98378a52": {
+            "question_id": "f78efd6420f2bb6664edc504292227cc98378a52",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Does the infrastructure automatically scale or harden security based on the \"Risk Tier\" assigned to the application?",
+            "focus": "U - Unified Platform",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Context-Aware"
+        },
+        "7c6e3528d16399fd2025fef55803059f9bd72d7b": {
+            "question_id": "7c6e3528d16399fd2025fef55803059f9bd72d7b",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Can the platform dynamically route requests to different models based on the intent or sensitivity of the input context?",
+            "focus": "U - Unified Platform",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Context-Aware"
+        },
+        "ed056df92ae6e6d7ddba622c043b62bdeae388ef": {
+            "question_id": "ed056df92ae6e6d7ddba622c043b62bdeae388ef",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Are there \"Circuit Breakers\" in place to prevent infinite loops in agentic or multi-step AI workflows?",
+            "focus": "U - Unified Platform",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "782428c11c9d49ec15ba10d24140f53a1ad54218": {
+            "question_id": "782428c11c9d49ec15ba10d24140f53a1ad54218",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Does the platform enforce \"Egress Controls\" to prevent AI agents from calling unapproved external URLs?",
+            "focus": "U - Unified Platform",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "c5d256580e67b4f594861ae62378f2ab8ab31e61": {
+            "question_id": "c5d256580e67b4f594861ae62378f2ab8ab31e61",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "Is there a tested \"Kill Switch\" that can isolate specific models without bringing down the entire platform?",
+            "focus": "U - Unified Platform",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "da07494afd927a08b00320e71e40ecd7997fdffc": {
+            "question_id": "da07494afd927a08b00320e71e40ecd7997fdffc",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Teams are currently selecting their own tools for LLM orchestration; we have yet to standardize on a single 'Golden Path' or unified metadata layer for the enterprise.",
+            "qText": "How frequently are \"Red Team\" simulations run against the platform's safety guardrails?",
+            "focus": "U - Unified Platform",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "543c3b40f4f8b7613f96e508cc97bd7c08430d56": {
+            "question_id": "543c3b40f4f8b7613f96e508cc97bd7c08430d56",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Is there a documented AI Security Policy that specifically addresses risks like prompt injection, model inversion, and data poisoning?",
+            "focus": "S - Security",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Strategic"
+        },
+        "80632e1222f29141c5cdfe8773091151a4f9f02b": {
+            "question_id": "80632e1222f29141c5cdfe8773091151a4f9f02b",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "To what extent is security integrated into the initial \"Discovery\" phase of new AI use cases rather than as a final gate?",
+            "focus": "S - Security",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Strategic"
+        },
+        "ad48c6d0978640e3747bca10d2eef198a9a06f7b": {
+            "question_id": "ad48c6d0978640e3747bca10d2eef198a9a06f7b",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Is there a dedicated budget or resource allocation for recurring AI-specific \"Red Teaming\" and adversarial testing?",
+            "focus": "S - Security",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Viable"
+        },
+        "010eeefd5d28e40981b12130dbe8bda97f847d91": {
+            "question_id": "010eeefd5d28e40981b12130dbe8bda97f847d91",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "How automated are your security compliance checks across the AI lifecycle to ensure sustainability as the number of models grows?",
+            "focus": "S - Security",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Viable"
+        },
+        "9160dfe73a6e84bf3f9083dd0529365e300e3d07": {
+            "question_id": "9160dfe73a6e84bf3f9083dd0529365e300e3d07",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Is there a tested Incident Response (IR) plan specifically tailored to AI-related breaches (e.g., unauthorized model weight extraction)?",
+            "focus": "S - Security",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Resilient"
+        },
+        "bc6ba956cd137092687b0a7eab583842871bb542": {
+            "question_id": "bc6ba956cd137092687b0a7eab583842871bb542",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "In the event of a compromised AI agent, does the platform have the technical capability to isolate that specific agent without a total system outage?",
+            "focus": "S - Security",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Resilient"
+        },
+        "f289f079abda8b51731ee4da953f728d0caf4ca0": {
+            "question_id": "f289f079abda8b51731ee4da953f728d0caf4ca0",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Are model artifacts, prompts, and vector embeddings backed up in a way that allows for \"State Recovery\" after a security event?",
+            "focus": "S - Security",
+            "trait": "C \u2014 Consistent",
+            "sub_capability": "Resilient"
+        },
+        "07ed60e4da1e54207435cd4d47ffdc4636dec056": {
+            "question_id": "07ed60e4da1e54207435cd4d47ffdc4636dec056",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Are all AI-related code commits and model artifacts digitally signed and verified through a secure supply chain pipeline?",
+            "focus": "S - Security",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Valid"
+        },
+        "633d9f12e5e162ca322a4ff71beb5079fce06501": {
+            "question_id": "633d9f12e5e162ca322a4ff71beb5079fce06501",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Do you perform automated \"Adversarial Robustness\" testing on models before they are promoted to production?",
+            "focus": "S - Security",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Valid"
+        },
+        "f8cd6f9b4cb70af5bc657c23cfd81ef8ede94c17": {
+            "question_id": "f8cd6f9b4cb70af5bc657c23cfd81ef8ede94c17",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Do you periodically audit security logs to ensure that automated filtering/blocking is not disproportionately affecting specific user groups?",
+            "focus": "S - Security",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Unbiased"
+        },
+        "39a705ffd55cdb872d5a86756c123f4b0b9a5c66": {
+            "question_id": "39a705ffd55cdb872d5a86756c123f4b0b9a5c66",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Are the \"Trust Scores\" or risk thresholds used for automated blocking reviewed for quantitative fairness?",
+            "focus": "S - Security",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Unbiased"
+        },
+        "2dd93f36dfd701448f7de43e716d9097704c6bc7": {
+            "question_id": "2dd93f36dfd701448f7de43e716d9097704c6bc7",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "When an AI request is blocked or intercepted by a security gate, is the specific policy violation logged with high-fidelity rationale?",
+            "focus": "S - Security",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Explainable"
+        },
+        "1f24e32dc17382e1f039a9b1e90d60d0d5fc157a": {
+            "question_id": "1f24e32dc17382e1f039a9b1e90d60d0d5fc157a",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Can security analysts reconstruct the full \"Chain of Thought\" or input/output trace for a flagged security event?",
+            "focus": "S - Security",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Explainable"
+        },
+        "270b6e8d98a6726f6617ab08241c97bb8b9b7558": {
+            "question_id": "270b6e8d98a6726f6617ab08241c97bb8b9b7558",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Are AI security events (e.g., suspected prompt injection) automatically fed into the enterprise SIEM/SOAR for centralized alerting?",
+            "focus": "S - Security",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Integrated"
+        },
+        "7881e55116178b4ff3c6ff866b3dec63240d2e77": {
+            "question_id": "7881e55116178b4ff3c6ff866b3dec63240d2e77",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "To what degree are security guardrails \"hard-coded\" into the platform templates rather than left to individual developers?",
+            "focus": "S - Security",
+            "trait": "A \u2014 Accurate",
+            "sub_capability": "Integrated"
+        },
+        "b8183ddabf40be996cde5d5194358b0f218450a9": {
+            "question_id": "b8183ddabf40be996cde5d5194358b0f218450a9",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Is there real-time monitoring specifically designed to detect \"Low and Slow\" data exfiltration via multiple small AI queries?",
+            "focus": "S - Security",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Observable"
+        },
+        "423a4b1f33116d10d5c2e8bf2b4b772b271d5c48": {
+            "question_id": "423a4b1f33116d10d5c2e8bf2b4b772b271d5c48",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Do you have automated alerts for anomalous model behavior that might indicate a compromised system or unauthorized fine-tuning?",
+            "focus": "S - Security",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Observable"
+        },
+        "a248bbfbe2b893edd2d5fc915bffdd263e064ec5": {
+            "question_id": "a248bbfbe2b893edd2d5fc915bffdd263e064ec5",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Is there a live dashboard or reporting mechanism that provides stakeholders with the current \"Threat Level\" for AI assets?",
+            "focus": "S - Security",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Transparent"
+        },
+        "86631ce0c80bca0de88c18fb79a9c4e2d332548e": {
+            "question_id": "86631ce0c80bca0de88c18fb79a9c4e2d332548e",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Are vulnerabilities in third-party AI libraries (e.g., LangChain, PyTorch) tracked and reported transparently to engineering teams?",
+            "focus": "S - Security",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Transparent"
+        },
+        "dcf55841bb769d4ffc0fd48ee51c61c9a0104e21": {
+            "question_id": "dcf55841bb769d4ffc0fd48ee51c61c9a0104e21",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Does the Security Lead have the formal \"Stop-Work\" authority to deactivate a production model if a critical vulnerability is found?",
+            "focus": "S - Security",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Accountable"
+        },
+        "c0ac12f71c6da1d33958294e0df53a7d5d828f66": {
+            "question_id": "c0ac12f71c6da1d33958294e0df53a7d5d828f66",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Are individual developers held accountable for security through automated \"Security Scorecards\" for their AI applications?",
+            "focus": "S - Security",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Accountable"
+        },
+        "03de1cb6240455ec851e1b2f7ce17288a52c2414": {
+            "question_id": "03de1cb6240455ec851e1b2f7ce17288a52c2414",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Are security policies (e.g., PII filtering rules) managed centrally such that they apply regardless of which model or cloud is used?",
+            "focus": "S - Security",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Interoperable"
+        },
+        "61cd7816e735d7d5f06d1aa149f01fd72528db53": {
+            "question_id": "61cd7816e735d7d5f06d1aa149f01fd72528db53",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Can security telemetry be shared between different components of the AI stack (e.g., from the WAF to the Vector DB)?",
+            "focus": "S - Security",
+            "trait": "R \u2014 Reliable",
+            "sub_capability": "Interoperable"
+        },
+        "365e972302eb6ec349255e5d7913a859b738abf9": {
+            "question_id": "365e972302eb6ec349255e5d7913a859b738abf9",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Does the security framework provide \"Fast-Track\" approvals for use cases that utilize pre-approved, hardened templates?",
+            "focus": "S - Security",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Desirable"
+        },
+        "d7dad3b84b4e453d64bed7f4eaabf97fa89463da": {
+            "question_id": "d7dad3b84b4e453d64bed7f4eaabf97fa89463da",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "How much friction do developers report when trying to integrate security guardrails into their local development environment?",
+            "focus": "S - Security",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Desirable"
+        },
+        "f7b83212e152b272230b0f37af2049ad17e500b5": {
+            "question_id": "f7b83212e152b272230b0f37af2049ad17e500b5",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Is a Zero-Trust model enforced for all agentic workflows, requiring re-authentication for every external tool call?",
+            "focus": "S - Security",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Secure"
+        },
+        "12990c6504c7d0c1a37a6df2f83ad1151c545ab6": {
+            "question_id": "12990c6504c7d0c1a37a6df2f83ad1151c545ab6",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Is PII detection and redaction operational for both the input (prompts) and the output (completions)?",
+            "focus": "S - Security",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Secure"
+        },
+        "82af56d756414c8956f81281cf197903832fc8de": {
+            "question_id": "82af56d756414c8956f81281cf197903832fc8de",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Are all sensitive data assets stored in \"Silos\" with identity-based access controls (DASF Component 1)?",
+            "focus": "S - Security",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Secure"
+        },
+        "84a702dac56759e02a186a92a1f4cbd0e2ea86c7": {
+            "question_id": "84a702dac56759e02a186a92a1f4cbd0e2ea86c7",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Do you use \"Honeypot\" prompts or data to detect model extraction or scraping attempts?",
+            "focus": "S - Security",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Secure"
+        },
+        "bfb49047f65fc77f7add8781872588529a38b2b0": {
+            "question_id": "bfb49047f65fc77f7add8781872588529a38b2b0",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Does the security posture (e.g., depth of filtering) automatically increase when a model is exposed to an external, untrusted network?",
+            "focus": "S - Security",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Context-Aware"
+        },
+        "8786f748741f2ef4925dc31bedd966bd6da5cdfc": {
+            "question_id": "8786f748741f2ef4925dc31bedd966bd6da5cdfc",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Are user \"Trust Scores\" dynamically adjusted based on the intent and sensitivity of their historical AI interactions?",
+            "focus": "S - Security",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Context-Aware"
+        },
+        "007251c86d755803c3ee9c3f84cd16964d844570": {
+            "question_id": "007251c86d755803c3ee9c3f84cd16964d844570",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Are there automated guardrails (e.g., LlamaGuard) that scan completions for harmful, illegal, or out-of-boundary content?",
+            "focus": "S - Security",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "356569ccc4da927a7fe8d16e94c6f3052af2d60a": {
+            "question_id": "356569ccc4da927a7fe8d16e94c6f3052af2d60a",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Is \"Rate Limiting\" applied at the user and application level to prevent Denial of Service (DoS) via expensive model calls?",
+            "focus": "S - Security",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "87bb50648d7588557fa740fec2756007c8836e4c": {
+            "question_id": "87bb50648d7588557fa740fec2756007c8836e4c",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Do you have a \"Human-in-the-loop\" requirement for high-impact AI actions (e.g., executing a bank transfer or deleting data)?",
+            "focus": "S - Security",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
+        },
+        "dedbc4bd343651e3dd6e34a13f6b7000e71f092d": {
+            "question_id": "dedbc4bd343651e3dd6e34a13f6b7000e71f092d",
+            "assessment_id": "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8",
+            "answer": "Our security posture relies on traditional network and data-at-rest controls; we are currently exploring AI-specific threat modeling for prompt injection and adversarial data poisoning.",
+            "qText": "Are egress controls (firewalls) restricted to a \"White List\" of approved URLs for all agentic AI workloads?",
+            "focus": "S - Security",
+            "trait": "E \u2014 Effective",
+            "sub_capability": "Safe"
         }
     }
 }
