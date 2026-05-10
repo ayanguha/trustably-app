@@ -34,7 +34,6 @@ def create_assessment():
     except:
         assessment_name = datetime.now().isoformat()
     
-    print(f"data: {data}")
     stored_assessments = safe_read_assessments()
         
     assessment_id = __hash_func__(assessment_name)
@@ -60,7 +59,6 @@ def delete_assessment():
     data = request.get_json()
     assessment_id = data.get('assessment_id')
     
-    print(f"data: {data}")
     stored_assessments = safe_read_assessments()
     index, assessment = safe_get_assessment_by_id(assessment_id)
     if assessment:
@@ -76,7 +74,6 @@ def set_assessment_status():
     assessment_id = data.get('assessment_id')
     status = data.get('status')
 
-    print(f"data: {data}")
     stored_assessments = safe_read_assessments()
     index, assessment = safe_get_assessment_by_id(assessment_id)
     if assessment:
@@ -103,7 +100,6 @@ def safe_get_assessment_by_id(assessment_id: str):
     stored_assessments = safe_read_assessments()
     print(f"assessment_id: {assessment_id}")
     for i,a in enumerate(stored_assessments):
-        print(f"Checking assessment {i}: {a['assessment_id']}")
         if a['assessment_id'] == assessment_id:
             return (i,a) 
 
@@ -122,12 +118,10 @@ def save_response():
     data = request.get_json()
     question_id = data.get('question_id')
     assessment_id = data.get('assessment_id')
-    (focus, trait, sub_capability) = get_question_metadata(question_id)
-    data['focus'] = focus 
-    data['trait'] = trait 
-    data['sub_capability'] = sub_capability 
+    role = data.get('role') 
+    (focus, trait, sub_capability, question_text) = get_question_metadata(question_id)
+    answer_time = datetime.now().isoformat(timespec='seconds')
 
-    print(f"data: {data}")
     print(f"question_id: {question_id}; assessment_id:{assessment_id}")
     stored_responses = safe_read_responses()
     
@@ -136,31 +130,63 @@ def save_response():
     else:
         print(f"Existing responses for assessment_id {assessment_id}: {stored_responses[assessment_id]}")
     
-    stored_responses[assessment_id][question_id] = data 
-    
+    if question_id not in stored_responses[assessment_id].keys():
+        stored_responses[assessment_id][question_id] = {
+            'focus': focus,
+            'trait': trait,
+            'sub_capability': sub_capability,
+            'question_text': question_text,
+            'answer': {role: {'role': role, 'answer_text': data['answer_text'], 'answer_time': answer_time}} 
+        }
+
+    if role not in stored_responses[assessment_id][question_id]['answer'].keys():
+        stored_responses[assessment_id][question_id]['answer'][role] = {'role': role, 'answer_text': data['answer_text'], 'answer_time': answer_time}
+    else:
+        stored_responses[assessment_id][question_id]['answer'][role]['answer_text'] = data['answer_text']
+        stored_responses[assessment_id][question_id]['answer'][role]['answer_time'] = answer_time
+
     with open('static/data/responses.json', 'w', encoding='utf-8') as f:
         json.dump(stored_responses, f, ensure_ascii=False, indent=4)
-
-    # Logic to save to a database, session, or file
-    # Example: print(f"Saving {question_id}: {evidence}")
     
     return jsonify({"status": "success", "message": "Response saved"}), 200
 
+@bp.route('/delete_response', methods=['POST'])
+def delete_response():
+    data = request.get_json()
+    question_id = data.get('question_id')
+    assessment_id = data.get('assessment_id')
+    role = data.get('role') 
+
+    stored_responses = safe_read_responses()
+    
+    if assessment_id in stored_responses.keys():
+        if question_id in stored_responses[assessment_id].keys():
+            if role in stored_responses[assessment_id][question_id]['answer'].keys():
+                del stored_responses[assessment_id][question_id]['answer'][role]
+    
+    with open('static/data/responses.json', 'w', encoding='utf-8') as f:
+        json.dump(stored_responses, f, ensure_ascii=False, indent=4)
+    
+    return jsonify({"status": "success", "message": "Response deleted"}), 200
 
 @bp.route("/get_response_by_qid", methods=["POST"])
 def get_response_by_qid():
     question_id = request.get_json().get('question_id')
     assessment_id = request.get_json().get('assessment_id')
-    print(f"question_id: {question_id}; assessment_id:{assessment_id}")
     try:
         qa = safe_get_reposnse_by_qid(assessment_id,question_id) 
-        res = {"success": 'true',"qid": question_id, "assessment_id":assessment_id, "question_answered": qa['question_answered'], "response": qa['response']}
-        #print(f"======== Response Text: {res}")
+        
+        res = {"success": 'true',"qid": question_id, 
+               "assessment_id":assessment_id, 
+               "question_answered": qa['question_answered'], 
+               "responses": list(qa['responses'].values())}
+        print(res)
         return jsonify(res)
     except Exception as e:
         return jsonify({
             "success": False,
-            "error": str(e)
+            "error": str(e),
+            "responses": []
         }), 500
     
 
@@ -227,8 +253,6 @@ def generate_metadata(file_path, assessment_id):
     total_questions = len(l) 
     answered_questions = sum([1 for x in l if x['question_answered']])
     pct_completed = round(100*(answered_questions/total_questions),2)
-    #print(f"total_questions: {total_questions}, answered_questions: {answered_questions}, pct_completed:{pct_completed} ")
-
 
     return {'total_questions': total_questions, 'answered_questions': answered_questions, 'pct_completed': pct_completed}
         
@@ -237,11 +261,7 @@ def generate_nested_list(file_path, assessment_id=None):
     nested_data = {}
 
     all_questions, focus_id_map, trait_id_map, sub_capability_id_map = safe_read_question_metadata()
-    ''' print(f"========>. all_questions: {all_questions}")
-    print(f"========>. focus_id_map: {focus_id_map}")
-    print(f"========>. trait_id_map: {trait_id_map}")
-    print(f"========>. sub_capability_id_map: {sub_capability_id_map}")
-    '''
+
 
     for i, row in enumerate(all_questions):
 
@@ -310,8 +330,9 @@ def get_question_metadata(qid):
             focus = row['focus']
             trait = row['trait']
             sub_capability = row['sub_capability']
-            return (focus, trait, sub_capability)
-    return (None, None, None)
+            question_text = row['question_text']
+            return (focus, trait, sub_capability, question_text)
+    return (None, None, None, None)
 
 
 ##############################################
@@ -323,8 +344,8 @@ def safe_get_reposnse_by_qid(assessment_id, qid):
     res = {"question_answered": False, "response": ''}
     if assessment_id in stored_responses.keys():
         if qid in stored_responses[assessment_id].keys():
-            response_text = stored_responses[assessment_id][qid]['answer']
-            res = {"question_answered": True, "response": response_text}         
+            responses = stored_responses[assessment_id][qid]['answer']
+            res = {"question_answered": True, "responses": responses}         
     return res 
 
 def safe_read_responses():
