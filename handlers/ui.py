@@ -24,8 +24,8 @@ def home():
 
 @bp.route('/reports/sample')
 def sample_report():
-    # This securely joins the path and sends the file
-    return send_from_directory(os.path.join(app.root_path, 'static', 'reports'), "sample.pdf")
+    
+    return send_from_directory(REPORT_FOLDER, "sample.pdf")
 
 @bp.route('/history')
 def history():
